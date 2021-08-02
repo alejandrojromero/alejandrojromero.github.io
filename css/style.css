@@ -306,7 +306,7 @@ span-color {
 
 .card {
     border: none;
-    box-shadow: 0 2px 40px 0 #E6E6E6;
+    box-shadow: 0 2px 40px 0 #ffe4d4;
     background-color: #fff;
     overflow: hidden;
     transition: box-shadow .3s ease-out, transform .3s ease-out, opacity .2s ease-out;
