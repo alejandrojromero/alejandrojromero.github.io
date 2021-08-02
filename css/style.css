@@ -175,10 +175,21 @@ a, a:hover {
 }
 
 
-.headline-big img{
+.header2 img {
     float: left;
+    width: 100px;
     height: 100px;
-}
+    background: #555;
+  }
+  
+  .header2 h1 {
+    color: #FF5A16;
+    position: relative;
+    font-size: 4rem;
+    font-weight: var(--font-bold);
+    top: 18px;
+    left: 10px;
+  }
 
 .display-3 {
     font-size: 2.5rem;
