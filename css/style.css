@@ -296,7 +296,6 @@ span-color {
 }
 
 .proj-label {
-    background-color: rgba(255, 228, 212);
     color: var(--primary-color);
     border: 1px solid var(--primary-color);
     padding: .5em .8em;
