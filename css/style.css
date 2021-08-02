@@ -166,6 +166,7 @@ a, a:hover {
 }
 
 .headline-big {
+    color: #FF5A16;
     font-size: 4rem;
     font-weight: var(--font-bold);
     padding-bottom: 0.2em;
