@@ -296,7 +296,7 @@ span-color {
 }
 
 .proj-label {
-    background-color: rgba(0, 184, 148, 0.05);
+    background-color: rgba(255, 228, 212);
     color: var(--primary-color);
     border: 1px solid var(--primary-color);
     padding: .5em .8em;
@@ -306,7 +306,7 @@ span-color {
 
 .card {
     border: none;
-    box-shadow: 0 2px 40px 0 #ffe4d4;
+    box-shadow: 0 2px 40px 0 #E6E6E6;
     background-color: #fff;
     overflow: hidden;
     transition: box-shadow .3s ease-out, transform .3s ease-out, opacity .2s ease-out;
