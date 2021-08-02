@@ -166,7 +166,14 @@ a, a:hover {
 }
 
 .headline-big {
+    float: left;
+    height: 100px;
+    background: #555;
+}
+
+.headline-big img {
     color: #FF5A16;
+    position: relative;
     font-size: 4rem;
     font-weight: var(--font-bold);
     padding-bottom: 0.2em;
