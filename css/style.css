@@ -243,6 +243,8 @@ Navigation
 
 .navbar {
     padding: 0;
+    position: fixed;
+    top: 0px;
 }
 
 /*/////////////////////
