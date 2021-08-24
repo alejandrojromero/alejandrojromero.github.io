@@ -127,7 +127,7 @@ a, a:hover {
   
   /* Create three equal columns that sits next to each other */
   .column {
-    flex: 25%;
+    flex: 33.33%;
     align-items: center;
     justify-content: center;
     padding-left: 2px;
