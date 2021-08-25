@@ -123,15 +123,11 @@ a, a:hover {
 
 .row {
     display: flex;
-    align-items: center;
-    justify-content: center;
   }
   
   /* Create three equal columns that sits next to each other */
   .column {
     flex: 33.33%;
-    align-items: center;
-    justify-content: center;
     padding-left: 2px;
     /*padding: 2px;*/
   }
