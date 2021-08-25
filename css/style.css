@@ -120,25 +120,27 @@ a, a:hover {
     cursor: pointer;
 }
 
-.fixed-top {
+/* Style the header: fixed position (always stay at the top) */
+.header {
     position: fixed;
     top: 0;
-    right: 0;
-    left: 0;
-    z-index: zindex-fixed;
+    z-index: 1;
+    width: 100%;
+    background-color: #f1f1f1;
   }
 
-  .progress-container {
+  /* The progress container (grey background) */
+.progress-container {
     width: 100%;
-    background-color: transparent;
-    height: 5px;
-    display: block;
+    height: 8px;
+    background: #ccc;
   }
+  
+  /* The progress bar (scroll indicator) */
   .progress-bar {
-    background-color: #FF5A16;
+    height: 8px;
+    background: #FF5A16;
     width: 0%;
-    display: block;
-    height: inherit;
   }
 
 .row {
