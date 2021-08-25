@@ -120,6 +120,26 @@ a, a:hover {
     cursor: pointer;
 }
 
+.fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: zindex-fixed;
+  }
+
+  .progress-container {
+    width: 100%;
+    background-color: transparent;
+    height: 5px;
+    display: block;
+  }
+  .progress-bar {
+    background-color: #FF5A16;
+    width: 0%;
+    display: block;
+    height: inherit;
+  }
 
 .row {
     display: flex;
