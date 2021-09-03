@@ -108,8 +108,9 @@ hr {
 }
 
 .container {
-    width: 95%;
-    max-width: 1500px;
+    max-width: 1920px;
+    padding: 0rem 5vw;
+    overflow: hidden;
 }
 
 a, a:hover {
@@ -141,9 +142,7 @@ a, a:hover {
     width: 0%;
   }
 
-.row {
-    display: flex;
-  }
+
   
   /* Create three equal columns that sits next to each other */
   .column {
