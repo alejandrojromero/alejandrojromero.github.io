@@ -15,6 +15,13 @@
 </head>
 
 <body>
+
+    <div class="header">
+        <div class="progress-container">
+          <div class="progress-bar" id="myBar"></div>
+        </div>
+    </div>
+
     <svg id="fader"></svg>
     <div class="container space-bottom">
         <nav class="navbar navbar-expand-lg navbar-light bg-white py-5">
@@ -358,6 +365,19 @@
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
         crossorigin="anonymous"></script>
     <script src="../js/custom.js"></script>
+
+    <script> 
+    
+        window.onscroll = function() {myFunction()};
+    
+            function myFunction() {
+              var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+              var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+              var scrolled = (winScroll / height) * 100;
+              document.getElementById("myBar").style.width = scrolled + "%";
+            }
+        </script>
+
 </body>
 
 </html>
