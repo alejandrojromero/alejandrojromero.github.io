@@ -12,6 +12,10 @@
     --font-bold: 700;
 }
 
+html{
+    scroll-behavior: smooth
+}
+
 body {
     font-family: 'Inter', sans-serif;
     color: var( --text-dark);
