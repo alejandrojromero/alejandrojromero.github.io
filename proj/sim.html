@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Simulator | Alejandro Romero</title>
+    <link rel="icon" href="../img/misc/favicon.png">
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/67f90579cc.js" crossorigin="anonymous"></script>
+    <link href="../css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="progress-container">
+            <div class="progress-bar" id="myBar"></div>
+        </div>
+    </div>
+
+    <svg id="fader"></svg>
+    <div class="container space-bottom">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white py-5">
+            <a class="navbar-brand js-scroll-trigger" href="../index.html">Alejandro Romero</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> <span
+                    class="navbar-toggler-icon"></span> </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"> <a class="nav-link js-scroll-trigger" href="../index.html#projects">Work</a>
+                    </li>
+                    <li class="nav-item"> <a class="nav-link js-scroll-trigger" href="../about.html">About</a>
+                    </li>
+                    <li class="nav-item"> <a class="nav-link js-scroll-trigger"
+                            href="../docs/Alejandro Romero Resume.pdf" target="_blank">Resume</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="row">
+            <div class="col-lg-2">
+                <div class="sidebar">
+                    <div class="space-bottom"><a href="../index.html" class="anchor">Home</a></div>
+                    <div id="tags"> </div>
+                </div>
+            </div>
+            <div class="col-lg-10 ml-auto col-sm-12 ">
+                <header>
+                    <div class="space-md">
+                        <div class="headline-content">
+                            <h1 class="headline-title display-3">Natural Selection Simulator</h1>
+                            <h1 class="display-3">AI Visualizer</h1>
+                        </div>
+                        <div class="row space-top proj-body">
+                            <div class="col-md-3">
+                                <div class="small-text">Role</div>
+                                <p>Full Stack Dev</p>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="small-text">Duration</div>
+                                <p>1 week</p>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="small-text">Tools</div>
+                                <span class="badge proj-label">Unity</span>
+                                <span class="badge proj-label">C#</span>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <video muted autoplay loop>
+                    <source src="../img/sim/NaturalSelectionSim.mp4" type="video/mp4">
+                    Sorry, your browser does not support the video tag.
+                </video>
+                <div class="row space-md">
+                    <div class="col-md-8 mr-auto ml-auto">
+                        <h1 id="s1" class="section">Overview</h1>
+                        <p class="proj-body"> As I discovered the ins and outs of Unity and interactive design during my
+                            internship at Infina, I had the idea to create a natural selection simulator using
+                            artificial intelligence. I had seen similar projects before, but wanted to create my own
+                            from scratch to learn a bit more about AI and the Unity engine.
+                        </p>
+                        <!-- <div class="row">
+                            <div class="col-md-6">
+                                <h2 class="space-top space-bottom-sm">IvyHacks 2020</h2>
+                                <p class="proj-dvb"><a href="https://ivyhacks.devpost.com/" class="proj-link"
+                                        target="_blank"><i class="fas fa-laptop"></i>&nbsp; IvyHacks 2020 Devpost</a>
+                                </p>
+                                <p class="proj-dvb"><a href="https://www.instagram.com/ivyhackathon/" class="proj-link"
+                                        target="_blank"><i class="fas fa-mobile-alt"></i>&nbsp; &nbsp; Instagram
+                                        marketing account</a>
+                                </p>
+                                <p class="proj-dvb space-bottom"><a
+                                        href="https://medium.com/ivyhacks/meet-the-ivyhacks-team-8c5788e23d83"
+                                        class="proj-link" target="_blank"><i class="fas fa-file-alt"></i>&nbsp; &nbsp;
+                                        Featured Medium article</a></p>
+                            </div>
+                            <div class="col-md-6">
+                                <h2 class="space-top space-bottom-sm">Hack@Brown</h2>
+                                <p class="proj-dvb"><a href="https://2021.hackatbrown.org/" class="proj-link"
+                                        target="_blank"><i class="fas fa-laptop"></i>&nbsp; Hack@Brown 2021 website</a>
+                                </p>
+                                <p class="proj-dvb"><a href="https://2020.hackatbrown.org/" class="proj-link"
+                                        target="_blank"><i class="fas fa-laptop"></i>&nbsp; Hack@Brown 2020 website</a>
+                                </p>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8 ml-auto mr-auto">
+                        <h1 id="s2" class="section">Ideation</h1>
+                        <h1 class="section display-3">What questions would this project answer?</h1>
+                        <h2 class="space-top">Objective</h2>
+                        <p class="proj-body"> The first step was to decide what exactly this simulation was going to
+                            show. I had a rough idea of what I wanted to implement: AI controlled bots simulating the
+                            natural processes of organisms, i.e. eating, reproducing, passing on genetic traits, etc.
+                        </p>
+                        <h2>Problem</h2>
+                        <p class="proj-body">My main goal was to easily convey these features as cleanly as possible, so
+                            I had the idea to make the "organisms" simple AI-controlled cubes that roamed around. They
+                            would each be equipped with a simple UI canvas showing their energy level and their sex. The
+                            organisms' speeds would be conveyed by their color (blue and red corresponding to slow and
+                            fast, respectively). The food sources would be represented by green spheres, which would
+                            repopulate if in a specified "feeding area."
+                            <h2>Other Challenges</h2>
+                            <p class="proj-body">As I started formulating ideas on how to implement these features, I
+                                realized that if I were to simulate a believable population, I would need to account for
+                                some other factors. For instance, food consumption, energy management, reproductive
+                                drive, and genetic variation were all things I was going to have to implement in the
+                                backend.
+                            </p>
+
+                            <figure> <img src="../img/sim/notes.jpg" alt="sim notes" class="img-fluid "></figure>
+                    </div>
+                </div>
+                <div class="row space-md">
+                    <div class="col-md-8 ml-auto mr-auto">
+                        <h1 class="section" id="s3">Implementation</h1>
+                        <h1 class="section display-3">Creating the visualization</h1>
+                        <h2 class="space-top">Mockups</h2>
+                        <p class="proj-body"> I wanted the program to be as lightweight and intuitive as possible, and
+                            to reflect these principles in the visual design of the application. I created a quick
+                            mockup of what the layout would look like, and created a palette for the ten possible speed
+                            groups.
+                            ​
+                        </p>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <figure> <img src="../img/sim/greybox.png" alt="wireframe" class="img-fluid "></figure>
+                    </div>
+                    <div class="col-md-6">
+                        <figure> <img src="../img/sim/design.png" alt="agent design" class="img-fluid "></figure>
+                    </div>
+
+
+                    <div class="row space-md">
+                        <div class="col-md-8 ml-auto mr-auto">
+                            <h2>Design</h2>
+                            <p class="proj-body"> The UI of the program was designed to be as minimal and nonintrusive
+                                as possible. Two graphs on the left side of the screen allow for the user to view the
+                                current distribution of male and female organisms in the population, as well as the
+                                distribution of speeds among them. The user also has the ability to pause or
+                                fast-forward the simulation.
+                                ​
+                            </p>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <figure> <img src="../img/sim/final.png" alt="final" class="img-fluid"></figure>
+                <div class="col-md-6" style="float: left">
+                    <video muted autoplay loop>
+                        <source src="../img/sim/graph1.mp4" type="video/mp4">
+                        Sorry, your browser does not support the video tag.
+                    </video>
+
+                </div>
+
+
+                <div class="col-md-6" style="float: left">
+                    <video muted autoplay loop>
+                        <source src="../img/sim/graph2.mp4" type="video/mp4">
+                        Sorry, your browser does not support the video tag.
+                    </video>
+                </div>
+
+
+                <div class="row space-md">
+                    <div class="col-md-8 ml-auto mr-auto">
+                        <h2>The Result</h2>
+                        <p class="proj-body">The organisms were coded to each have traits within a set of predetermined parameters to simulate the surfacing of optimal traits among the population. Ultimately, the tradeoffs between speed and energy consumption, paired with the limited availability of food, resulted in a preference for a more moderate speed gene. The blue colored (1-3 speed) organisms tended to die out, as well as any fast organisms (7-10 speed), which would eventually perish due to their increased energy consumption. Over repeated trials, it became apparent that this pattern was repeating itself, resulting in controlled population sizes as well a much higher number of midrange speeds (4-6).
+                        </p>
+                    </div>
+                </div>
+                
+
+                <div class="row space-md">
+                    <div class="col-md-8 ml-auto mr-auto">
+                        <h1 id="s4" class="section" >Reflection</h1>
+                        <p class="proj-body">Working on this side project gave me a lot of insights on best practices for tackling 
+                            design and development problems. I can't stress how important it was to ensure I knew what and how I wanted 
+                            to create certain aspects of the application before I actually dove into implementation.
+                        </p>
+                        <p class="proj-body">The project also provided insights on how to best approach fullstack work in general.
+                            I had no collaborators on this project, so the design and development work was all on me. Flying solo 
+                            in a project means a lack of critique and external perspective, so that's one area this project suffered in.
+                            However, it helped me learn that iteration is vital, and catching errors earlier on in the process rather 
+                            than later helps a project's timeline as well as the quality of the final product itself.
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="space-md">
+                    <h5 class="space-bottom">Recommended 🔎</h5>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <a href="../proj/sim.html">
+                                <figure> <img src="../img/thumbnail/ames.png" alt="NASA MarsVR" class="img-fluid img-next">
+                                </figure>
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="proj/sim.html">
+                                <figure> <img src="../img/thumbnail/tkd.png" alt="TKD Visualizer" class="img-fluid img-next">
+                                </figure>
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="../proj/sim.html">
+                                <figure> <img src="../img/thumbnail/instagram.png" alt="Instagram AR/VR" class="img-fluid img-next">
+                                </figure>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="container py-5">
+        <div class="row">
+            <div class="col-sm-8">
+                <p class="mb-1">&copy;
+                    <script>
+                        var d = new Date()
+                        document.write(d.getFullYear())
+                    </script>
+                    Alejandro Romero
+                </p>
+            </div>
+            <div class="col-sm-4 text-md-right">
+                <a href="mailto:alejandro_romero@brown.edu" target="_blank" class="fa fa-envelope">
+                </a>
+                <a href="https://github.com/alejandrojromero" target="_blank" class="fa fab fa-github"></a>
+                <a href="https://www.linkedin.com/in/alejandrojromero/" target="_blank" class="fa fa-linkedin"></a>
+                <a href="https://www.instagram.com/a.r.works/" target="_blank" class="fa fa-instagram">
+                </a>
+                <a href="https://www.youtube.com/channel/UCHFQkfqIZiIZCzZukbZJ_5Q" target="_blank"
+                    class="fa fa-youtube-play">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Javascript -->
+    <script src="../js/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <script src="../js/custom.js"></script>
+
+    <script>
+
+        window.onscroll = function () { myFunction() };
+
+        function myFunction() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("myBar").style.width = scrolled + "%";
+        }
+    </script>
+
+</body>
+
+</html>
