@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Mars VR | Alejandro Romero</title>
+    <link rel="icon" href="../img/misc/favicon.png">
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/67f90579cc.js" crossorigin="anonymous"></script>
+    <link href="../css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="progress-container">
+            <div class="progress-bar" id="myBar"></div>
+        </div>
+    </div>
+
+    <svg id="fader"></svg>
+    <div class="container space-bottom">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white py-5">
+            <a class="navbar-brand js-scroll-trigger" href="../index.html">Alejandro Romero</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> <span
+                    class="navbar-toggler-icon"></span> </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"> <a class="nav-link js-scroll-trigger" href="../index.html#projects">Work</a>
+                    </li>
+                    <li class="nav-item"> <a class="nav-link js-scroll-trigger" href="../about.html">About</a>
+                    </li>
+                    <li class="nav-item"> <a class="nav-link js-scroll-trigger"
+                            href="../docs/Alejandro Romero Resume.pdf" target="_blank">Resume</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="row">
+            <div class="col-lg-2">
+                <div class="sidebar">
+                    <div class="space-bottom"><a href="../index.html" class="anchor">Home</a></div>
+                    <div id="tags"> </div>
+                </div>
+            </div>
+            <div class="col-lg-10 ml-auto col-sm-12 ">
+                <header>
+                    <div class="space-md">
+                        <div class="headline-content">
+                            <h1 class="headline-title display-3">NASA Ames - MarsVR</h1>
+                            <h1 class="display-3">The next generation of Mars exploration 🚀</h1>
+                        </div>
+                        <div class="row space-top proj-body">
+                            <div class="col-md-3">
+                                <div class="small-text">Role</div>
+                                <p>UX Designer, Full Stack Dev</p>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="small-text">Duration</div>
+                                <p>Aug 2021 - Dec 2021</p>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="small-text">Tools</div>
+                                <span class="badge proj-label">VR</span>
+                                <span class="badge proj-label">UX</span>
+                                <span class="badge proj-label">Python</span>
+                                <span class="badge proj-label">Figma</span>
+                                <span class="badge proj-label">Unity</span>
+                                <span class="badge proj-label">C#</span>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <video muted autoplay loop>
+                    <source src="../img/voxelpad/clip.mp4" type="video/mp4">
+                    Sorry, your browser does not support the video tag.
+                </video>
+                <div class="row space-md">
+                    <div class="col-md-8 mr-auto ml-auto">
+                        <h1 id="s1" class="section">Overview</h1>
+                        <p class="proj-body"> I wanted to design an application that would allow a user to create
+                            8bit-style graphics using 3D voxels in an interactive environment. The first step was
+                            defining the core feature of "painting"— how would the user draw in the first place? I
+                            ultimately wanted to make an app where the user could effectively enjoy the following
+                            features.
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8 ml-auto mr-auto">
+                        <h1 id="s2" class="section">Core Features</h1>
+                        <h1 class="section display-3">The nuts and bolts</h1>
+                        <ul class="proj-body space-top">
+                            <li><strong>Responsive Camera.</strong> Allow user to navigate scene in 3D
+                            </li>
+                            <li><strong>Customizable brush color and size.</strong> What's the fun in art if you can't
+                                make it your own?</li>
+                            <li><strong>Toggle canvas on/off.</strong> Some people like guidelines, others don't!
+                            </li>
+                            <li><strong>Draw on previous blocks in 3D.</strong> Make your drawings stand out (this was a
+                                lot more complex than I initially imagined).
+                            </li>
+                            <li><strong>2D Preview with zoom.</strong> A source of truth is pretty important in a
+                                complex
+                                scene. This way, a user can always have the full context of their drawing without having
+                                to
+                                readjust the camera too often.
+                            </li>
+                            <li><strong>Erase tool.</strong> We all make mistakes.
+                            </li>
+                            <li><strong>Override previous block color with new color data.</strong> Drawing over a
+                                previous block with a
+                                new color will change the original block's color.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row space-md">
+                    <div class="col-md-8 ml-auto mr-auto">
+                        <h1 class="section" id="s3">Implementation</h1>
+                        <h1 class="section display-3">Bringing it all to life</h1>
+                        <h2 class="space-top">Mockups</h2>
+                        <p class="proj-body"> Most of the features were relatively straightforward in implementation.
+                            The finished program allowed for the user to draw in a free environment with few restraints.
+                            However, there were a few logical roadblocks in the implementation. To avoid issues later
+                            on,
+                            I created a rough mockup with all the features I wanted to include so I knew exactly what I
+                            needed to design for and build.
+                            ​
+                        </p>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <figure> <img src="../img/voxelpad/3d.png" alt="agent design" class="img-fluid "></figure>
+                    </div>
+                    <div class="col-md-6">
+                        <figure> <img src="../img/voxelpad/grey.png" alt="wireframe" class="img-fluid "></figure>
+                    </div>
+
+
+                    <div class="row space-md">
+                        <div class="col-md-8 ml-auto mr-auto">
+                            <h2>Challenges</h2>
+                            <p class="proj-body"> After creating a mockup of the program's UI and general style, I had
+                                to figure out how exactly to implement drawing functionality in the way I had originally
+                                desired. The primary issue was how to handle blocks that had already been drawn. Because
+                                the user would presumably draw over these blocks to add detail and color, it was
+                                important to find a solution to account for this.
+                                ​
+                            </p>
+
+                            <h2>Solution</h2>
+                            <p class="proj-body"> I decided it would make most sense to have different modes: 2D and 3D
+                                drawing modes. The 2D mode would allow users to draw on the canvas with voxels and
+                                overwrite the color of preexisting blocks they draw over, while the 3D mode uses a ray
+                                tracer to determine which face of a preexisting block is being hovered on so that the
+                                user can draw on top of the block in 3D.
+                                ​
+                            </p>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <figure> <img src="../img/voxelpad/note3.png" alt="final" class="img-fluid"></figure>
+
+                
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <figure> <img src="../img/voxelpad/note2.png" alt="agent design" class="img-fluid "></figure>
+                    </div>
+                    <div class="col-md-6">
+                        <figure> <img src="../img/voxelpad/note1.png" alt="wireframe" class="img-fluid "></figure>
+                    </div>
+                </div>
+
+
+
+
+                <div class="row space-md">
+                    <div class="col-md-8 ml-auto mr-auto">
+                        <h1 id="s4" class="section">Reflection</h1>
+                        <p class="proj-body">The final result was a lightweight program that allowed users to draw
+                            using 3D voxels, so the main goal was met. However, there is still room for improvement.
+                            The UI of the program is still quite rough due to the short project timeline.
+                        </p>
+                        <p class="proj-body">The 3D and 2D
+                            drawing modes are also not distinguished in the UI and are controlled by a toggle handled
+                            via
+                            keyboard bindings. Overall, here are some possible improvements for a future version of this
+                            project:
+                        </p>
+                        <ul class="proj-body">
+                            <li><strong>Improved UI.</strong> Make the program feel more visually appealing and
+                                highlight some of the CTAs in the control panel.
+                            </li>
+                            <li><strong>Emphasize 3D vs 2D Modes.</strong> Convey the difference to these modes, and
+                                their capabilities, to the user in a natural way.</li>
+                            <li><strong>Toggle canvas on/off.</strong> Some people like guidelines, others don't!
+                            </li>
+                            <li><strong>Camera fixes.</strong> In some contexts, the camera could be a little buggy,
+                                making it hard to view the scene from every angle.
+                            </li>
+                            <li><strong>Export images.</strong> Something I learned in later internships is that
+                                you can export screen states from Unity as images. This feature would be great for
+                                allowing users to save their creations with the click of a button.
+                            </li>
+                        </ul>
+                        <p class="proj-body">Overall, this project was a great learning experience. It allowed me to equally balance functionality 
+                            and user expoerience, as well as teaching me how to bring big ideas to life as prototypes in the Unity engine. Thanks for reading!
+                        </p>
+                    </div>
+                </div>
+
+                <div class="space-md">
+                    <h5 class="space-bottom">Recommended 🔎</h5>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <a href="../proj/tkd.html">
+                                <figure> <img src="../img/thumbnail/tkd.png" alt="TKD Visualizer" class="img-fluid img-next">
+                                </figure>
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="../proj/infina.html">
+                                <figure> <img src="../img/thumbnail/infina.png" alt="Infina Ltd." class="img-fluid img-next">
+                                </figure>
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="../proj/sim.html">
+                                <figure> <img src="../img/thumbnail/naturalselectionsim.png" alt="Natural Selection Simulator" class="img-fluid img-next">
+                                </figure>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="container py-5">
+        <div class="row">
+            <div class="col-sm-8">
+                <p class="mb-1">&copy;
+                    <script>
+                        var d = new Date()
+                        document.write(d.getFullYear())
+                    </script>
+                    Alejandro Romero
+                </p>
+            </div>
+            <div class="col-sm-4 text-md-right">
+                <a href="mailto:alejandro_romero@brown.edu" target="_blank" class="fa fa-envelope">
+                </a>
+                <a href="https://github.com/alejandrojromero" target="_blank" class="fa fab fa-github"></a>
+                <a href="https://www.linkedin.com/in/alejandrojromero/" target="_blank" class="fa fa-linkedin"></a>
+                <a href="https://www.instagram.com/a.r.works/" target="_blank" class="fa fa-instagram">
+                </a>
+                <a href="https://www.youtube.com/channel/UCHFQkfqIZiIZCzZukbZJ_5Q" target="_blank"
+                    class="fa fa-youtube-play">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Javascript -->
+    <script src="../js/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <script src="../js/custom.js"></script>
+
+    <script>
+
+        window.onscroll = function () { myFunction() };
+
+        function myFunction() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("myBar").style.width = scrolled + "%";
+        }
+    </script>
+
+</body>
+
+</html>

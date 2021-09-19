@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>NASA GVIS | Alejandro Romero</title>
+    <link rel="icon" href="../img/misc/favicon.png">
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/67f90579cc.js" crossorigin="anonymous"></script>
+    <link href="../css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="progress-container">
+            <div class="progress-bar" id="myBar"></div>
+        </div>
+    </div>
+
+    <svg id="fader"></svg>
+    <div class="container space-bottom">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white py-5">
+            <a class="navbar-brand js-scroll-trigger" href="../index.html">Alejandro Romero</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> <span
+                    class="navbar-toggler-icon"></span> </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"> <a class="nav-link js-scroll-trigger" href="../index.html#projects">Work</a>
+                    </li>
+                    <li class="nav-item"> <a class="nav-link js-scroll-trigger" href="../about.html">About</a>
+                    </li>
+                    <li class="nav-item"> <a class="nav-link js-scroll-trigger"
+                            href="../docs/Alejandro Romero Resume.pdf" target="_blank">Resume</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="row">
+            <div class="col-lg-2">
+                <div class="sidebar">
+                    <div class="space-bottom"><a href="../index.html" class="anchor">Home</a></div>
+                    <div id="tags"> </div>
+                </div>
+            </div>
+            <div class="col-lg-10 ml-auto col-sm-12 ">
+                <header>
+                    <div class="space-md">
+                        <div class="headline-content">
+                            <h1 class="headline-title display-3">NASA GVIS</h1>
+                            <h1 class="display-3">Science in Mixed Reality 🔭</h1>
+                        </div>
+                        <div class="row space-top proj-body">
+                            <div class="col-md-3">
+                                <div class="small-text">Role</div>
+                                <p>Full Stack Dev, UX Designer</p>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="small-text">Duration</div>
+                                <p>June 2020 - August 2020</p>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="small-text">Team</div>
+                                <p>NASA GVIS Lab Members (~10)</p>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="small-text">Tools</div>
+                                <span class="badge proj-label">VR</span>
+                                <span class="badge proj-label">AR</span>
+                                <span class="badge proj-label">Figma</span>
+                                <span class="badge proj-label">Unity</span>
+                                <span class="badge proj-label">Blender</span>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <div>
+                    <figure> <img src="../img/gvis/iss.png" alt="mesh" class="img-fluid ">
+                    </figure>
+                </div>
+                <div class="row space-md">
+                    <div class="col-md-8 mr-auto ml-auto">
+                        <h1 id="s1" class="section">Overview</h1>
+                        <p class="proj-body">
+                            Throughout the summer of 2020, I contributed to a variety of projects and prospective
+                            technologies at GVIS that allow for more powerful visualizations at NASA.
+                        </p>
+                        <p class="proj-body">
+                            Not only was I
+                            able to work with the development of MR projects, but I also explored the possibilities of
+                            remote experiences and mobile applications: factors that have become more essential and
+                            relevant to graphics work due to the COVID-19 pandemic.
+                        </p>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8 ml-auto mr-auto">
+                        <h1 id="s2" class="section">ISS</h1>
+                        <h1 class="section display-3">Interactive International Space Station Visualization</h1>
+                        <p class="proj-body space-top">The International Space Station (ISS) visualization project
+                            allowed me to experiment with natural user interface techniques while developing a practical
+                            application. I optimized the application for the Oculus Quest device, which supports hand
+                            tracking via infrared sensing. This facilitates the development of applications that support
+                            the use of handheld controllers and controller-less hand tracking.
+                        </p>
+
+                        <p class="proj-body"> I went through an iterative process at this stage, initially designing the
+                            environment as a room in which the user views a model of the ISS. However, I eventually
+                            decided that viewing a life-sized model of the ISS in orbit would be a more informative and
+                            visually appealing experience.
+                        </p>
+                        <p class="proj-body">To achieve realistic lighting, I applied a constant rotation
+                            on the Earth to give the viewer the illusion that the ISS was orbiting, as well as a
+                            constant rotation on the scene’s light source to mimic the lighting shifts observed by
+                            Earth’s rotation. These changes resulted in a scene that was both convincing and immersive.
+                        </p>
+
+                        <p class="proj-body"> I decided to add functionality that allowed for the user to highlight
+                            certain components of
+                            the ISS preview model by tapping on the component names in a scrollable list in the hand
+                            menu. In addition, I added functionality to the labels so that, as the ISS model rotates in
+                            any which direction, the labels would still face the user and remain legible.
+                        </p>
+
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-7 space-top">
+                        <figure> <img src="../img/gvis/handanchoring.png" alt="hand anchored UI" class="img-fluid "
+                                width="600">
+                        </figure>
+                    </div>
+                    <video muted autoplay loop class="col-md-4 space-top" style="float: left">
+                        <source src="../img/gvis/iss.mp4" type="video/mp4">
+                        Sorry, your browser does not support the video tag.
+                    </video>
+                </div>
+
+
+                <div class="row space-md">
+                    <div class="col-md-8 ml-auto mr-auto">
+                        <h1 class="section" id="s3">Mars Rover</h1>
+                        <h1 class="section display-3">Exploring the Perseverance Rover</h1>
+                        <h2 class="space-top">Visuals</h2>
+                        <p class="proj-body space-top"> With the recent launch of the Perseverance rover, an interactive
+                            experience with this new technology would be informative. Taking a similar approach as with
+                            the ISS demo, I created an environment representing the surface of Mars using Unity’s
+                            terrain editor.
+                        </p>
+
+                        <div>
+                            <figure> <img src="../img/gvis/rover.png" alt="wireframe" class="img-fluid "></figure>
+                        </div>
+                        <h2 class="space-top">Interaction</h2>
+                        <p class="proj-body">Next steps in this project involved the interactivity itself: what would
+                            users do in this environment? I looked to other successful VR experiences and decided to
+                            start the scene with the user facing an interactive menu explaining what Perseverance is,
+                            rover history, information on Mars, etc. The menu allows users to select any of these tabs
+                            in the menu, which will show them the relevant information.
+                        </p>
+                        <div>
+                            <figure> <img src="../img/gvis/ui.png" alt="wireframe" class="img-fluid "></figure>
+                        </div>
+
+
+                        <p class="proj-body space-top">They can then teleport around
+                            the scene and view the rover from various angles. I also wanted to implement interactivity
+                            with individual pieces of the rover model. That is, a user can grab various pieces of the
+                            rover, which would make their names and descriptions appear beside them. The user could then
+                            let go of the piece to have it “snap back” to its correct position on the rover, providing a
+                            hands-on educational experience.
+                        </p>
+
+
+                        <div>
+                            <figure> <img src="../img/gvis/menu.png" alt="wireframe" class="img-fluid "></figure>
+                        </div>
+
+                        <p class="proj-body space-top">We created a mocap suit with radio-dense beads that could be
+                            tracked using
+                            <a href="https://www.xromm.org/" class=project-link>XROMM</a> tracking software. We then set
+                            up 3 GoPro cameras to capture the motion from three
+                            different viewpoints. The idea was to capture the motion data from various kicks, track
+                            them, export the 3D transformations, and import them as animations in Unity.
+                        </p>
+
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-8 ml-auto mr-auto">
+                        <h1 id="s4" class="section">Other Projects</h1>
+                        <p class="proj-body space-top">While working at the GVIS lab, I also worked
+                            on an experimental project in VR navigation in which a user could move their
+                            hands in a "swimming" motion to explore the liquid bodies on the surface of Titan,
+                            Saturn's biggest moon.
+                        </p>
+                        <div>
+                            <figure> <img src="../img/gvis/titan.png" alt="wireframe" class="img-fluid "></figure>
+                        </div>
+                        <p class="proj-body space-top">I also created a side project called Bored Games VR, a
+                            prototype allowing users to play board games together with nothing but a VR headset and
+                            their hands! Of course, the application supports standard VR controllers, but it was built
+                            with a focus on allowing users to interact with games in the most natural way, in an
+                            environment where they can play remotely with other friends in VR using realtime
+                            multiplayer.
+                        </p>
+
+                        <video muted autoplay loop class="space-top" >
+                            <source src="../img/gvis/boredgames.mp4" type="video/mp4">
+                            Sorry, your browser does not support the video tag.
+                        </video>
+                        <p class="proj-body space-top">The app allows users to change the current game with a minimal menu on the
+                            tabletop. Users can also emote by using hand gestures. That is, the application can
+                            recognize hand gestures such as a "thumbs up" to render the associated emoticon(s).
+                        </p>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <figure> <img src="../img/gvis/jenga.png" alt="bored games screenshot" class="img-fluid ">
+                                </figure>
+                            </div>
+                            <div class="col-md-6">
+                                <figure> <img src="../img/gvis/emoji.png" alt="bored games emojis" class="img-fluid "></figure>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="row space-md">
+                    <div class="col-md-8 ml-auto mr-auto">
+                        <h1 id="s5" class="section">Reflection</h1>
+                        <p class="proj-body">Working at the GVIS lab was an incredible experience,
+                            where I got to learn from many extremely intelligent research and development experts.
+                        </p>
+                        <p class="proj-body">
+                            This set of projects allowed me to tackle problems I'd never think I would solve, but my mentor
+                            helped me learn and grow to make sure I could make an impact at NASA.
+                        </p>
+                        <p class="proj-body">
+                            10/10 would do again 
+                        </p>
+                    </div>
+                </div>
+
+
+
+                <div class="space-md">
+                    <h5 class="space-bottom">Recommended 🔎</h5>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <a href="../proj/catfish.html">
+                                <figure> <img src="../img/thumbnail/catfish.png" alt="Catfish visulization"
+                                        class="img-fluid img-next">
+                                </figure>
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="../proj/ames.html">
+                                <figure> <img src="../img/thumbnail/ames.png" alt="NASA Mars VR"
+                                        class="img-fluid img-next">
+                                </figure>
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="../proj/instagram.html">
+                                <figure> <img src="../img/thumbnail/instagram.png" alt="Instagram AR/VR"
+                                        class="img-fluid img-next">
+                                </figure>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="container py-5">
+        <div class="row">
+            <div class="col-sm-8">
+                <p class="mb-1">&copy;
+                    <script>
+                        var d = new Date()
+                        document.write(d.getFullYear())
+                    </script>
+                    Alejandro Romero
+                </p>
+            </div>
+            <div class="col-sm-4 text-md-right">
+                <a href="mailto:alejandro_romero@brown.edu" target="_blank" class="fa fa-envelope">
+                </a>
+                <a href="https://github.com/alejandrojromero" target="_blank" class="fa fab fa-github"></a>
+                <a href="https://www.linkedin.com/in/alejandrojromero/" target="_blank" class="fa fa-linkedin"></a>
+                <a href="https://www.instagram.com/a.r.works/" target="_blank" class="fa fa-instagram">
+                </a>
+                <a href="https://www.youtube.com/channel/UCHFQkfqIZiIZCzZukbZJ_5Q" target="_blank"
+                    class="fa fa-youtube-play">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Javascript -->
+    <script src="../js/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <script src="../js/custom.js"></script>
+
+    <script>
+
+        window.onscroll = function () { myFunction() };
+
+        function myFunction() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("myBar").style.width = scrolled + "%";
+        }
+    </script>
+
+</body>
+
+</html>
