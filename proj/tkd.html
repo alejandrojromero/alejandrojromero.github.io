@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Infina, Ltd. | Alejandro Romero</title>
+    <title>Taekwondo Visualizer | Alejandro Romero</title>
     <link rel="icon" href="../img/misc/favicon.png">
     <!-- CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -52,8 +52,8 @@
                 <header>
                     <div class="space-md">
                         <div class="headline-content">
-                            <h1 class="headline-title display-3">Infina, Ltd.</h1>
-                            <h1 class="display-3">VR Training for the FAA ✈️</h1>
+                            <h1 class="headline-title display-3">Taekwondo Simulator</h1>
+                            <h1 class="display-3">Visualizing Martial Arts 🥋</h1>
                         </div>
                         <div class="row space-top proj-body">
                             <div class="col-md-3">
@@ -62,145 +62,191 @@
                             </div>
                             <div class="col-md-3">
                                 <div class="small-text">Duration</div>
-                                <p>July 2019 - Sept 2019</p>
+                                <p>January 2020 - May 2020</p>
                             </div>
 
                             <div class="col-md-3">
                                 <div class="small-text">Team</div>
-                                <p>Infina Design org, <a href="https://www.benmorseart.com/about.html"
-                                        class=project-link>Ben Morse (mentor).</a> </p>
+                                <a href="https://aaronolsen.github.io/about_me.html" class=project-link>Aaron Olsen,
+                                    Ph.D.</a>
                             </div>
 
                             <div class="col-md-3">
                                 <div class="small-text">Tools</div>
-                                <span class="badge proj-label">VR</span>
-                                <span class="badge proj-label">AR</span>
-                                <span class="badge proj-label">Speech Recognition</span>
-                                <span class="badge proj-label">Unity</span>
+                                <span class="badge proj-label">Mocap</span>
+                                <span class="badge proj-label">Figma</span>
                                 <span class="badge proj-label">C#</span>
+                                <span class="badge proj-label">Unity</span>
+                                <span class="badge proj-label">XROMM</span>
                             </div>
                         </div>
                     </div>
                 </header>
-                <video muted autoplay loop>
-                    <source src="../img/infina/Interactive Training 2019.mp4" type="video/mp4">
-                    Sorry, your browser does not support the video tag.
-                </video>
+                <div>
+                    <figure> <img src="../img/tkd/TkdVizUI.png" alt="mesh" class="img-fluid ">
+                    </figure>
+                </div>
                 <div class="row space-md">
                     <div class="col-md-8 mr-auto ml-auto">
-                        <h1 id="s1" class="section">Overview</h1>
-                        <p class="proj-body"> During the summer of 2019, I worked with <a href="https://www.infina.net/"
-                                class=project-link>Infina, Ltd.</a>to
-                            create mixed
-                            reality experiences for the Federal Aviation Administration. These ranged from Virtual
-                            Reality technical operations training demos to ground control taxiway applications.
+                        <h1 id="s1" class="section">Why Taekwondo?</h1>
+                        <p class="proj-body">
+                            Ever since the age of 6, I've been in love with Taekwondo. I joined the Taekwondo team at
+                            Brown University and became an instructor. In the Spring of 2020, I was working at the
+                            Brainerd Biomechanics and Morphology lab studying the <a href="../proj/catfish.html"
+                                class=project-link>motion data of nonhuman organisms.</a> My
+                            mentor asked me if I was interested in creating an independent project, and the Taekwondo
+                            Visualizer was born.
                         </p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <figure> <img src="../img/tkd/youngtkd.JPG" alt="agent design" class="img-fluid ">
+                                </figure>
+                            </div>
+                            <div class="col-md-6">
+                                <figure> <img src="../img/tkd/oldtkd.JPG" alt="wireframe" class="img-fluid "></figure>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-8 ml-auto mr-auto">
                         <h1 id="s2" class="section">Introduction</h1>
-                        <h1 class="section display-3">Creating Government Training Apps</h1>
-                        <p class="proj-body">Working with my mentor at Infina, Ben Morse, my main objective was to
-                            create immersive
-                            experiences for FAA technical operations training courses for proper maintenance procedures.
-
+                        <h1 class="section display-3">Quantifying Martial Arts</h1>
+                        <p class="proj-body">The first step in creating the project was the idea: what was I going to
+                            make? Naturally, there were other questions that accompanied this one: <strong> What goal
+                                was I
+                                trying to accomplish with this visualization? Who would the potential audience of such a
+                                visualization be? What user pain points would I need to address? </strong>
                         </p>
 
-                        <p class="proj-body">This consisted of working with Ben to create 3D assets, code up
-                            simulations, and work with
-                            various mixed reality hardware types to provide the most optimal training experience
-                            possible.
+                        <p class="proj-body"> An interactive 3D martial arts visualizer seemed extremely useful, since
+                            most online martial arts tutorials tend to be in two dimensional video formats. With the
+                            help of my mentor, I decided to create a 3D visualization using Unity.
+                        </p>
+
+                        <p class="proj-body"> This would allow a
+                            user to select different techniques, view them from any viewpoint, and learn about the
+                            breakdowns of each individual technique to learn more than by simply viewing a technique
+                            executed via video.
                         </p>
 
                     </div>
                 </div>
                 <div class="row space-md">
                     <div class="col-md-8 ml-auto mr-auto">
-                        <h1 class="section" id="s3">Projects</h1>
-                        <h1 class="section display-3">What I worked on 👀</h1>
-                        <h2 class="space-top">Hardware Maintenance Training</h2>
-                        <p class="proj-body"> The first of these applications was an interactive refresher for power
-                            transfer switch maintenance. Because most current training is bottlenecked by the lack of
-                            physical training facilities, waitlists for receiving hands-on training for mechanical
-                            procedures are long and time inefficient.
+                        <h1 class="section" id="s3">Data Collection</h1>
+                        <h1 class="section display-3">The science behind the visuals</h1>
+                        <h2 class="space-top">Motion Capture System</h2>
+                        <p class="proj-body"> Initially, the idea was to create a visualization in Virtual Reality that
+                            would allow for the viewer to see the model kicking right in front of them.
                         </p>
-                        <p class="proj-body">Therefore, we wanted to design an application
-                            where the user could navigate the proper maintenance sequence while receiving realtime
-                            feedback in the form of UI elements, haptics, and visual cues and signifiers in the
-                            environment.
+                        <p class="proj-body">The first step
+                            of this was to collect the data. To do this, we created a motion capture rig from scratch
+                            that would allow us to capture real-world motion data.
                         </p>
+                        <div>
+                            <figure> <img src="../img/tkd/rig.png" alt="wireframe" class="img-fluid "></figure>
+                        </div>
 
                         <video muted autoplay loop>
-                            <source src="../img/infina/ATS_Demo.mp4" type="video/mp4">
+                            <source src="../img/tkd/block.mp4" type="video/mp4">
                             Sorry, your browser does not support the video tag.
                         </video>
-
-                        <h2 class="space-top">Extreme Environment Training</h2>
-                        <p class="proj-body"> We also wanted to test a maintenance sequence in an extreme environment,
-                            such as a radio tower in northern Alaska, since replicating these conditions in a physical
-                            training facility isn't very practical.
-                        </p>
-                        <p class="proj-body">We used this experiment to test natural user
-                            motion in VR. This was done by using the velocity of the user's arms' swinging for
-                            locomotion to simulate realistic traversal. The rest of the app was focused aroudn the
-                            environment and the maintenance sequence that had to be completed, with minimal UI
-                            interference.
-                        </p>
-                        <video muted autoplay loop>
-                            <source src="../img/infina/Alaska_Demo.mp4" type="video/mp4">
-                            Sorry, your browser does not support the video tag.
-                        </video>
-
-
-                        <h2 class="space-top">Taxiways</h2>
-                        <p class="proj-body"> Next was the taxiways program that I worked on, which uses a breadth first
-                            search algorithm to delegate planes along paths using A.I. As a first step for a
-                            fully-functional program for airport traffic control training, I created an interactive
-                            application in which a user can select a plane and specify a desired path by selecting three
-                            points on a map.
-                        </p>
-                        <p class="proj-body">I then built off of this mockup model and created a basic training
-                            implementation in Boise Airport, where a user can either delegate planes along taxiways
-                            using click-commands or voice commands. The software keeps track of all of the planes'
-                            destinations and instructions in realtime, simulating the real-life communication between
-                            traffic-controllers and pilots.
-                        </p>
-                        <video muted autoplay loop>
-                            <source src="../img/infina/Taxiways_v1.mp4" type="video/mp4">
-                            Sorry, your browser does not support the video tag.
-                        </video>
-                        <video muted autoplay loop>
-                            <source src="../img/infina/Taxiways_v2.mp4" type="video/mp4">
-                            Sorry, your browser does not support the video tag.
-                        </video>
-
-                        <h2 class="space-top">Sandbox Projects!</h2>
-                        <p class="proj-body"> While at Infina, my mentor encouraged me to learn VR development
-                            in Unity by creating some test projects, so I ended up having a bit of fun in VR, 
-                            including giving myself the ability to firebend. 🔥
-
                         <video muted autoplay loop class="space-top">
-                            <source src="../img/infina/VR_ATLA.mp4" type="video/mp4">
+                            <source src="../img/tkd/TaekwondoBlockTest.mp4" type="video/mp4">
                             Sorry, your browser does not support the video tag.
                         </video>
+
+                        <p class="proj-body space-top">We created a mocap suit with radio-dense beads that could be
+                            tracked using
+                            <a href="https://www.xromm.org/" class=project-link>XROMM</a> tracking software. We then set
+                            up 3 GoPro cameras to capture the motion from three
+                            different viewpoints. The idea was to capture the motion data from various kicks, track
+                            them, export the 3D transformations, and import them as animations in Unity.
+                        </p>
+
                         <video muted autoplay loop>
-                            <source src="../img/infina/LeapMotionProximityTest.mp4" type="video/mp4">
+                            <source src="../img/tkd/kickGoPro.mp4" type="video/mp4">
                             Sorry, your browser does not support the video tag.
                         </video>
+
+                        <h2 class="space-top">An Unexpected Roadblock</h2>
+                        <p class="proj-body">Though the motion capture system worked and we had a solid workflow in
+                            place, the project came to a halt due to the Covid-19 pandemic-- it became impossible to
+                            access our motion capture system at the time.
+                        </p>
+                        <p class="proj-body">Because of our excitement for the project, we
+                            felt it would be better to <strong> pivot to a new workflow </strong>than to abandon the
+                            project altogether, so we
+                            went back to the drawing board.
+                        </p>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-8 ml-auto mr-auto">
+                        <h1 id="s4" class="section">Iteration</h1>
+                        <p class="proj-body">The next idea was to use photogrammetry to generate 3D meshes of Taekwondo
+                            athletes in various poses throughout a kick. However, this idea soon became logistically
+                            challenging for various reasons.
+                        </p>
+                        <p class="proj-body">Mainly, the athlete would be required to hold a position
+                            for enough time to allow for many photos to be taken to feed into the photogrammetry
+                            software. This would sacrifice accuracy in the motion, since a technique being held
+                            statically is much different from one in motion.
+                        </p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <figure> <img src="../img/tkd/roundhouse.png" alt="agent design" class="img-fluid ">
+                                </figure>
+                            </div>
+                            <div class="col-md-6">
+                                <figure> <img src="../img/tkd/front.png" alt="wireframe" class="img-fluid "></figure>
+                            </div>
+                        </div>
+                        <p class="proj-body space-top">We finally settled on animating character skeletons based on the
+                            positions
+                            of taekwondo athletes from video. This meant I would use two viewpoints of an athlete
+                            completing the motion, and animate a character rig to match.
+                        </p>
+                        <p class="proj-body">This proved to be both a time
+                            efficient and accurate solution, so I moved forward with it. This allowed me to animate
+                            various kicks without the need to run motion data through the variety of software required
+                            for our previous workflow.
+                        </p>
 
                     </div>
                 </div>
 
                 <div class="row ">
                     <div class="col-md-8 ml-auto mr-auto">
-                        <h1 id="s4" class="section">Reflection</h1>
-                        <p class="proj-body">Infina gave me my first experience in designing and developing for
-                            VR in a professional setting. It also was my first exposure to government contracting,
-                            which made me think about users with pain points and use cases I had never thought of
-                            before. Throughout the summer, I had many opportunities to learn and grow, and even 
-                            got to present my work to the CEO and VPs! 🤩
+                        <h1 id="s4" class="section">Design</h1>
+                        <p class="proj-body">With the animations created, I then created a wireframe of what I wanted
+                            the final application to look like.
                         </p>
+                        <p class="proj-body">After some ideation and brainstorming sessions, we came
+                            up with a variety of core features that could be implemented. The focus of the wireframe was
+                            entirely ease of use and user-friendliness in accessing these features.
+                        </p>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div>
+                        <figure> <img src="../img/tkd/grey.png" alt="agent design" class="img-fluid ">
+                        </figure>
+                    </div>
+                </div>
+
+
+                <div class="row ">
+                    <div class="col-md-8 ml-auto mr-auto space-top">
+                        <p class="proj-body">With an idea of what the UI would look like, and a sense of the user
+                            experience we wishes to create from the core features list, I created a very basic mockup to
+                            see what colors would work well with the wireframe design.
+                        </p>
+
                     </div>
                 </div>
 
