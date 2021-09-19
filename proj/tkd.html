@@ -112,7 +112,8 @@
                     <div class="col-md-8 ml-auto mr-auto">
                         <h1 id="s2" class="section">Introduction</h1>
                         <h1 class="section display-3">Quantifying Martial Arts</h1>
-                        <p class="proj-body">The first step in creating the project was the idea: what was I going to
+                        <p class="proj-body space-top">The first step in creating the project was the idea: what was I
+                            going to
                             make? Naturally, there were other questions that accompanied this one: <strong> What goal
                                 was I
                                 trying to accomplish with this visualization? Who would the potential audience of such a
@@ -137,7 +138,8 @@
                         <h1 class="section" id="s3">Data Collection</h1>
                         <h1 class="section display-3">The science behind the visuals</h1>
                         <h2 class="space-top">Motion Capture System</h2>
-                        <p class="proj-body"> Initially, the idea was to create a visualization in Virtual Reality that
+                        <p class="proj-body space-top"> Initially, the idea was to create a visualization in Virtual
+                            Reality that
                             would allow for the viewer to see the model kicking right in front of them.
                         </p>
                         <p class="proj-body">The first step
@@ -171,7 +173,8 @@
                         </video>
 
                         <h2 class="space-top">An Unexpected Roadblock</h2>
-                        <p class="proj-body">Though the motion capture system worked and we had a solid workflow in
+                        <p class="proj-body space-top">Though the motion capture system worked and we had a solid
+                            workflow in
                             place, the project came to a halt due to the Covid-19 pandemic-- it became impossible to
                             access our motion capture system at the time.
                         </p>
@@ -187,7 +190,8 @@
                 <div class="row">
                     <div class="col-md-8 ml-auto mr-auto">
                         <h1 id="s4" class="section">Iteration</h1>
-                        <p class="proj-body">The next idea was to use photogrammetry to generate 3D meshes of Taekwondo
+                        <p class="proj-body space-top">The next idea was to use photogrammetry to generate 3D meshes of
+                            Taekwondo
                             athletes in various poses throughout a kick. However, this idea soon became logistically
                             challenging for various reasons.
                         </p>
@@ -221,23 +225,23 @@
 
                 <div class="row ">
                     <div class="col-md-8 ml-auto mr-auto">
-                        <h1 id="s4" class="section">Design</h1>
-                        <p class="proj-body">With the animations created, I then created a wireframe of what I wanted
+                        <h1 id="s5" class="section">Design</h1>
+                        <p class="proj-body space-top">With the animations created, I then created a wireframe of what I
+                            wanted
                             the final application to look like.
                         </p>
                         <p class="proj-body">After some ideation and brainstorming sessions, we came
                             up with a variety of core features that could be implemented. The focus of the wireframe was
                             entirely ease of use and user-friendliness in accessing these features.
                         </p>
+                        <div>
+                            <figure> <img src="../img/tkd/grey.png" alt="agent design" class="img-fluid ">
+                            </figure>
+                        </div>
 
                     </div>
                 </div>
-                <div class="row">
-                    <div>
-                        <figure> <img src="../img/tkd/grey.png" alt="agent design" class="img-fluid ">
-                        </figure>
-                    </div>
-                </div>
+
 
 
                 <div class="row ">
@@ -246,31 +250,122 @@
                             experience we wishes to create from the core features list, I created a very basic mockup to
                             see what colors would work well with the wireframe design.
                         </p>
-
+                        <div>
+                            <figure> <img src="../img/tkd/mockup.png" alt="agent design" class="img-fluid ">
+                            </figure>
+                        </div>
                     </div>
                 </div>
+
+
+
+                <div class="row">
+                    <div class="col-md-8 ml-auto mr-auto">
+                        <h1 id="s6" class="section space-top">Development</h1>
+                        <p class="proj-body">Now that the original ideas had been fleshed out, it was time to create the
+                            application itself in Unity. I proceeded to implement our key features in the program, using
+                            C# for the backend.
+                        </p>
+                        <p class="proj-body">The final product provided a clean and easily digestible interface that
+                            would allow the user to focus on visualizing techniques, as opposed to wrestling with
+                            confusing UI.
+                        </p>
+                        <h1 id="s6" class="section space-top">Core Features</h1>
+                        <ul class="proj-body">
+                            <li><strong>Responsive camera</strong>
+                            </li>
+                            <li><strong>Interactive Playback bar</strong></li>
+                            <li><strong>Individual kick sub-technique breakdowns</strong>
+                            </li>
+                            <li><strong>Technique tip popups</strong>
+                            </li>
+                            <li>
+                                <strong>Interactive menu </strong>
+                                <ul>
+                                    <li>Scrollable technique selection list</li>
+                                    <li>Cosmetic options</li>
+                                    <li>Change scale of ground, or toggle its visibility</li>
+                                    <li>Add textures</li>
+                                    <li>Toggle modes</li>
+                                </ul>
+                            </li>
+                            <li><strong>Skeletal view</strong>
+
+                                <ul>
+                                    <li>Visualize individual limb velocities</li>
+                                </ul>
+                            </li>
+                            <li><strong>Center of mass</strong>
+                                <ul>
+                                    <li>Calculate center of mass and visualize via sphere projected onto ground</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+
+                        <h1 id="s7" class="section space-top">The Product</h1>
+                        <h2 class="space-top">Playback</h2>
+                        <video muted autoplay loop class="space-top">
+                            <source src="../img/tkd/Playback.mp4" type="video/mp4">
+                            Sorry, your browser does not support the video tag.
+                        </video>
+                        <h2 class="space-top">Skeletal View and Center of Mass</h2>
+                        <video muted autoplay loop class="space-top">
+                            <source src="../img/tkd/Skeletal+COM.mp4" type="video/mp4">
+                            Sorry, your browser does not support the video tag.
+                        </video>
+                        <h2 class="space-top">Cosmetic Changes</h2>
+                        <video muted autoplay loop class="space-top">
+                            <source src="../img/tkd/CosmeticChanges.mp4" type="video/mp4">
+                            Sorry, your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+
+                <div class="row space-md">
+                    <div class="col-md-8 ml-auto mr-auto">
+                        <h1 id="s8" class="section">Reflection</h1>
+                        <p class="proj-body">There have been so many
+                            positive takeaways from this project. The ideation and iterative processes in designing this
+                            application were
+                            extremely valuable in tackling the project in manageable chunks rather than diving into it
+                            blindly.
+                        </p>
+                        <p class="proj-body">
+                            Integrating real-world data into the Unity engine allows for an easy way to present the data
+                            via various platforms such as virtual reality, in-browser ports, or even mobile
+                            applications.
+                        </p>
+                        <p class="proj-body">
+                            This project was a huge lesson in how to visualize data for users in a fun and intuitive way. Not 
+                            to mention, it was fun to make! Thanks for reading! 💥
+                        </p>
+                    </div>
+                </div>
+
+
 
                 <div class="space-md">
                     <h5 class="space-bottom">Recommended 🔎</h5>
                     <div class="row">
                         <div class="col-md-4">
-                            <a href="proj/sim.html">
-                                <figure> <img src="../img/thumbnail/tkd.png" alt="TKD Visualizer"
+                            <a href="../proj/catfish.html">
+                                <figure> <img src="../img/thumbnail/catfish.png" alt="Catfish visulization"
                                         class="img-fluid img-next">
                                 </figure>
                             </a>
                         </div>
                         <div class="col-md-4">
-                            <a href="../proj/infina.html">
-                                <figure> <img src="../img/thumbnail/infina.png" alt="Infina Ltd."
+                            <a href="../proj/ames.html">
+                                <figure> <img src="../img/thumbnail/ames.png" alt="NASA Mars VR"
                                         class="img-fluid img-next">
                                 </figure>
                             </a>
                         </div>
                         <div class="col-md-4">
-                            <a href="../proj/sim.html">
-                                <figure> <img src="../img/thumbnail/naturalselectionsim.png"
-                                        alt="Natural Selection Simulator" class="img-fluid img-next">
+                            <a href="../proj/instagram.html">
+                                <figure> <img src="../img/thumbnail/instagram.png"
+                                        alt="Instagram AR/VR" class="img-fluid img-next">
                                 </figure>
                             </a>
                         </div>
