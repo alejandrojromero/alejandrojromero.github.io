@@ -102,49 +102,48 @@
                             as 3D
                             Slicer and HOROS.
                         </p>
+                        <div class="row">
+                            <div class="col-md-8">
+                                <h2 class="space-top space-bottom-sm">Published Software Package</h2>
+                                <p><a href="https://cran.r-project.org/web/packages/svgViewR/index.html"
+                                        class="proj-link" target="_blank"><i class="fas fa-laptop"
+                                            aria-hidden="true"></i>&nbsp; SVG Viewer</a>
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-8 ml-auto mr-auto">
-                        <h1 id="s2" class="section">Core Features</h1>
-                        <h1 class="section display-3">The nuts and bolts</h1>
-                        <ul class="proj-body space-top">
-                            <li><strong>Responsive Camera.</strong> Allow user to navigate scene in 3D
-                            </li>
-                            <li><strong>Customizable brush color and size.</strong> What's the fun in art if you can't
-                                make it your own?</li>
-                            <li><strong>Toggle canvas on/off.</strong> Some people like guidelines, others don't!
-                            </li>
-                            <li><strong>Draw on previous blocks in 3D.</strong> Make your drawings stand out (this was a
-                                lot more complex than I initially imagined).
-                            </li>
-                            <li><strong>2D Preview with zoom.</strong> A source of truth is pretty important in a
-                                complex
-                                scene. This way, a user can always have the full context of their drawing without having
-                                to
-                                readjust the camera too often.
-                            </li>
-                            <li><strong>Erase tool.</strong> We all make mistakes.
-                            </li>
-                            <li><strong>Override previous block color with new color data.</strong> Drawing over a
-                                previous block with a
-                                new color will change the original block's color.
-                            </li>
-                        </ul>
+                        <h1 id="s2" class="section">Introduction</h1>
+                        <h1 class="section display-3">Understanding science through visuals</h1>
+                        <p class="proj-body"> One of the projects we worked on was an interactive browser-based catfish
+                            visualization. Suction feeding fish rapidly expand their mouths to create a pressure
+                            gradient, forcing water and prey inside. To better understand this phenomenon, the fish
+                            skulls' skeletal elements are studied using x-ray and CT imaging techniques.
+                        </p>
+
+                        <p class="proj-body">However, we
+                            wanted to go a step further by building an interactive tool where a user could change the
+                            conformation of a fish's bones depending on a biologically accurate linkage model connecting
+                            each bone. This would allow anyone to visualize how a catfish skull's components would move
+                            under different conditions.
+
+                        </p>
+
+
                     </div>
                 </div>
                 <div class="row space-md">
                     <div class="col-md-8 ml-auto mr-auto">
                         <h1 class="section" id="s3">Implementation</h1>
                         <h1 class="section display-3">Bringing it all to life</h1>
-                        <h2 class="space-top">Mockups</h2>
-                        <p class="proj-body"> Most of the features were relatively straightforward in implementation.
-                            The finished program allowed for the user to draw in a free environment with few restraints.
-                            However, there were a few logical roadblocks in the implementation. To avoid issues later
-                            on,
-                            I created a rough mockup with all the features I wanted to include so I knew exactly what I
-                            needed to design for and build.
-                            ​
+                        <h2 class="space-top">Creating the Meshes</h2>
+                        <p class="proj-body"> The 3D meshes we used for the visualization were generated using real fish
+                            bones. This was done by CT scanning the fish, which produced DICOM (Digital Imaging and
+                            Communications in Medicine) files. These files could then be imported into a program such as
+                            3D Slicer or HOROS, which allow for a user to isolate bones from the rest of the fish
+                            anatomy, and export the resulting selections as 3D meshes.
                         </p>
 
                     </div>
@@ -152,31 +151,22 @@
 
                 <div class="row">
                     <div class="col-md-6">
-                        <figure> <img src="../img/voxelpad/3d.png" alt="agent design" class="img-fluid "></figure>
+                        <figure> <img src="../img/catfish/scan1.png" alt="scan" class="img-fluid "></figure>
                     </div>
                     <div class="col-md-6">
-                        <figure> <img src="../img/voxelpad/grey.png" alt="wireframe" class="img-fluid "></figure>
+                        <figure> <img src="../img/catfish/scan2.png" alt="mesh" class="img-fluid "></figure>
                     </div>
 
 
                     <div class="row space-md">
                         <div class="col-md-8 ml-auto mr-auto">
-                            <h2>Challenges</h2>
-                            <p class="proj-body"> After creating a mockup of the program's UI and general style, I had
-                                to figure out how exactly to implement drawing functionality in the way I had originally
-                                desired. The primary issue was how to handle blocks that had already been drawn. Because
-                                the user would presumably draw over these blocks to add detail and color, it was
-                                important to find a solution to account for this.
-                                ​
-                            </p>
-
-                            <h2>Solution</h2>
-                            <p class="proj-body"> I decided it would make most sense to have different modes: 2D and 3D
-                                drawing modes. The 2D mode would allow users to draw on the canvas with voxels and
-                                overwrite the color of preexisting blocks they draw over, while the 3D mode uses a ray
-                                tracer to determine which face of a preexisting block is being hovered on so that the
-                                user can draw on top of the block in 3D.
-                                ​
+                            <h2>Making the Meshes presentable</h2>
+                            <p class="proj-body"> To maximize the simplicity of the visualization while keeping
+                                scientific accuracy, we cleaned up the meshes a bit and decimated them to include less
+                                polygons and thus optimize our program. The bones were then kept in their initial CT
+                                scan positions as to not compromise accuracy. Each bone is its own mesh, which allowed
+                                us many options in how to use them moving forward (visualization, color-coding, 3D
+                                printing, etc.)
                             </p>
 
                         </div>
@@ -184,55 +174,109 @@
 
                 </div>
 
-                <figure> <img src="../img/voxelpad/note3.png" alt="final" class="img-fluid"></figure>
+                <div class="row">
+                    <div class="col-md-3">
+                        <figure> <img src="../img/catfish/Catfish Comparisons 1.png" alt="mesh" class="img-fluid ">
+                        </figure>
+                    </div>
+                    <div class="col-md-4">
+                        <figure> <img src="../img/catfish/Catfish Comparisons 2.png" alt="mesh" class="img-fluid ">
+                        </figure>
+                    </div>
+                    <div class="col-md-3">
+                        <figure> <img src="../img/catfish/Catfish Comparisons 3.png" alt="mesh" class="img-fluid ">
+                        </figure>
+                    </div>
 
+                    <div class="row space-md">
+                        <div class="col-md-8 ml-auto mr-auto">
+                            <h2>Physical Model</h2>
+                            <p class="proj-body"> To help us better understand the morphology of the catfish skull, we
+                                decided to create a 3D printed version of the skull. This would allow us to more
+                                critically evaluate how different components of the skull would move in relation to one
+                                another when creating the digital model.
+                            </p>
+
+
+                            <p class="proj-body">Because we already had the 3D obj files for each bone, we were able to
+                                3D print each bone to
+                                scale. To simulate ligaments between bones, we used small woven polyester ribbons
+                                anchored
+                                by micro-screws. The final result allowed us to manipulate the skull "by hand" and
+                                visualize
+                                its general motion patterns.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
 
 
                 <div class="row">
                     <div class="col-md-6">
-                        <figure> <img src="../img/voxelpad/note2.png" alt="agent design" class="img-fluid "></figure>
+                        <figure> <img src="../img/catfish/physicaldisassembled.png" alt="mesh" class="img-fluid ">
+                        </figure>
                     </div>
                     <div class="col-md-6">
-                        <figure> <img src="../img/voxelpad/note1.png" alt="wireframe" class="img-fluid "></figure>
+                        <figure> <img src="../img/catfish/3D Print Key.jpg" alt="mesh" class="img-fluid ">
+                        </figure>
                     </div>
+                    <div class="col-md-6" style="float: left">
+                        <figure> <img src="../img/catfish/physical.jpg" alt="mesh" class="img-fluid ">
+                        </figure>
+                    </div>
+
+                    <video muted autoplay loop style="float: left" class="col-md-6">
+                        <source src="../img/catfish/projected.mp4" type="video/mp4" width="600">
+                        Sorry, your browser does not support the video tag.
+                    </video>
                 </div>
-
-
 
 
                 <div class="row space-md">
                     <div class="col-md-8 ml-auto mr-auto">
-                        <h1 id="s4" class="section">Reflection</h1>
-                        <p class="proj-body">The final result was a lightweight program that allowed users to draw
-                            using 3D voxels, so the main goal was met. However, there is still room for improvement.
-                            The UI of the program is still quite rough due to the short project timeline.
+                        <h1 id="s4" class="section">The Application</h1>
+                        <p class="proj-body">When creating the virtual model, we wanted to allow users to play around
+                            with different motion patterns to see how the skeletal elements interacted with one another,
+                            as they would with the physical model. Aaron wrote a <a
+                            href="https://aaronolsen.github.io/software/linkr.html"
+                            class=project-link>linkage model</a> that handled the physics
+                            of motion and kinematics between bones given observed properties in the actual organisms.
                         </p>
-                        <p class="proj-body">The 3D and 2D
-                            drawing modes are also not distinguished in the UI and are controlled by a toggle handled
-                            via
-                            keyboard bindings. Overall, here are some possible improvements for a future version of this
-                            project:
+                        <p class="proj-body">I
+                            then helped him expand upon the <a
+                                href="https://cran.r-project.org/web/packages/svgViewR/index.html"
+                                class=project-link>svgViewR package</a> to include interpolation functionality so
+                            that when users interact with different sliders, they can view different forms of movement
+                            in the model. They can choose to play all motion types at once, or play them individually to
+                            view breakdowns of the motion patterns.
                         </p>
-                        <ul class="proj-body">
-                            <li><strong>Improevd UI.</strong> Make the program feel more visually appealing and
-                                highlight some of the CTAs in the control panel.
-                            </li>
-                            <li><strong>Emphasis 3D vs 2D Modes.</strong> Convey the difference to these modes, and
-                                their capabilities, to the user in a natural way.</li>
-                            <li><strong>Toggle canvas on/off.</strong> Some people like guidelines, others don't!
-                            </li>
-                            <li><strong>Camera fixes.</strong> In some contexts, the camera could be a little buggy,
-                                making it hard to view the scene from every angle.
-                            </li>
-                            <li><strong>Export images.</strong> Something I learned in later internships is that
-                                you can export screen states from Unity as images. This feature would be great for
-                                allowing users to save their creations with the click of a button.
-                            </li>
-                        </ul>
-                        <p class="proj-body">Overall, this project was a great learning experience. It allowed me to
-                            equally balance functionality
-                            and user expoerience, as well as teaching me how to bring big ideas to life as prototypes in
-                            the Unity engine. Thanks for reading!
+                    </div>
+                </div>
+                <div class="col-md-6" style="float: left">
+                    <video muted autoplay loop>
+                        <source src="../img/catfish/interpolation.mp4" type="video/mp4">
+                        Sorry, your browser does not support the video tag.
+                    </video>
+
+                </div>
+
+
+                <div class="col-md-6" style="float: left">
+                    <video muted autoplay loop>
+                        <source src="../img/catfish/Catfish Skull Visualization Demo.mp4" type="video/mp4">
+                        Sorry, your browser does not support the video tag.
+                    </video>
+                </div>
+
+                <div class="row space-md">
+                    <div class="col-md-8 ml-auto mr-auto">
+                        <h1 id="s5" class="section">Reflection</h1>
+                        <p class="proj-body">This interdisciplinary project was my first foray into scientitifc visualization.
+                            Taking real world data and creating a medium by which to present it to others for their own understanding
+                            is truly special. Working with Aaron was a huge step in my journey as a product designer and developer.
+                            This body of work inspired me to pursue countless other projects that helped me develop my skillset as a creator
+                            (and I am an expert in catfish skull segmentation, a title held by a very limited few 😉).
                         </p>
                     </div>
                 </div>
@@ -256,8 +300,8 @@
                         </div>
                         <div class="col-md-4">
                             <a href="../proj/voxelpad.html">
-                                <figure> <img src="../img/thumbnail/voxelpad.png"
-                                        alt="VoxelPad" class="img-fluid img-next">
+                                <figure> <img src="../img/thumbnail/voxelpad.png" alt="VoxelPad"
+                                        class="img-fluid img-next">
                                 </figure>
                             </a>
                         </div>
