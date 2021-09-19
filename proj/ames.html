@@ -66,6 +66,12 @@
                             </div>
 
                             <div class="col-md-3">
+                                <div class="small-text">Team Size</div>
+                                <p>4, <a href="https://www.psi.edu/about/staffpage/eldar" class="project-link">Eldar Noe
+                                        Dobrea, Ph.D. (Mentor)</a></p>
+                            </div>
+
+                            <div class="col-md-3">
                                 <div class="small-text">Tools</div>
                                 <span class="badge proj-label">VR</span>
                                 <span class="badge proj-label">UX</span>
@@ -78,45 +84,45 @@
                     </div>
                 </header>
                 <video muted autoplay loop>
-                    <source src="../img/voxelpad/clip.mp4" type="video/mp4">
+                    <source src="../img/ames/demo.mp4" type="video/mp4">
                     Sorry, your browser does not support the video tag.
                 </video>
                 <div class="row space-md">
                     <div class="col-md-8 mr-auto ml-auto">
+                        <p class="proj-body"> <strong> Disclaimer: </strong>This case study is very text heavy!
+                        </p>
                         <h1 id="s1" class="section">Overview</h1>
-                        <p class="proj-body"> I wanted to design an application that would allow a user to create
-                            8bit-style graphics using 3D voxels in an interactive environment. The first step was
-                            defining the core feature of "painting"— how would the user draw in the first place? I
-                            ultimately wanted to make an app where the user could effectively enjoy the following
-                            features.
+
+                        <p class="proj-body"> NASA Ames Research Center (ARC) specializes in cutting edge research and
+                            development to further progress NASA’s mission of enhancing knowledge and education via
+                            novel advances in various disciplines.
+                        </p>
+                        <p class="proj-body"> My project at NASA ARC was to support development of an interactive
+                            toolkit for observing, interacting with, and assessing Mars data as relayed by the Mars
+                            Science Laboratory (MSL). By directly referencing observations from the MSL database, we
+                            generated an accurate 3D representation of Mars, as charted by the Curiosity rover, that a
+                            user may directly interact with.
                         </p>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-8 ml-auto mr-auto">
-                        <h1 id="s2" class="section">Core Features</h1>
-                        <h1 class="section display-3">The nuts and bolts</h1>
+                        <h1 id="s2" class="section">Key Interactions</h1>
+                        <h1 class="section display-3">Goals for the app</h1>
                         <ul class="proj-body space-top">
-                            <li><strong>Responsive Camera.</strong> Allow user to navigate scene in 3D
+                            <li><strong>Generate an accurate and traversable martian surface</strong> with NavCam image
+                                data.
                             </li>
-                            <li><strong>Customizable brush color and size.</strong> What's the fun in art if you can't
-                                make it your own?</li>
-                            <li><strong>Toggle canvas on/off.</strong> Some people like guidelines, others don't!
+                            <li><strong>Allow user to enter "fly" mode</strong> to gain bird's eye view of Martian
+                                terrain, marked with key UI labels</li>
+                            <li><strong>Create a data product sorting system</strong> allowing users to browse and view
+                                all MastCam images to date
                             </li>
-                            <li><strong>Draw on previous blocks in 3D.</strong> Make your drawings stand out (this was a
-                                lot more complex than I initially imagined).
+                            <li><strong>Generate camera cones</strong> to visualize the rover’s point of view when
+                                capturing images
                             </li>
-                            <li><strong>2D Preview with zoom.</strong> A source of truth is pretty important in a
-                                complex
-                                scene. This way, a user can always have the full context of their drawing without having
-                                to
-                                readjust the camera too often.
-                            </li>
-                            <li><strong>Erase tool.</strong> We all make mistakes.
-                            </li>
-                            <li><strong>Override previous block color with new color data.</strong> Drawing over a
-                                previous block with a
-                                new color will change the original block's color.
+                            <li><strong>Allow user to select points on the martian surface</strong> and visualize a plot
+                                of its chemical composition via ChemCam data
                             </li>
                         </ul>
                     </div>
@@ -124,101 +130,165 @@
                 <div class="row space-md">
                     <div class="col-md-8 ml-auto mr-auto">
                         <h1 class="section" id="s3">Implementation</h1>
-                        <h1 class="section display-3">Bringing it all to life</h1>
-                        <h2 class="space-top">Mockups</h2>
-                        <p class="proj-body"> Most of the features were relatively straightforward in implementation.
-                            The finished program allowed for the user to draw in a free environment with few restraints.
-                            However, there were a few logical roadblocks in the implementation. To avoid issues later
-                            on,
-                            I created a rough mockup with all the features I wanted to include so I knew exactly what I
-                            needed to design for and build.
-                            ​
+                        <h1 class="section display-3">Creating a way to explore MSL data</h1>
+                        <h2 class="space-top">Generating the Terrain</h2>
+                        <p class="proj-body"> The other interns on my team did some really great work on the Navigation
+                            Camera (NavCam) data, which they used to create 3D terrains of the martian soil. This is the
+                            core of the environment for the VR app, and the user can walk around on these terrains in
+                            VR. They are also important for generating 3D camera cones for visualizing where in space
+                            the rover was relative to the terrain when taking images.
                         </p>
+                        <p class="proj-body"> The terrains were generated by using Python to import the NavCam
+                            coordinate and depth data, which were used to generate meshes in the Blender 3D engine.
+                            These meshes were then colorized in an ochre palette to convey an accurate martian
+                            environment.
+                        </p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <figure> <img src="../img/ames/terrain1.png" alt="terrain" class="img-fluid ">
+                                </figure>
+                            </div>
+                            <div class="col-md-6">
+                                <figure> <img src="../img/ames/terrain2.png" alt="terrain" class="img-fluid "></figure>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <figure> <img src="../img/ames/terrain3.png" alt="terrain" class="img-fluid ">
+                                </figure>
+                            </div>
+                            <div class="col-md-6">
+                                <figure> <img src="../img/ames/terrain4.png" alt="terrain" class="img-fluid "></figure>
+                            </div>
+                        </div>
 
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-md-6">
-                        <figure> <img src="../img/voxelpad/3d.png" alt="agent design" class="img-fluid "></figure>
-                    </div>
-                    <div class="col-md-6">
-                        <figure> <img src="../img/voxelpad/grey.png" alt="wireframe" class="img-fluid "></figure>
-                    </div>
 
 
-                    <div class="row space-md">
+                    <div class="row space-top">
                         <div class="col-md-8 ml-auto mr-auto">
-                            <h2>Challenges</h2>
-                            <p class="proj-body"> After creating a mockup of the program's UI and general style, I had
-                                to figure out how exactly to implement drawing functionality in the way I had originally
-                                desired. The primary issue was how to handle blocks that had already been drawn. Because
-                                the user would presumably draw over these blocks to add detail and color, it was
-                                important to find a solution to account for this.
-                                ​
+                            <h2>MastCam Image Sorting Engine</h2>
+                            <p class="proj-body"> Most of my work involved MSL’s MastCam, which produces images of
+                                Martian scenery. These images are associated with PDS labels, which are basically files
+                                with extensive data for each image. To display the thousands of available images
+                                properly, I had to query the MSL library and automate an engine for parsing data from
+                                these PDS labels and presenting them to the user graphically. ​
+                            </p>
+                            <p class="proj-body"> In order to do this, I had to generate a CSV file with the data points
+                                we care about from all of the labels, meaning my engine had to parse every label one by
+                                one, extract the necessary data, and insert it into a larger lookup table that I would
+                                then query to get information for the user interface. All of this data was extracted by
+                                querying the appropriate MSL database URLs directly.
+
+                            </p>
+                            <div>
+                                <figure> <img src="../img/ames/pds.png" alt="terrain" class="img-fluid "></figure>
+                            </div>
+                            <p class="proj-body space-top"> Loading the images into the scene required a similar
+                                process, where
+                                the engine queried the URL for the image file associated with a specific observation
+                                product ID, instead of the PDS label. Jargon aside, this means that I was able to get
+                                the data and images for each observation from the MSL database correctly, which I then
+                                presented in the graphical user interface for the user to see.
+
                             </p>
 
-                            <h2>Solution</h2>
-                            <p class="proj-body"> I decided it would make most sense to have different modes: 2D and 3D
-                                drawing modes. The 2D mode would allow users to draw on the canvas with voxels and
-                                overwrite the color of preexisting blocks they draw over, while the 3D mode uses a ray
-                                tracer to determine which face of a preexisting block is being hovered on so that the
-                                user can draw on top of the block in 3D.
-                                ​
+                            <p class="proj-body"> So now that I was able to present images and data, the bigger
+                                underlying issue was data sorting. There are hundreds of thousands of data points in the
+                                PDS labels for each sol (each sol being a day on mars), and we had to figure out how to
+                                allow users to sort through it. This meant making a menu where the user can select on a
+                                sol, and will then be taken to a menu for all the sequences of images for that day.
                             </p>
+
+                            <p class="proj-body">
+                                Then, they could select a sequence, and see the individual observations in that given
+                                sequence. Designing the implementation for this was actually more complex than one would
+                                think, and required a lot of iteration before I was able to come up with a solution that
+                                worked smoothly by storing values in dictionary data structures.
+                            </p>
+
+                            <p class="proj-body">
+                                When one of the specific observations in the observation list is selected, the engine
+                                displays the correct image to the user in a preview window and then gives them options
+                                to view its corresponding camera cone, or add it to their image gallery, which can then
+                                be downloaded to the user’s directory of interest.
+                            </p>
+                            <div>
+                                <figure> <img src="../img/ames/MSL2.png" alt="mastcam images 2" class="img-fluid ">
+                                </figure>
+                            </div>
+                            <div>
+                                <figure> <img src="../img/ames/MSL1.png" alt="mastcam images" class="img-fluid ">
+                                </figure>
+                            </div>
 
                         </div>
                     </div>
 
                 </div>
 
-                <figure> <img src="../img/voxelpad/note3.png" alt="final" class="img-fluid"></figure>
 
-                
 
-                <div class="row">
-                    <div class="col-md-6">
-                        <figure> <img src="../img/voxelpad/note2.png" alt="agent design" class="img-fluid "></figure>
-                    </div>
-                    <div class="col-md-6">
-                        <figure> <img src="../img/voxelpad/note1.png" alt="wireframe" class="img-fluid "></figure>
+                <div class="row space-md">
+                    <div class="col-md-8 ml-auto mr-auto">
+                        <h1 id="s4" class="section">UX Aids</h1>
+                        <p class="proj-body">Because a lot of the complex data can be intimidating or verbose for more
+                            casual users, we included certain aids to help the user in their experience of MarsVR.
+                        </p>
+                        <p class="proj-body">The first of these was a 3D model of the Curiosity rover, which could be
+                            used to help users see the instruments being used to collect the data and understand how
+                            they work via modal windows or hands-on interaction.
+                        </p>
+                        <div>
+                            <figure> <img src="../img/ames/blender.png" alt="curiosity rover model" class="img-fluid ">
+                            </figure>
+                        </div>
+                        <p class="proj-body space-top">The second of these aids was the "Mars Buddy," a small green
+                            martian
+                            character designed to walk users through the UI and provide FAQ support. Users can even set
+                            the buddy to follow them around the martian surface, or can even play catch with it!
+                        </p>
+                        <div>
+                            <figure> <img src="../img/ames/marsbuddy.png" alt="curiosity rover model"
+                                    class="img-fluid ">
+                            </figure>
+                        </div>
                     </div>
                 </div>
 
 
 
-
                 <div class="row space-md">
                     <div class="col-md-8 ml-auto mr-auto">
-                        <h1 id="s4" class="section">Reflection</h1>
-                        <p class="proj-body">The final result was a lightweight program that allowed users to draw
-                            using 3D voxels, so the main goal was met. However, there is still room for improvement.
-                            The UI of the program is still quite rough due to the short project timeline.
+                        <h1 id="s5" class="section">Future Work</h1>
+                        <p class="proj-body">As MarsVR is a growing app still in its infant stages, there is a lot more
+                            functionality planned for future iterations. Future versions will incorporate additional MSL
+                            datasets, as well as new data from the Mars 2020 Perseverance Rover, which
+                            landed on Mars on February 18, 2021.
                         </p>
-                        <p class="proj-body">The 3D and 2D
-                            drawing modes are also not distinguished in the UI and are controlled by a toggle handled
-                            via
-                            keyboard bindings. Overall, here are some possible improvements for a future version of this
-                            project:
+                        <p class="proj-body"><strong>Future Features:</strong>
                         </p>
                         <ul class="proj-body">
-                            <li><strong>Improved UI.</strong> Make the program feel more visually appealing and
-                                highlight some of the CTAs in the control panel.
+                            <li><strong>Automated camera cone generation</strong> based on PDS label coordinate data
                             </li>
-                            <li><strong>Emphasize 3D vs 2D Modes.</strong> Convey the difference to these modes, and
-                                their capabilities, to the user in a natural way.</li>
-                            <li><strong>Toggle canvas on/off.</strong> Some people like guidelines, others don't!
+                            <li><strong>ChemCam data viewing</strong> Convey the difference to these modes, and
+                                their capabilities, to the user in a natural way.
+                                <ul>
+                                    <li> Allow users to select any point on Mars terrain
+                                    </li>
+                                    <li> View plot of chemical composition for that point
+                                    </li>
+                                </ul></li>
+                            <li><strong>Visualization and analysis of other MSL datatypes</strong> (ChemCam, DAN, CheMin, APXS, and MAHLI)
                             </li>
-                            <li><strong>Camera fixes.</strong> In some contexts, the camera could be a little buggy,
-                                making it hard to view the scene from every angle.
-                            </li>
-                            <li><strong>Export images.</strong> Something I learned in later internships is that
-                                you can export screen states from Unity as images. This feature would be great for
-                                allowing users to save their creations with the click of a button.
+                            <li><strong>A virtual tour of Mars</strong> led by "Mars buddy," complete with voiceover
                             </li>
                         </ul>
-                        <p class="proj-body">Overall, this project was a great learning experience. It allowed me to equally balance functionality 
-                            and user expoerience, as well as teaching me how to bring big ideas to life as prototypes in the Unity engine. Thanks for reading!
+                        <p class="proj-body">Working with the <a href="https://an.rsl.wustl.edu/msl/mslbrowser/an3.aspx" class="project-link">MSL datasets </a>
+                            was a very challengin but fun experience that taught me a great deal about showing users complex data in comprehensive ways.
                         </p>
                     </div>
                 </div>
@@ -228,19 +298,22 @@
                     <div class="row">
                         <div class="col-md-4">
                             <a href="../proj/tkd.html">
-                                <figure> <img src="../img/thumbnail/tkd.png" alt="TKD Visualizer" class="img-fluid img-next">
+                                <figure> <img src="../img/thumbnail/tkd.png" alt="TKD Visualizer"
+                                        class="img-fluid img-next">
                                 </figure>
                             </a>
                         </div>
                         <div class="col-md-4">
                             <a href="../proj/infina.html">
-                                <figure> <img src="../img/thumbnail/infina.png" alt="Infina Ltd." class="img-fluid img-next">
+                                <figure> <img src="../img/thumbnail/infina.png" alt="Infina Ltd."
+                                        class="img-fluid img-next">
                                 </figure>
                             </a>
                         </div>
                         <div class="col-md-4">
                             <a href="../proj/sim.html">
-                                <figure> <img src="../img/thumbnail/naturalselectionsim.png" alt="Natural Selection Simulator" class="img-fluid img-next">
+                                <figure> <img src="../img/thumbnail/naturalselectionsim.png"
+                                        alt="Natural Selection Simulator" class="img-fluid img-next">
                                 </figure>
                             </a>
                         </div>
