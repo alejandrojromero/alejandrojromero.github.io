@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Extreme Weather Visualization | Alejandro Romero</title>
+    <link rel="icon" href="../img/misc/favicon.png">
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/67f90579cc.js" crossorigin="anonymous"></script>
+    <link href="../css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="progress-container">
+            <div class="progress-bar" id="myBar"></div>
+        </div>
+    </div>
+
+    <svg id="fader"></svg>
+    <div class="container space-bottom">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white py-5">
+            <a class="navbar-brand js-scroll-trigger" href="../index.html">Alejandro Romero</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> <span
+                    class="navbar-toggler-icon"></span> </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"> <a class="nav-link js-scroll-trigger" href="../index.html#projects">Work</a>
+                    </li>
+                    <li class="nav-item"> <a class="nav-link js-scroll-trigger" href="../about.html">About</a>
+                    </li>
+                    <li class="nav-item"> <a class="nav-link js-scroll-trigger"
+                            href="../docs/Alejandro Romero Resume.pdf" target="_blank">Resume</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="row">
+            <div class="col-lg-2">
+                <div class="sidebar">
+                    <div class="space-bottom"><a href="../index.html" class="anchor">Home</a></div>
+                    <div id="tags"> </div>
+                </div>
+            </div>
+            <div class="col-lg-10 ml-auto col-sm-12 ">
+                <header>
+                    <div class="space-md">
+                        <div class="headline-content">
+                            <h1 class="headline-title display-3">Is it Getting Hot in Here?</h1>
+                            <h1 class="display-3">Interactive Web Visualizations of Extreme Global Weather Events 🌍</h1>
+                        </div>
+                        <div class="row space-top proj-body">
+                            <div class="col-md-3">
+                                <div class="small-text">Role</div>
+                                <p>Full Stack Dev</p>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="small-text">Duration</div>
+                                <p>Nov 2021 - Dec 2021</p>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="small-text">Team</div>
+                                <a href="https://mpstewart.net/" class=project-link target="_blank">Matthew Stewart</a>, 
+                                <a href="https://www.nadatarkhan.com/" class=project-link target="_blank">Nada Tarkhan</a>, 
+                                <a href="https://www.linkedin.com/in/maximilian-urbany-766086123/" class=project-link target="_blank">Max Urbany</a>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="small-text">Tools</div>
+                                <span class="badge proj-label">JavaScript</span>
+                                <span class="badge proj-label">HTML/CSS</span>
+                                <span class="badge proj-label">Three.js</span>
+                                <span class="badge proj-label">D3.js</span>
+                                <span class="badge proj-label">Blender</span>
+                                <span class="badge proj-label">Rhino</span>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+
+
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <figure> <img src="../img/harvard/title_redesign.png" alt="title" class="img-fluid ">
+                        </figure>
+                    </div>
+                    <div class="col-md-6" style="float: left">
+                        <figure> <img src="../img/harvard/globe_redesign.png" alt="globe" class="img-fluid ">
+                        </figure>
+                    </div>
+                    <div class="col-md-6">
+                        <figure> <img src="../img/harvard/spiral_redesign.png" alt="quote" class="img-fluid ">
+                        </figure>
+                    </div>
+                    <div class="col-md-6" style="float: left">
+                        <figure> <img src="../img/harvard/team_redesign.png" alt="team" class="img-fluid ">
+                        </figure>
+                    </div>
+
+                </div>
+
+
+                <div class="row space-md">
+                    <div class="col-md-8 mr-auto ml-auto">
+                        <h1 id="s1" class="section">Overview</h1>
+                        <p class="proj-body"> I had the pleasure of taking Harvard's famous Visualization course, taught by 
+                            <a href="https://vcg.seas.harvard.edu/people" class=project-link target="_blank">Hanspeter Pfister</a>. 
+
+
+                        </p>
+
+                        <p class="proj-body">There, I learned the ins and outs of JavaScript libraries like D3.js and Three.js, which 
+                            we used to build our final data visualization project.
+                        </p>
+
+                        
+                        <div class="row space-md" style="float: left">
+                            <video controls muted autoplay loop>
+                                <source src="../img/harvard/v1.mp4" type="video/mp4">
+                                Sorry, your browser does not support the video tag.
+                            </video>
+        
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-md-8">
+                                <h2 class="space-top space-bottom-sm">Links</h2>
+                                <p><a href="https://climate-crew.github.io/d3-climate-visualization/"
+                                        class="proj-link" target="_blank"><i class="fas fa-laptop"
+                                            aria-hidden="true"></i>&nbsp; Interactive Website</a>
+                                </p>
+                                <p><a href="https://drive.google.com/file/d/1LYJdGfJ344T5X50EfubT-pQulHhZs9If/view"
+                                    class="proj-link" target="_blank"><i class="fas fa-laptop"
+                                        aria-hidden="true"></i>&nbsp; Video Demo</a>
+                            </p>
+                            <p><a href="https://github.com/Climate-Crew/d3-climate-visualization"
+                                class="proj-link" target="_blank"><i class="fas fa-laptop"
+                                    aria-hidden="true"></i>&nbsp; GitHub Repo</a>
+                        </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8 ml-auto mr-auto">
+                        <h1 id="s2" class="section">Introduction</h1>
+                        <h1 class="section display-3">Raising awareness of a global issue</h1>
+                        <p class="proj-body"> For our final project, we were tasked with creating an interactive website containing various
+                            data visualizations that formed a cohesive story. 
+                        </p>
+
+                        <p class="proj-body">We ultimately chose climate change as our topic, an issue that has seemed to shrink away form
+                            the public eye in recent years. However, the problem is more real than ever, and we aimed to create a body of interactive 
+                            visualizations that scrapes objective data from the National Weather Service, as well as the Extreme Weather dataset by NOAA, both of which are publicly available and from reliable government sources.
+
+                        </p>
+
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-8 ml-auto mr-auto">
+                        <h2 class="space-top">Core questions</h2>
+                        <p class="proj-body"> 
+                        </p>
+                        <p class="proj-body"> 1. What are the <b> places most affected</b> by extreme weather?
+                        </p>
+
+                        <p class="proj-body"> 2. What are the<b> human impacts</b>  of global changes in extreme weather?
+                        </p>
+
+                        <p class="proj-body"> 3. How can we convey this data in a <b> fun and interactive</b>  way?
+                        </p>
+
+
+                    </div>
+                </div>
+
+                <div class="row space-md">
+                    <div class="col-md-8 ml-auto mr-auto">
+                        <h1 class="section" id="s3">Implementation</h1>
+                        <h1 class="section display-3">Creating the visualizations</h1>
+                        <h2 class="space-top">Brainstorming</h2>
+                        <p class="proj-body"> We spent a long time making sure the data we were going to use would be clean 
+                            enough for us to scrape without spending out entire project timeline on cleaning the data. We wanted
+                            to focus on three main areas, from macro to micro: global, city, and personal impacts. The goal was to 
+                            paint a story that resonated with the user: climate change is an issue affecting everyone. 
+                        </p>
+
+                        <p class="proj-body"> Before diving into implementation, we generated over 20 sketches of potential visualizations
+                            and voted on our top choices that would make it into the final website.          
+                        </p>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <figure> <img src="../img/harvard/sketch1.png" alt="scan" class="img-fluid "></figure>
+                    </div>
+                    <div class="col-md-4">
+                        <figure> <img src="../img/harvard/sketch2.png" alt="mesh" class="img-fluid "></figure>
+                    </div>
+                    <div class="col-md-4">
+                        <figure> <img src="../img/harvard/sketch3.png" alt="scan" class="img-fluid "></figure>
+                    </div>
+                    <div class="col-md-4">
+                        <figure> <img src="../img/harvard/sketch4.png" alt="mesh" class="img-fluid "></figure>
+                    </div>
+                    <div class="col-md-4">
+                        <figure> <img src="../img/harvard/sketch5.png" alt="scan" class="img-fluid "></figure>
+                    </div>
+                    <div class="col-md-4">
+                        <figure> <img src="../img/harvard/sketch6.png" alt="mesh" class="img-fluid "></figure>
+                    </div>
+
+
+                    <div class="row space-md">
+                        <div class="col-md-8 ml-auto mr-auto">
+                            <h2>First Pass Implementation</h2>
+                            <p class="proj-body"> For consistency, we set up a design system and standardized our CSS rules and
+                                the JavaScript packages we would use throughout the project. 
+                            </p>
+                            <p class="proj-body"> The majority of our visuals were created using D3.js, and the globe was created 
+                                using Three.js, a package I was super excited to learn. Luckily, the two libraries allowed for relatively 
+                                seamless integration, which allowed for smoother experiences for both development and users of the final product.
+                            </p>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-5"  style="float: left">
+                    <video height="440" controls muted autoplay loop>
+                        <source src="../img/harvard/spiral_vid.mov" type="video/mp4">
+                        Sorry, your browser does not support the video tag.
+                    </video>
+
+                </div>
+                <div class="col-md-7"  style="float: left">
+                    <video height="440" controls muted autoplay loop>
+                        <source src="../img/harvard/globe_vid.mov" type="video/mp4">
+                        Sorry, your browser does not support the video tag.
+                    </video>
+
+                </div>
+
+
+
+                <div class="row">
+
+
+
+
+                <div class="row space-md">
+                    <div class="col-md-8 ml-auto mr-auto">
+                        <h1 id="s4" class="section">Redesign</h1>
+                        <p class="proj-body">Our v1 implementation of the website was practical, but I felt we had lost
+                            our initial vision ofan aesthetically pleasing experience. We were able to conduct user testing to gather 
+                            feedback on v1, but unfortunately we did not have time to implement all of the changes we would have 
+                            liked within the time constraints of the project. Though we did not have enough time 
+                            to implement it in JavaScript, I redesigned the website to reflect a cleaner, more polished experience.
+                        </p>
+
+                        <div >
+                            <figure> <img src="../img/harvard/redesigns.png" alt="scan" class="img-fluid "></figure>
+                        </div>
+                    </div>
+                </div>
+ 
+            </div>
+
+
+                <div class="row space-md">
+                    <div class="col-md-8 ml-auto mr-auto">
+                        <h1 id="s5" class="section">Reflection</h1>
+                        <p class="proj-body">Though I had experience in web development before this project, I do think it made me much more
+                            comfortable in it, not to mention I learned about D3.js and Three.js, two libraries I had always wanted to learn.
+                            Somehow, we managed to win the <b> Best Project Award</b> out of 29 total projects, earning us a spot on the Harvard
+                            <a href="https://www.cs171.org/2021/fame/"class="proj-link" target="_blank" >CS 171 Hall of Fame!
+                            </a> 
+                        </p>
+
+                        <p class="proj-body">Despite the award, the website in and of itself was a great experience learning about creating 
+                            a data-driven experience that would drive users to learn more about important issues. 
+                        </p>
+                        <div class="row space-bottom"></div>
+
+                        <div class="col-md-6" style="  display: block;
+                        margin-left: auto;
+                        margin-right: auto;
+                        width: 50%;">
+                            <figure> <img src="../img/harvard/certificate.png" alt="scan" class="img-fluid "></figure>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-md">
+                    <h5 class="space-bottom">Recommended 🔎</h5>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <a href="../proj/tkd.html">
+                                <figure> <img src="../img/thumbnail/tkd.png" alt="TKD Visualizer"
+                                        class="img-fluid img-next">
+                                </figure>
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="../proj/ames.html">
+                                <figure> <img src="../img/thumbnail/ames.png" alt="Nasa Mars VR"
+                                        class="img-fluid img-next">
+                                </figure>
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="../proj/voxelpad.html">
+                                <figure> <img src="../img/thumbnail/voxelpad.png" alt="VoxelPad"
+                                        class="img-fluid img-next">
+                                </figure>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="container py-5">
+        <div class="row">
+            <div class="col-sm-8">
+                <p class="mb-1">&copy;
+                    <script>
+                        var d = new Date()
+                        document.write(d.getFullYear())
+                    </script>
+                    Alejandro Romero
+                </p>
+            </div>
+            <div class="col-sm-4 text-md-right">
+                <a href="mailto:alejandro_romero@brown.edu" target="_blank" class="fa fa-envelope">
+                </a>
+                <a href="https://github.com/alejandrojromero" target="_blank" class="fa fab fa-github"></a>
+                <a href="https://www.linkedin.com/in/alejandrojromero/" target="_blank" class="fa fa-linkedin"></a>
+                <a href="https://www.instagram.com/a.r.works/" target="_blank" class="fa fa-instagram">
+                </a>
+                <a href="https://www.youtube.com/channel/UCHFQkfqIZiIZCzZukbZJ_5Q" target="_blank"
+                    class="fa fa-youtube-play">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Javascript -->
+    <script src="../js/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <script src="../js/custom.js"></script>
+
+    <script>
+
+        window.onscroll = function () { myFunction() };
+
+        function myFunction() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("myBar").style.width = scrolled + "%";
+        }
+    </script>
+
+</body>
+
+</html>
