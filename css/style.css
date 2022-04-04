@@ -111,6 +111,20 @@ hr {
     -webkit-animation-name: fadeInUp;
 }
 
+.gradient-text {
+    color: #FF5A16;
+    position: relative;
+    font-size: 4rem;
+    font-weight: var(--font-bold);
+    padding-bottom: 0.2em;
+    line-height: 1.2em;
+
+    background: -webkit-linear-gradient(6deg, #FF5A16, #FCAB0A);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .container {
     max-width: 1920px;
     padding: 0rem 5vw;

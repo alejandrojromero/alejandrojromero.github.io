@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Snap Spectacles | Alejandro Romero</title>
+    <link rel="icon" href="../img/misc/favicon.png">
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/67f90579cc.js" crossorigin="anonymous"></script>
+    <link href="../css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="progress-container">
+            <div class="progress-bar" id="myBar"></div>
+        </div>
+    </div>
+
+    <svg id="fader"></svg>
+    <div class="container space-bottom">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white py-5">
+            <a class="navbar-brand js-scroll-trigger" href="../index.html">Alejandro Romero</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> <span
+                    class="navbar-toggler-icon"></span> </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"> <a class="nav-link js-scroll-trigger" href="../index.html#projects">Work</a>
+                    </li>
+                    <li class="nav-item"> <a class="nav-link js-scroll-trigger" href="../about.html">About</a>
+                    </li>
+                    <li class="nav-item"> <a class="nav-link js-scroll-trigger"
+                            href="../docs/Alejandro Romero Resume.pdf" target="_blank">Resume</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="row">
+            <div class="col-lg-2">
+                <div class="sidebar">
+                    <div class="space-bottom"><a href="../index.html" class="anchor">Home</a></div>
+                    <div id="tags"> </div>
+                </div>
+            </div>
+            <div class="col-lg-10 ml-auto col-sm-12 ">
+                <header>
+                    <div class="space-md">
+                        <div class="headline-content">
+                            <h1 class="headline-title display-3">Snap Spectacles</h1>
+                            <h1 class="display-3">Prototyping novel AR interactions 😎</h1>
+                        </div>
+                        <div class="row space-top proj-body">
+                            <div class="col-md-3">
+                                <div class="small-text">Role</div>
+                                <p>UX Designer, Full Stack Dev</p>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="small-text">Duration</div>
+                                <p>Sept 2021 - Present</p>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="small-text">Team Size</div>
+                                <p><a href="https://www.jingq.org/" target="_blank" class="project-link">Jing Qian</a>,
+                                    <a href="https://jeffhuang.com/" target="_blank" class="project-link">Prof. Jeff
+                                        Huang</a></p>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="small-text">Tools</div>
+                                <span class="badge proj-label">AR</span>
+                                <span class="badge proj-label">UX</span>
+                                <span class="badge proj-label">JavaScript</span>
+                                <span class="badge proj-label">Figma</span>
+                                <span class="badge proj-label">Lens Studio</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                </header>
+
+                <div class="row space-bottom">
+                    <div class="col-md-1" style="float: left;">
+
+                    </div>
+                    <div class="col-md-7" style="float: left;">
+                        <video controls muted autoplay loop>
+                            <source src="../img/spectacles/Pokemon_CatchAR.mp4" type="video/mp4">
+                            Sorry, your browser does not support the video tag.
+                        </video>
+                    </div>
+
+                    <div class="col-md-3" style="float: right;">
+                        <video controls muted autoplay loop>
+                            <source src="../img/spectacles/spawn_points_demo.mov" type="video/mp4">
+                            Sorry, your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+
+
+                <div class="row space-md">
+                    <div class="col-md-8 mr-auto ml-auto">
+                        <p class="proj-body"> <strong> Disclaimer: </strong>This project is still a work in progress!
+                        </p>
+                        <h1 id="s1" class="section">Overview</h1>
+
+                        <p class="proj-body"> With tech's biggest topic being the implications of the metaverse, it has
+                            never been more exciting
+                            to work with mixed reality. Snap Inc released the next generation of AR technology
+                            in the form of the <a href="https://www.spectacles.com/new-spectacles" target="_blank"
+                                class="project-link">2021 Snap Spectacles</a>, their first pair of true augmented
+                            reality glasses.
+                        </p>
+
+                        <p class="proj-body"> Lots of my colleagues at the Brown HCI Lab have been working on <a
+                                href="https://portalble.cs.brown.edu/" target="_blank" class="project-link">AR
+                                projects</a>, but none
+                            with AR glasses, so I was eager to be the first to dive into this technology. We're
+                            specifically interested in incorporating partial object manipulation and naturalistic
+                            throwing interactions,
+                            which has taken the form of <b> Pokemon CatchAR</b>, a Pokemon Go demo with live hand
+                            tracking and waypoint navigation. <b>I'm leading this project as a full stack prototyper,
+                                defining end-to-end UX </b> and gathering feedback along the way.
+                        </p>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-2" style="float: left;">
+
+                        </div>
+                        <div class="col-md-8"> 
+                            <figure> <img src="../img/spectacles/Group 21.png" alt="terrain"
+                                    class="img-fluid" style="float: left;"></figure>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row space-md">
+                    <div class="col-lg-9 mx-auto">
+                        <div class="row">
+                            <div class="col-md-3 mr-3">
+                                <h2 id="s2" class="section">Problem</h2>
+                            </div>
+                            <div class="col proj-body">Operations managers act as the point-person for questions related
+                                to
+                                finance, IT, and human resources. They use Bot Portal to
+                                automate responses to technical problems and simplify repetitive tasks, such as booking
+                                meeting rooms. However, user feedback shows that <strong>it takes too long to build
+                                    short conversation flows</strong> on the current interface.
+                            </div>
+                        </div>
+                        <div class="row space-md">
+                            <div class="col-md-3 mr-3">
+                                <h2>Solution</h2>
+                            </div>
+                            <div class="col proj-body">How do we make the chatbot builder accessible for
+                                <strong>creating
+                                    simple flows?</strong>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3 mr-3">
+                                <h2>Results</h2>
+                            </div>
+                            <div class="col">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <h2><i class="fas fa-user icon-sm" aria-hidden="true"></i>  50K+</h2>
+                                        <p class="text-small">unique plays and views on Snapchat </p>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <h2><i class="fas fa-hand-peace-o icon-sm" aria-hidden="true"></i>  2 lenses</h2>
+                                        <p class="text-small">full hand tracking on Spectacles and smartphones</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <p class="proj-body space-md"> Before diving into the process, let me clarify some keywords for
+                            describing the interface: </p>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-8 ml-auto mr-auto">
+                        <h1 id="s2" class="section">Interactions</h1>
+                        <h1 class="section display-3">Goals for the app</h1>
+                        <ul class="proj-body space-top">
+                            <li><strong>Generate an accurate and traversable martian surface</strong> with NavCam image
+                                data.
+                            </li>
+                            <li><strong>Allow user to enter "fly" mode</strong> to gain bird's eye view of Martian
+                                terrain, marked with key UI labels</li>
+                            <li><strong>Create a data product sorting system</strong> allowing users to browse and view
+                                all MastCam images to date
+                            </li>
+                            <li><strong>Generate camera cones</strong> to visualize the rover’s point of view when
+                                capturing images
+                            </li>
+                            <li><strong>Allow user to select points on the martian surface</strong> and visualize a plot
+                                of its chemical composition via ChemCam data
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row space-md">
+                    <div class="col-md-8 ml-auto mr-auto">
+                        <h1 class="section" id="s3">Implementation</h1>
+                        <h1 class="section display-3">Creating a way to explore MSL data</h1>
+                        <h2 class="space-top">Generating the Terrain</h2>
+                        <p class="proj-body"> The other interns on my team did some really great work on the Navigation
+                            Camera (NavCam) data, which they used to create 3D terrains of the martian soil. This is the
+                            core of the environment for the VR app, and the user can walk around on these terrains in
+                            VR. They are also important for generating 3D camera cones for visualizing where in space
+                            the rover was relative to the terrain when taking images.
+                        </p>
+                        <p class="proj-body"> The terrains were generated by using Python to import the NavCam
+                            coordinate and depth data, which were used to generate meshes in the Blender 3D engine.
+                            These meshes were then colorized in an ochre palette to convey an accurate martian
+                            environment.
+                        </p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <figure> <img src="../img/ames/terrain1.png" alt="terrain" class="img-fluid ">
+                                </figure>
+                            </div>
+                            <div class="col-md-6">
+                                <figure> <img src="../img/ames/terrain2.png" alt="terrain" class="img-fluid "></figure>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <figure> <img src="../img/ames/terrain3.png" alt="terrain" class="img-fluid ">
+                                </figure>
+                            </div>
+                            <div class="col-md-6">
+                                <figure> <img src="../img/ames/terrain4.png" alt="terrain" class="img-fluid "></figure>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row">
+
+
+                    <div class="row space-top">
+                        <div class="col-md-8 ml-auto mr-auto">
+                            <h2>MastCam Image Sorting Engine</h2>
+                            <p class="proj-body"> Most of my work involved MSL’s MastCam, which produces images of
+                                Martian scenery. These images are associated with PDS labels, which are basically files
+                                with extensive data for each image. To display the thousands of available images
+                                properly, I had to query the MSL library and automate an engine for parsing data from
+                                these PDS labels and presenting them to the user graphically. ​
+                            </p>
+                            <p class="proj-body"> In order to do this, I had to generate a CSV file with the data points
+                                we care about from all of the labels, meaning my engine had to parse every label one by
+                                one, extract the necessary data, and insert it into a larger lookup table that I would
+                                then query to get information for the user interface. All of this data was extracted by
+                                querying the appropriate MSL database URLs directly.
+
+                            </p>
+                            <div>
+                                <figure> <img src="../img/ames/pds.png" alt="terrain" class="img-fluid "></figure>
+                            </div>
+                            <p class="proj-body space-top"> Loading the images into the scene required a similar
+                                process, where
+                                the engine queried the URL for the image file associated with a specific observation
+                                product ID, instead of the PDS label. Jargon aside, this means that I was able to get
+                                the data and images for each observation from the MSL database correctly, which I then
+                                presented in the graphical user interface for the user to see.
+
+                            </p>
+
+                            <p class="proj-body"> So now that I was able to present images and data, the bigger
+                                underlying issue was data sorting. There are hundreds of thousands of data points in the
+                                PDS labels for each sol (each sol being a day on mars), and we had to figure out how to
+                                allow users to sort through it. This meant making a menu where the user can select on a
+                                sol, and will then be taken to a menu for all the sequences of images for that day.
+                            </p>
+
+                            <p class="proj-body">
+                                Then, they could select a sequence, and see the individual observations in that given
+                                sequence. Designing the implementation for this was actually more complex than one would
+                                think, and required a lot of iteration before I was able to come up with a solution that
+                                worked smoothly by storing values in dictionary data structures.
+                            </p>
+
+                            <p class="proj-body">
+                                When one of the specific observations in the observation list is selected, the engine
+                                displays the correct image to the user in a preview window and then gives them options
+                                to view its corresponding camera cone, or add it to their image gallery, which can then
+                                be downloaded to the user’s directory of interest.
+                            </p>
+                            <div>
+                                <figure> <img src="../img/ames/MSL2.png" alt="mastcam images 2" class="img-fluid ">
+                                </figure>
+                            </div>
+                            <div>
+                                <figure> <img src="../img/ames/MSL1.png" alt="mastcam images" class="img-fluid ">
+                                </figure>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+                <div class="row space-md">
+                    <div class="col-md-8 ml-auto mr-auto">
+                        <h1 id="s4" class="section">UX Aids</h1>
+                        <p class="proj-body">Because a lot of the complex data can be intimidating or verbose for more
+                            casual users, we included certain aids to help the user in their experience of MarsVR.
+                        </p>
+                        <p class="proj-body">The first of these was a 3D model of the Curiosity rover, which could be
+                            used to help users see the instruments being used to collect the data and understand how
+                            they work via modal windows or hands-on interaction.
+                        </p>
+                        <div>
+                            <figure> <img src="../img/ames/blender.png" alt="curiosity rover model" class="img-fluid ">
+                            </figure>
+                        </div>
+                        <p class="proj-body space-top">The second of these aids was the "Mars Buddy," a small green
+                            martian
+                            character designed to walk users through the UI and provide FAQ support. Users can even set
+                            the buddy to follow them around the martian surface, or can even play catch with it!
+                        </p>
+                        <div>
+                            <figure> <img src="../img/ames/marsbuddy.png" alt="curiosity rover model"
+                                    class="img-fluid ">
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="row space-md">
+                    <div class="col-md-8 ml-auto mr-auto">
+                        <h1 id="s5" class="section">Next Steps</h1>
+                        <p class="proj-body">As MarsVR is a growing app still in its infant stages, there is a lot more
+                            functionality planned for future iterations. Future versions will incorporate additional MSL
+                            datasets, as well as new data from the Mars 2020 Perseverance Rover, which
+                            landed on Mars on February 18, 2021.
+                        </p>
+                        <p class="proj-body"><strong>Future Features:</strong>
+                        </p>
+                        <ul class="proj-body">
+                            <li><strong>Automated camera cone generation</strong> based on PDS label coordinate data
+                            </li>
+                            <li><strong>ChemCam data viewing</strong> Convey the difference to these modes, and
+                                their capabilities, to the user in a natural way.
+                                <ul>
+                                    <li> Allow users to select any point on Mars terrain
+                                    </li>
+                                    <li> View plot of chemical composition for that point
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><strong>Visualization and analysis of other MSL datatypes</strong> (ChemCam, DAN,
+                                CheMin, APXS, and MAHLI)
+                            </li>
+                            <li><strong>A virtual tour of Mars</strong> led by "Mars buddy," complete with voiceover
+                            </li>
+                        </ul>
+                        <p class="proj-body">Working with the <a href="https://an.rsl.wustl.edu/msl/mslbrowser/an3.aspx"
+                                class="project-link">MSL datasets </a>
+                            was a very challengin but fun experience that taught me a great deal about showing users
+                            complex data in comprehensive ways.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="space-md">
+                    <h5 class="space-bottom">Recommended 🔎</h5>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <a href="../proj/tkd.html">
+                                <figure> <img src="../img/thumbnail/tkd.png" alt="TKD Visualizer"
+                                        class="img-fluid img-next">
+                                </figure>
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="../proj/ames.html">
+                                <figure> <img src="../img/thumbnail/ames.png" alt="mars vr" class="img-fluid img-next">
+                                </figure>
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="../proj/gvis.html">
+                                <figure> <img src="../img/thumbnail/GVIS.png" alt="nasa gvis"
+                                        class="img-fluid img-next">
+                                </figure>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="container py-5">
+        <div class="row">
+            <div class="col-sm-8">
+                <p class="mb-1">&copy;
+                    <script>
+                        var d = new Date()
+                        document.write(d.getFullYear())
+                    </script>
+                    Alejandro Romero
+                </p>
+            </div>
+            <div class="col-sm-4 text-md-right">
+                <a href="mailto:alejandro_romero@brown.edu" target="_blank" class="fa fa-envelope">
+                </a>
+                <a href="https://github.com/alejandrojromero" target="_blank" class="fa fab fa-github"></a>
+                <a href="https://www.linkedin.com/in/alejandrojromero/" target="_blank" class="fa fa-linkedin"></a>
+                <a href="https://www.instagram.com/a.r.works/" target="_blank" class="fa fa-instagram">
+                </a>
+                <a href="https://www.youtube.com/channel/UCHFQkfqIZiIZCzZukbZJ_5Q" target="_blank"
+                    class="fa fa-youtube-play">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Javascript -->
+    <script src="../js/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <script src="../js/custom.js"></script>
+
+    <script>
+
+        window.onscroll = function () { myFunction() };
+
+        function myFunction() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("myBar").style.width = scrolled + "%";
+        }
+    </script>
+
+</body>
+
+</html>
