@@ -266,6 +266,10 @@ Navigation
     opacity: 0.6;
 }
 
+.text-regular {
+    font-weight: 400;
+}
+
 .navbar-light .navbar-nav .nav-link, .navbar-light .navbar-brand {
     color: var(--text-dark);
     font-weight: var( --font-bold);
