@@ -119,10 +119,11 @@ hr {
     padding-bottom: 0.2em;
     line-height: 1.2em;
 
-    background: -webkit-linear-gradient(6deg, #FF5A16, #FCAB0A);
+
+    /* background: -webkit-linear-gradient(6deg, #FF5A16, #FCAB0A);
     -webkit-background-clip: text;
     background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent; */
 }
 
 .container {
