@@ -189,6 +189,10 @@ a, a:hover {
     padding: 4em 0;
 }
 
+.space-btw {
+    padding: 1.5em 0;
+}
+
 .space-lg {
     padding: 8em 0;
 }
@@ -220,6 +224,14 @@ a, a:hover {
 
 .headline-big {
     color: #FF5A16;
+    position: relative;
+    font-size: 4rem;
+    font-weight: var(--font-bold);
+    padding-bottom: 0.2em;
+    line-height: 1.2em;
+}
+
+.headline-big-secondary {
     position: relative;
     font-size: 4rem;
     font-weight: var(--font-bold);
