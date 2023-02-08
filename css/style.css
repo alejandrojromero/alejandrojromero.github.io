@@ -353,6 +353,13 @@ span-color {
     grid-auto-rows: 1fr;
 }
 
+.game-grid {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-auto-rows: 1fr;
+}
+
 .grid img {
     width: 100%;
     height: 100%;
@@ -395,7 +402,18 @@ span-color {
     border-radius: 1em;
 }
 
+.game {
+
+    transition: box-shadow .3s ease-out, transform .3s ease-out, opacity .2s ease-out;
+
+}
+
 .proj-card:hover {
+    box-shadow: 0 2px 40px 0 var(--text-light);
+    transform: translateY(-.8em);
+}
+
+.game-card:hover {
     box-shadow: 0 2px 40px 0 var(--text-light);
     transform: translateY(-.8em);
 }
