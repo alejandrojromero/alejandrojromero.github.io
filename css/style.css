@@ -289,6 +289,17 @@ Navigation
     font-size: 1em;
 }
 
+.navbar-brand, .nav-item, .text-next, .social-icon, .img-next {
+    -webkit-transition: var(--transition-time);
+    -moz-transition: var(--transition-time);
+    -o-transition: var(--transition-time);
+    transition: var(--transition-time);
+}
+
+.nav-item:hover, .navbar-brand:hover, .text-next:hover, .social-icon:hover, .img-next:hover {
+    opacity: 0.7;
+}
+
 .anchor {
     display: block;
     color: var(--text-light);
@@ -353,6 +364,13 @@ span-color {
     grid-auto-rows: 1fr;
 }
 
+.photo-grid {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-auto-rows: 1fr;
+}
+
 .game-grid {
     display: grid;
     grid-gap: 10px;
@@ -368,6 +386,11 @@ span-color {
 
 #proj-gallery {
     grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2em;
+}
+
+#misc-gallery {
+    grid-template-columns: repeat(3, 1fr);
     grid-gap: 2em;
 }
 
@@ -541,6 +564,12 @@ video {
     height: 100%;
 }
 
+.square {
+    object-fit: cover;
+    width: 230px;
+    height: 230px;
+  }
+
 .proj-video {
     position: relative;
     width: 100%;
@@ -573,6 +602,9 @@ Media queries
 @media only screen and (max-width: 1200px) {
     .cover-img {
         width: 400px;
+    }
+    #misc-gallery {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -608,6 +640,9 @@ Media queries
         font-size: 18px;
     }
     #proj-gallery {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    #misc-gallery {
         grid-template-columns: repeat(1, 1fr);
     }
     .proj-block {
