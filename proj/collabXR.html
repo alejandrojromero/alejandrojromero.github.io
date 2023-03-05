@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Voxel Pad | Alejandro Romero</title>
+    <link rel="icon" href="../img/misc/favicon.png">
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/67f90579cc.js" crossorigin="anonymous"></script>
+    <link href="../css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="progress-container">
+            <div class="progress-bar" id="myBar"></div>
+        </div>
+    </div>
+
+    <svg id="fader"></svg>
+    <div class="container space-bottom">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white py-5">
+            <a class="navbar-brand js-scroll-trigger" href="../index.html">Alejandro Romero</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> <span
+                    class="navbar-toggler-icon"></span> </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"> <a class="nav-link js-scroll-trigger" href="../index.html#projects">Work</a>
+                    </li>
+                    <li class="nav-item"> <a class="nav-link js-scroll-trigger" href="../art.html">Art</a>
+                    </li>
+                    <li class="nav-item"> <a class="nav-link js-scroll-trigger" href="../about.html">About</a>
+                    </li>
+                    <li class="nav-item"> <a class="nav-link js-scroll-trigger"
+                            href="../docs/Alejandro Romero Resume.pdf" target="_blank">Resume</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="row">
+            <div class="col-lg-2">
+                <div class="sidebar">
+                    <div class="space-bottom"><a href="../index.html" class="anchor">Home</a></div>
+                    <div id="tags"> </div>
+                </div>
+            </div>
+            <div class="col-lg-10 ml-auto col-sm-12 ">
+                <header>
+                    <div class="space-md">
+                        <div class="headline-content">
+                            <h1 class="headline-title display-3">Collab XR</h1>
+                            <h1 class="display-3">Prototyping the future of collaborative 3D modeling in mixed reality</h1>
+                        </div>
+                        <div class="row space-top proj-body">
+                            <div class="col-md-3">
+                                <div class="small-text">Role</div>
+                                <p>Designer, Prototyper</p>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="small-text">Duration</div>
+                                <p>3 days</p>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="small-text">Tools</div>
+                                <span class="badge proj-label">Figma</span>
+                                <span class="badge proj-label">Bezel</span>
+                                <span class="badge proj-label">Lens Studio</span>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <video controls muted autoplay loop>
+                    <source src="../img/collabXR/xr 3d modeling demo.mp4" type="video/mp4">
+                    Sorry, your browser does not support the video tag.
+                </video>
+                <div class="row space-md">
+                    <div class="col-md-8 mr-auto ml-auto">
+                        <h1 id="s1" class="section">Overview</h1>
+                        <p class="proj-body"> A few years ago, I did an analysis of some of the most used VR applications for 
+                            3D modeling. I contributed my findings to <a href="https://www.brown.edu"
+                            target="_blank"><span class="proj-link">Brown CS's VR wiki</span></a>
+                            with my main takeaways summed up in the table below. At the time, I wanted to explore new ways 
+                            to collaborate on scientic visualizations in VR settings. </p>
+                            
+                            <div class="row space-bottom">
+                                <figure> <img src="../img/collabXR/comparison_table.png" alt="comparison table" class="img-fluid" style="float: left;">
+                                </figure>
+                            </div>
+                            
+                            <p class="proj-body">A few years later, I found Bezel, a browser-based
+                            collaborative tool for 3D design and XR prototyping. With a suite of innovative new features, I couldn't help
+                            but imagine all the crazy new ways Bezel could build on its platform to change the standard for designing 
+                            in XR. </p> 
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row space-bottom">
+                    <div class="col-md-8 ml-auto mr-auto">
+                        <h1 class="section" id="s2">AI for 3D</h1>
+
+                        <p class="proj-body"> With recent releases in the field of generative AI, such as OpenAI's Point-E system for 
+                            generating 3D point clouds from text prompts, it is becoming increasingly vital to discover the implications
+                            of these systems for the future of 3D and how they can facilitate workflows when designing for mixed reality. 
+                        </p>
+
+                        <video controls muted autoplay loop>
+                            <source src="../img/collabXR/AI.mov" type="video/mp4">
+                            Sorry, your browser does not support the video tag.
+                        </video>
+
+                        <p class="proj-body space-top">​I mocked up a possible interface for generating 3D meshes with generative models on the cloud. Democratizing 
+                            this technology for designers by integrating it in an accessible browser-based tool like Bezel will be critical 
+                            in maximizing how AI assisted 3D design can affect industry standards.
+                        </p>
+
+                    </div>
+                </div>
+
+
+                <div class="row space-bottom">
+                    <div class="col-md-8 ml-auto mr-auto">
+                        <h1 class="section" id="s3">Mobile Collab</h1>
+
+                        <p class="proj-body"> Not everyone has an HMD, but almost everyone has a smartphone. Viewing and editing 3D files
+                            on a mobile device is not only a good way of testing XR prototypes, but also allows anyone to contribute to the 
+                            3D design process from anywhere.
+                        </p>
+
+                        <video controls muted autoplay loop>
+                            <source src="../img/collabXR/mobile.mov" type="video/mp4">
+                            Sorry, your browser does not support the video tag.
+                        </video>
+
+                        <p class="proj-body space-top">There are three primary interaction types on mobile: interacting in the editor, 
+                            interacting in AR mode with touchscreen controls, and interacting with 3D scenes with hand tracking.
+                        </p>
+
+                    </div>
+                </div>
+
+
+
+                <div class="row space-bottom">
+                    <div class="col-md-8 ml-auto mr-auto">
+                        <h1 id="s4" class="section">Design in VR</h1>
+                        <p class="proj-body">Though mobile unlocks 3D collaboration for a wider audience, I also considered 
+                            3D modeling and collaboration in VR as an expansion of Bezel, as I noted that the currently available 
+                            VR applications for 3D modeling leave much to be desired.
+                        </p>
+
+                        <div class="row space-bottom">
+                            <figure> <img src="../img/collabXR/vr_bezel.png" alt="3d scene in vr" class="img-fluid" style="width: 50%;   display: block;
+                                margin-left: auto;
+                                margin-right: auto;">
+                            </figure>
+                        </div>
+
+                        <p class="proj-body space-top space-bottom">By allowing users to view each other's cursors and edits in VR, along with any collaborators
+                            on mobile or desktop, mixed reality design takes on a whole new meaning.
+                        </p>
+
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <figure> <img src="../img/collabXR/modeling1.png" alt="vr 3d modeling" class="img-fluid " style="height: 75%">
+                        </figure>
+                    </div>
+                    <div class="col-md-6" style="float: left">
+                        <figure> <img src="../img/collabXR/modeling2.png" alt="vr 3d modeling" class="img-fluid ">
+                        </figure>
+                    </div>
+
+                </div>
+
+                        <div class=" space-bottom">
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row space-bottom">
+                    <div class="col-md-8 ml-auto mr-auto">
+                        <h1 class="section" id="s5">Passthrough</h1>
+
+                        <p class="proj-body"> The future of XR lie in AR. Virtual elements overlaid over the real world will help 
+                            humans achieve electronic tasks without disrupting their daily lives. To design for AR, designs have to 
+                            be viewed and tested in AR. Color passthrough for HMDs, as well as full AR glasses, are the future of 
+                            AR prototyping. 
+
+                        </p>
+                        <div class="row space-bottom">
+                            <figure> <img src="../img/collabXR/passthrough.png" alt="3d scene in vr" class="img-fluid" style="width:80%;   display: block;
+                                margin-left: auto;
+                                margin-right: auto;">
+                            </figure>
+                        </div>
+
+                        <p class="proj-body space-top">Toggling into full color passthrough is a feature that will set the next big XR design 
+                            platforms out from the rest. And for a true hands-free experience, pairing hand tracking with voice commands 
+                            opens the doors for the most naturalistic design opportunities we've ever seen.
+                        </p>
+
+                    </div>
+                </div>
+
+                <div class="space-md">
+                    <h5 class="space-bottom">Recommended 🔎</h5>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <a href="../proj/spectacles.html">
+                                <figure> <img src="../img/thumbnail/spectacles.png" alt="Snap spectacles" class="img-fluid img-next">
+                                </figure>
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="../proj/instagram.html">
+                                <figure> <img src="../img/thumbnail/instagram.png" alt="instagram ar/vr" class="img-fluid img-next">
+                                </figure>
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="../docs/Collaborative Remote Medical Imaging Exploration for Brain Science.pdf">
+                                <figure> <img src="../img/thumbnail/annotation.png" alt="Natural Selection Simulator" class="img-fluid img-next">
+                                </figure>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="container py-5">
+        <div class="row">
+            <div class="col-sm-8">
+                <p class="mb-1">&copy;
+                    <script>
+                        var d = new Date()
+                        document.write(d.getFullYear())
+                    </script>
+                    Alejandro Romero
+                </p>
+            </div>
+            <div class="col-sm-4 text-md-right">
+                <a href="mailto:alejandro_romero@alumni.brown.edu" target="_blank" class="fa fa-envelope">
+                </a>
+                <a href="https://github.com/alejandrojromero" target="_blank" class="fa fab fa-github"></a>
+                <a href="https://www.linkedin.com/in/alejandrojromero/" target="_blank" class="fa fa-linkedin"></a>
+                <a href="https://www.instagram.com/aleboi.art/" target="_blank" class="fa fa-instagram">
+                </a>
+                <a href="https://www.youtube.com/channel/UCHFQkfqIZiIZCzZukbZJ_5Q" target="_blank"
+                    class="fa fa-youtube-play">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Javascript -->
+    <script src="../js/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <script src="../js/custom.js"></script>
+
+    <script>
+
+        window.onscroll = function () { myFunction() };
+
+        function myFunction() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("myBar").style.width = scrolled + "%";
+        }
+    </script>
+
+</body>
+
+</html>
