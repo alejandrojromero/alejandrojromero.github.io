@@ -223,11 +223,11 @@ a, a:hover {
 }
 
 .headline-big {
-    color: #FF5A16;
+    color: rgb(68, 68, 68);
     position: relative;
-    font-size: 4rem;
+    font-size: 3.5rem;
     font-weight: var(--font-bold);
-    padding-bottom: 0.2em;
+    padding-bottom: 0.5em;
     line-height: 1.2em;
 }
 
@@ -482,6 +482,13 @@ Project
 .proj-body {
     line-height: 2em;
     padding-bottom: 20px;
+    color: var(--text-grey);
+}
+
+
+.proj-body2 {
+    line-height: 2em;
+    padding-bottom: 2px;
     color: var(--text-grey);
 }
 
