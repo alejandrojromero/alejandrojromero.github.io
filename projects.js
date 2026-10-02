@@ -20,17 +20,17 @@ window.PROJECTS = {
     recommended: ['shader', 'blizzard', 'spectacles']
   },
   shader: {
-    thumb: 'https://alejandroromero.me/img/thumbnail/Shader_mobile.jpg',
+    thumb: 'img/thumbnail/Shader_mobile.jpg',
     category: 'Founding Designer · AR × genAI',
     title: 'Shader Inc.',
     tagline: 'Tools for people to augment reality into anything with realtime genAI.',
     layout: 'hub',
     entries: [
-      { image: 'https://alejandroromero.me/img/thumbnail/Shader_mobile.jpg',
+      { image: 'img/thumbnail/Shader_mobile.jpg',
         tags: ['UX/UI Design', 'Prototyping', 'Figma', 'User Research'],
         title: 'Shader Mobile',
         desc: 'Creating an app that lets anyone be anything.', href: 'project.html?id=shadermobile' },
-      { image: 'https://alejandroromero.me/img/thumbnail/Shader_web.jpg',
+      { image: 'img/thumbnail/Shader_web.jpg',
         tags: ['UX/UI Design', 'Prototyping', 'Figma', 'User Research'],
         title: 'Shader Web',
         desc: 'Designing a new form of social communication, built on genAI.', href: 'project.html?id=shaderweb' }
@@ -38,7 +38,7 @@ window.PROJECTS = {
     recommended: ['neo', 'blizzard', 'instagram']
   },
   blizzard: {
-    thumb: 'https://alejandroromero.me/img/thumbnail/hackathon.png',
+    thumb: 'img/thumbnail/hackathon.png',
     category: 'Blizzard Entertainment · Microsoft',
     title: 'Blizzard Entertainment',
     tagline: 'Projects I worked on at the gaming powerhouse.',
@@ -49,12 +49,12 @@ window.PROJECTS = {
         title: 'Battle.net Mobile',
         desc: 'Enhancing the Battle.net Mobile App experience for a new era of Blizzard gamers.',
         href: 'project.html?id=bnet' },
-      { image: 'https://alejandroromero.me/img/thumbnail/hackathon.png',
+      { image: 'img/thumbnail/hackathon.png',
         tags: ['UX/UI Design', 'Figma', 'Prototyping', 'Unity'],
         title: 'Blizzard Hackathon',
         desc: 'Won 3rd place and pitched hackathon project concept to Blizzard executives.',
         href: 'project.html?id=blizzverse' },
-      { image: 'https://alejandroromero.me/img/thumbnail/desktop.png',
+      { image: 'img/thumbnail/desktop.png',
         tags: ['UX/UI Design', 'Figma', 'User Research'],
         title: 'Social Features for Desktop',
         desc: 'Designed new social interactions to delight players outside of Blizzard games.', locked: true },
@@ -75,14 +75,14 @@ window.PROJECTS = {
         href: 'https://diablo2.blizzard.com/en-us/' },
     ],
     games: [
-      { title: 'World of Warcraft', image: 'https://alejandroromero.me/img/games/wow.png', href: 'https://worldofwarcraft.blizzard.com/' },
-      { title: 'Call of Duty: Modern Warfare II', image: 'https://alejandroromero.me/img/games/mw2.png', href: 'https://www.callofduty.com/modernwarfare2' },
-      { title: 'Overwatch 2', image: 'https://alejandroromero.me/img/games/ow2.png', href: 'https://overwatch.blizzard.com/' },
-      { title: 'Diablo IV', image: 'https://alejandroromero.me/img/games/d4.png', href: 'https://diablo4.blizzard.com/' },
-      { title: 'Diablo II: Resurrected', image: 'https://alejandroromero.me/img/games/d2r.png', href: 'https://diablo2.blizzard.com/' },
-      { title: 'Diablo Immortal', image: 'https://alejandroromero.me/img/games/immortal.png', href: 'https://diabloimmortal.blizzard.com/' },
+      { title: 'World of Warcraft', image: 'img/games/wow.png', href: 'https://worldofwarcraft.blizzard.com/' },
+      { title: 'Call of Duty: Modern Warfare II', image: 'img/games/mw2.png', href: 'https://www.callofduty.com/modernwarfare2' },
+      { title: 'Overwatch 2', image: 'img/games/ow2.png', href: 'https://overwatch.blizzard.com/' },
+      { title: 'Diablo IV', image: 'img/games/d4.png', href: 'https://diablo4.blizzard.com/' },
+      { title: 'Diablo II: Resurrected', image: 'img/games/d2r.png', href: 'https://diablo2.blizzard.com/' },
+      { title: 'Diablo Immortal', image: 'img/games/immortal.png', href: 'https://diabloimmortal.blizzard.com/' },
       { title: 'Hearthstone', image: 'assets/game_hearthstone.png', href: 'https://hearthstone.blizzard.com/' },
-      { title: 'Warcraft Rumble', image: 'https://alejandroromero.me/img/games/arclight.png', href: 'https://warcraftrumble.blizzard.com/' }
+      { title: 'Warcraft Rumble', image: 'img/games/arclight.png', href: 'https://warcraftrumble.blizzard.com/' }
     ],
     recommended: ['neo', 'shader', 'spectacles']
   },
@@ -156,14 +156,14 @@ window.PROJECTS = {
     recommended: ['neodesktop', 'shaderweb', 'spectacles']
   },
   shadermobile: {
-    thumb: 'https://alejandroromero.me/img/thumbnail/Shader_mobile.jpg',
+    thumb: 'img/thumbnail/Shader_mobile.jpg',
     category: 'Shader Inc. · Founding Design Lead',
     title: 'Shader Mobile App',
     tagline: 'Helping anyone become anything ✨',
     meta: { Role: 'Founding Design Lead', Duration: 'Sept 2023 — Sept 2024', Tools: 'Figma · UX/UI Design · User Research · Prototyping' },
     sections: [
       { id: 'overview', heading: 'Overview', html: `
-        <img src="https://alejandroromero.me/img/thumbnail/Shader_mobile.jpg" alt="Shader mobile app screens">
+        <img src="img/thumbnail/Shader_mobile.jpg" alt="Shader mobile app screens">
         <p class="media-caption">A selection of screens I designed for the Shader mobile app</p>
         <p>When I first met Darya, Shader's CEO, she told me all about her vision for an app that could harness the power of generative AI to let people turn themselves into anything with a few simple text prompts or voice commands. The technology would blend emerging genAI pipelines with existing AR principles to redefine how casual users interact with 3D assets in mixed reality. I was sold — and soon joined as the <strong>Founding Design Lead at Shader.</strong></p>
         <div class="stats-row">
@@ -284,7 +284,7 @@ window.PROJECTS = {
     recommended: ['shaderweb', 'neodesktop', 'instagram']
   },
   shaderweb: {
-    thumb: 'https://alejandroromero.me/img/thumbnail/Shader_web.jpg',
+    thumb: 'img/thumbnail/Shader_web.jpg',
     category: 'Shader Inc. · Founding Design Lead',
     title: 'Shader Web',
     tagline: 'Bringing an AI effects camera to every browser ✨',
@@ -362,11 +362,11 @@ window.PROJECTS = {
     },
     sections: [
       { id: 'overview', heading: 'Overview', html: `
-        <img src="https://alejandroromero.me/img/blizzard/intro.png" alt="Iterative mockups">
+        <img src="img/blizzard/intro.png" alt="Iterative mockups">
         <p class="media-caption">Just a few of the <strong>many</strong> iterative mockups I made during my internship</p>
         <p>I have always loved video games — they're the main reason I fell in love with creating experiences for users. A lot of my experience before Blizzard involved self-contained experimental projects, so I was extremely excited to <strong>spearhead design on two new features for a product reaching millions of gamers.</strong></p>
         <p>During my internship, <strong>I worked on the Battle.net mobile app</strong>, a hub for players to socialize while playing Activision-Blizzard games, learn more about their favorite games, get customer support, and more. My mentor gave me a very open-ended problem: <strong>the app has robust social features, but is lacking in player utility features.</strong> After an informal competitive analysis of gaming companion apps, <strong>I worked on two new utility features: News and Game Library.</strong></p>
-        <img src="https://alejandroromero.me/img/blizzard/3d.png" alt="Battle.net mobile app">
+        <img src="img/blizzard/3d.png" alt="Battle.net mobile app">
         <h3>Problem</h3>
         <p>If players want to find information about their games, they have to jump through many hoops, leading to user dissatisfaction.</p>
         <h3>Objective</h3>
@@ -394,32 +394,32 @@ window.PROJECTS = {
       { id: 'process', heading: 'Process', html: `
         <h3>Sparking Discussion with Wireframes</h3>
         <p>On my first day I was blown away by Blizzard's meticulous design systems, but surprised to learn <strong>my team had no system in place for creating wireframes.</strong> My News wireframes proved immensely effective during high-level discussions with engineers and PMs — so I created a Wireframe Design System for the team.</p>
-        <img src="https://alejandroromero.me/img/blizzard/news_wire.png" alt="News wireframes">
+        <img src="img/blizzard/news_wire.png" alt="News wireframes">
         <p>The wires explored 3 directions for delivering News: filtering news by game, aggregating all news into a single feed, and embedding news on game pages nested in the library. After <strong>feedback sessions with engineers, designers, and PMs</strong>, I iterated on the game-filtering user flow.</p>
         <h3>Iteration</h3>
         <p>I spent a lot of time iterating on the design and user flow of the News tab, working with the Content UI team on the most efficient and elegant ways to bring News into the app. <strong>Setting up meetings with engineers and PMs on multiple teams</strong> showed me that collaboration and communication are crucial early in the design process.</p>
-        <img src="https://alejandroromero.me/img/blizzard/news_iteration.png" alt="News design iterations">
-        <img src="https://alejandroromero.me/img/blizzard/iteration.png" alt="High fidelity iterations">
+        <img src="img/blizzard/news_iteration.png" alt="News design iterations">
+        <img src="img/blizzard/iteration.png" alt="High fidelity iterations">
         <p class="media-caption">High fidelity mockups comparing possible looks for the News tab</p>
         <p>Conversations with other designers surfaced <strong>faults in my initial design thinking, letting me improve on subsequent iterations</strong> — PMs flagged that the swim lane wouldn't scale as games are added, and the localization team showed a language dropdown wasn't necessary since geolocation handles it.</p>
         <h3>Story Mapping</h3>
         <p>I led 3 formal feedback sessions: hi-fi design feedback from the entire design org, prototype critiques, and user story mapping. Story mapping <strong>let us create an affinity map of potential directions based on our team's many perspectives</strong>, and informed the final user stories mapping all possible interactions with a feature.</p>
-        <img src="https://alejandroromero.me/img/blizzard/affinity.png" alt="Affinity map">
-        <img src="https://alejandroromero.me/img/blizzard/stories.png" alt="User stories">
+        <img src="img/blizzard/affinity.png" alt="Affinity map">
+        <img src="img/blizzard/stories.png" alt="User stories">
         <h3>A/B & Usability Testing</h3>
         <p>A/B and usability tests validated my design decisions and showed how users interact with these features for the first time. Asking users to narrate their thought process kept a record of how intuitive each step of the user flow was.</p>
-        <img src="https://alejandroromero.me/img/blizzard/ab_testing.png" alt="A/B testing">
+        <img src="img/blizzard/ab_testing.png" alt="A/B testing">
         <h3>Prototyping</h3>
         <p>Interactive prototypes helped me convey my exact vision — an extremely valuable tool for quick iteration and RITE testing without committing to development time.</p>
-        <video src="https://alejandroromero.me/img/blizzard/prototype.mov" data-vertical autoplay muted loop playsinline></video>
+        <video src="img/blizzard/prototype.mov" data-vertical autoplay muted loop playsinline></video>
         <h3>Design Handoff to Engineers</h3>
         <p>A huge milestone was handing off my designs for implementation: compiling them into coherent user stories accounting for more than core interactions — scroll states, loading states, empty states, error screens. The complete story gave PMs, engineers, managers, and designers a digestible breakdown of the feature's intended UX at a glance.</p>
-        <img src="https://alejandroromero.me/img/blizzard/handoff.png" alt="Design handoff">` },
+        <img src="img/blizzard/handoff.png" alt="Design handoff">` },
       { id: 'result', heading: 'Result', html: `
         <p>A few months after my internship, <strong>the Game Library feature was released on mobile devices!</strong> The final experience integrates all game information on consolidated game pages to facilitate discovery.</p>
         <div class="image-grid">
-          <img src="https://alejandroromero.me/img/blizzard/library.PNG" alt="Game library">
-          <img src="https://alejandroromero.me/img/blizzard/game_page.PNG" alt="Game page">
+          <img src="img/blizzard/library.PNG" alt="Game library">
+          <img src="img/blizzard/game_page.PNG" alt="Game page">
         </div>
         <p class="media-caption">The game library in the current version of Battle.net</p>` },
       { id: 'takeaways', heading: 'Takeaways', html: `
@@ -434,7 +434,7 @@ window.PROJECTS = {
     recommended: ['blizzverse', 'ames', 'spectacles']
   },
   blizzverse: {
-    thumb: 'https://alejandroromero.me/img/thumbnail/hackathon.png',
+    thumb: 'img/thumbnail/hackathon.png',
     category: 'Blizzard Entertainment · Hackathon',
     title: 'Enter the Blizzverse',
     tagline: 'Conceptualizing the future of gaming platforms 🎮',
@@ -446,47 +446,47 @@ window.PROJECTS = {
     },
     sections: [
       { id: 'overview', heading: 'Overview', html: `
-        <video src="https://alejandroromero.me/img/blizzverse/Blizzverse%20Demo%20Video.mov" autoplay muted loop playsinline></video>
+        <video src="img/blizzverse/Blizzverse%20Demo%20Video.mov" autoplay muted loop playsinline></video>
         <p class="media-caption">The final sizzle reel — a product of a few late nights and <strong>a lot</strong> of coffee</p>
         <p>Blizzard's annual hackathon allows employees to make anything their heart desires, whether business related or not. We decided to make the Blizzverse: <strong>a unified platform experience that allows players to interact with Blizzard IPs in new ways outside of the games themselves.</strong> We won 3rd place and pitched the concept to Blizzard executives.</p>` },
       { id: 'process', heading: 'Process', html: `
         <h3>Building it all in 3 days</h3>
         <p>I knew the timeline was tight, but I had ambitious plans. The process began in Figma, where I mocked up the general flow of the experience. From there, I ideated on an entry point: why not make <strong>portals on Blizzard's Battle.net launcher</strong> that could take you to new virtual experiences?</p>
         <div class="image-grid">
-          <img src="https://alejandroromero.me/img/blizzverse/entry.png" alt="Blizzverse entry">
-          <img src="https://alejandroromero.me/img/blizzverse/portals.png" alt="Blizzverse portals">
+          <img src="img/blizzverse/entry.png" alt="Blizzverse entry">
+          <img src="img/blizzverse/portals.png" alt="Blizzverse portals">
         </div>
         <p>I created the entry flow by integrating lore pages on the Battle.net launcher, letting users read about in-game universes and their favorite characters in a single place.</p>
         <div class="image-grid">
-          <img src="https://alejandroromero.me/img/blizzverse/heroes.png" alt="Blizzverse characters">
-          <img src="https://alejandroromero.me/img/blizzverse/lore.png" alt="Blizzverse lore">
+          <img src="img/blizzverse/heroes.png" alt="Blizzverse characters">
+          <img src="img/blizzverse/lore.png" alt="Blizzverse lore">
         </div>
         <p>While lore pages in the launcher were cool, I really wanted to prototype a new browser-based experience for players to interact outside their usual games. With inspiration from platforms like Gather.town, <strong>I created a Unity prototype for a 2.5D sidescrolling social gaming platform</strong> where players create their own characters, learn about Blizzard games, and interact in new ways — with a QR code to onboard desktop users to the mobile equivalent.</p>
         <div class="image-grid">
-          <img src="https://alejandroromero.me/img/blizzverse/character.png" alt="Character creator">
-          <img src="https://alejandroromero.me/img/blizzverse/customize.png" alt="Character customization">
+          <img src="img/blizzverse/character.png" alt="Character creator">
+          <img src="img/blizzverse/customize.png" alt="Character customization">
         </div>
         <div class="image-grid">
-          <img src="https://alejandroromero.me/img/blizzverse/chat.png" alt="Blizzverse chat">
-          <img src="https://alejandroromero.me/img/blizzverse/qr.png" alt="Mobile gateway QR">
+          <img src="img/blizzverse/chat.png" alt="Blizzverse chat">
+          <img src="img/blizzverse/qr.png" alt="Mobile gateway QR">
         </div>
         <h3>Going Mobile</h3>
         <p>That's right — with only a day left in the hackathon, we decided to make mobile Blizzverse experiences too.</p>
         <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px;max-width:440px;margin:24px auto">
-          <img src="https://alejandroromero.me/img/blizzverse/mobile_lore.png" alt="Mobile lore" style="margin:0">
-          <img src="https://alejandroromero.me/img/blizzverse/Detail%20Screen.png" alt="Detail screen" style="margin:0">
+          <img src="img/blizzverse/mobile_lore.png" alt="Mobile lore" style="margin:0">
+          <img src="img/blizzverse/Detail%20Screen.png" alt="Detail screen" style="margin:0">
         </div>
         <p>These demos were a kitbash of Figma, Blender, and Lens Studio. I textured and animated the character models with Blender and Mixamo, exported renders to Figma for the mocks, and used Lens Studio to anchor animated characters in the environment for the live AR app.</p>
         <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px;max-width:440px;margin:24px auto">
-          <img src="https://alejandroromero.me/img/blizzverse/lock%20in%20(1).png" alt="Mobile AR" style="margin:0">
-          <img src="https://alejandroromero.me/img/blizzverse/Kiriko%20AR%20DEMO%20(1).png" alt="Kiriko AR demo" style="margin:0">
+          <img src="img/blizzverse/lock%20in%20(1).png" alt="Mobile AR" style="margin:0">
+          <img src="img/blizzverse/Kiriko%20AR%20DEMO%20(1).png" alt="Kiriko AR demo" style="margin:0">
         </div>
         <h3>AR Filters</h3>
         <p>With AR and non-AR mobile experiences working, there was still potential to augment our players' reality — so I created a set of <strong>AR Snapchat filters inspired by characters from Overwatch 2.</strong></p>
         <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;max-width:620px;margin:24px auto">
-          <img src="https://alejandroromero.me/img/blizzverse/snapchat1.png" alt="Snapchat filter" style="margin:0">
-          <img src="https://alejandroromero.me/img/blizzverse/snapchat2.png" alt="Snapchat filter" style="margin:0">
-          <img src="https://alejandroromero.me/img/blizzverse/snapchat3.png" alt="Snapchat filter" style="margin:0">
+          <img src="img/blizzverse/snapchat1.png" alt="Snapchat filter" style="margin:0">
+          <img src="img/blizzverse/snapchat2.png" alt="Snapchat filter" style="margin:0">
+          <img src="img/blizzverse/snapchat3.png" alt="Snapchat filter" style="margin:0">
         </div>` },
       { id: 'takeaways', heading: 'Takeaways', html: `
         <p>Creating the Blizzverse was one of the most fun and challenging prototyping projects I've undergone in a long time, in no small part due to the sheer amount of content made within 3 days.</p>
@@ -495,7 +495,7 @@ window.PROJECTS = {
     recommended: ['bnet', 'instagram', 'spectacles']
   },
   spectacles: {
-    thumb: 'https://alejandroromero.me/img/thumbnail/spectacles.png',
+    thumb: 'img/thumbnail/spectacles.png',
     category: 'Brown HCI Lab · Snap Spectacles',
     title: 'Snap Spectacles',
     tagline: 'Prototyping novel AR interactions 😎',
@@ -508,12 +508,12 @@ window.PROJECTS = {
     sections: [
       { id: 'overview', heading: 'Overview', html: `
         <div class="image-grid">
-          <video src="https://alejandroromero.me/img/spectacles/Pokemon_CatchAR.mp4" autoplay muted loop playsinline></video>
-          <video src="https://alejandroromero.me/img/spectacles/Chicken_CatchAR.mp4" autoplay muted loop playsinline></video>
+          <video src="img/spectacles/Pokemon_CatchAR.mp4" autoplay muted loop playsinline></video>
+          <video src="img/spectacles/Chicken_CatchAR.mp4" autoplay muted loop playsinline></video>
         </div>
         <p>Snap released the next generation of AR technology in the form of the <a href="https://www.spectacles.com/new-spectacles" target="_blank" rel="noopener">2021 Snap Spectacles</a> — their first pair of true augmented reality glasses. At the <a href="https://hci.brown.edu/" target="_blank" rel="noopener">Brown HCI Lab</a>, I was the first to dive into this technology, exploring partial object manipulation and naturalistic throwing interactions.</p>
         <p>The result is <strong><a href="https://www.snapchat.com/lens/9eff1581da8e4ba7a5208787e08348f2?type=SNAPCODE&metadata=01" target="_blank" rel="noopener">Pokemon CatchAR</a></strong>, a Pokemon Go demo with live hand tracking and waypoint navigation. <strong>I led this project as a full-stack prototyper, defining end-to-end UX</strong> and gathering feedback along the way.</p>
-        <img src="https://alejandroromero.me/img/spectacles/devices.png" alt="Lens running on Spectacles and smartphones">
+        <img src="img/spectacles/devices.png" alt="Lens running on Spectacles and smartphones">
         <p class="media-caption">The lens works on both Spectacles and smartphones</p>
         <h3>Problem</h3>
         <p>AR applications aren't fully immersive — they still rely on a phone screen. Pokemon Go, the most popular AR game of all time, requires users to throw a ball by swiping. <strong>Current methods for interacting with AR objects are not nearly as immersive as users would like.</strong></p>
@@ -523,7 +523,7 @@ window.PROJECTS = {
           <div><div class="stat-num">1M+</div><div class="stat-label">unique plays and views on Snapchat</div></div>
           <div><div class="stat-num">2 lenses</div><div class="stat-label">with full hand tracking on Spectacles and smartphones</div></div>
         </div>
-        <img src="https://alejandroromero.me/img/spectacles/mocks.png" alt="Interface mockups">
+        <img src="img/spectacles/mocks.png" alt="Interface mockups">
         <p class="media-caption">The interface of the lens, from concept to reality</p>` },
       { id: 'goals', heading: 'Goals', html: `
         <p>How do we leverage hand tracking to create a more immersive and accessible experience for interacting with virtual objects?</p>
@@ -535,21 +535,21 @@ window.PROJECTS = {
       { id: 'process', heading: 'Process', html: `
         <h3>Brainstorming</h3>
         <p>Lenses can only be developed in Lens Studio, so I spent my first weeks learning the software. I initially explored AR navigation — Google Maps routing, projected right in your glasses!</p>
-        <video src="https://alejandroromero.me/img/spectacles/navigation.mov" autoplay muted loop playsinline></video>
+        <video src="img/spectacles/navigation.mov" autoplay muted loop playsinline></video>
         <p class="media-caption">Early AR navigation prototype</p>
         <p>Unfortunately there were clear roadblocks: <strong>a GPS API isn't quite possible with this tech stack yet</strong>, and granular navigation would be very time-consuming to implement. So we pivoted to what excites people most about AR: games.</p>
         <h3>Throwing</h3>
         <p>Lens Studio had no physics engine, so <strong>we calculated the velocity and trajectory of the ball ourselves</strong> — a ring buffer of the latest 10 hand positions feeds an average velocity vector into our own physics algorithm.</p>
-        <img src="https://alejandroromero.me/img/spectacles/throw.png" alt="Throwing algorithm diagram">
+        <img src="img/spectacles/throw.png" alt="Throwing algorithm diagram">
         <p>After refining the formula, we added some Pokemon into the scene and had a first draft of the project!</p>
-        <video src="https://alejandroromero.me/img/spectacles/v1.MP4" autoplay muted loop playsinline></video>
+        <video src="img/spectacles/v1.MP4" autoplay muted loop playsinline></video>
         <p class="media-caption">The first draft of the throwing interaction</p>
         <h3>Gamification</h3>
         <p>User feedback called for a tutorial to <strong>educate users about hand tracking</strong>, plus game mechanics to make the experience more exciting. We revisited the navigation idea as a <strong>radar-like mini-map showing where Pokemon spawn</strong>, randomized within a fixed distance so there are always 3 spawn locations nearby.</p>
-        <img src="https://alejandroromero.me/img/spectacles/navCode.png" alt="Navigation code">
+        <img src="img/spectacles/navCode.png" alt="Navigation code">
         <h3>User feedback</h3>
         <p>We adapted the path-generating navigation system into an arrow pointing toward the nearest Pokemon, which turns off within "throwable" distance. When Snap added a physics engine to Lens Studio, we integrated it to ground the ball in the environment. <strong>These changes were informed by user feedback and observational studies.</strong></p>
-        <video src="https://alejandroromero.me/img/spectacles/final.mov" data-vertical autoplay muted loop playsinline></video>
+        <video src="img/spectacles/final.mov" data-vertical autoplay muted loop playsinline></video>
         <p class="media-caption">The final version of Pokemon CatchAR</p>` },
       { id: 'rebrand', heading: 'Rebrand', html: `
         <p>To market the lens we had to remove the Pokémon IP due to legal issues. Here's what changed:</p>
@@ -559,9 +559,9 @@ window.PROJECTS = {
           <li><strong>Used the framework for educational purposes.</strong> We worked with a professor at the University of Oregon to create an educational lens about exploring endangered wildlife.</li>
           <li><strong>Randomized spawn points and added catching logic.</strong> We rewarded player efforts in the UI with some fun animations!</li>
         </ul>
-        <video src="https://alejandroromero.me/img/spectacles/Chicken_CatchAR_2.mov" data-vertical autoplay muted loop playsinline></video>
+        <video src="img/spectacles/Chicken_CatchAR_2.mov" data-vertical autoplay muted loop playsinline></video>
         <p class="media-caption">Chicken CatchAR in action</p>
-        <p><strong>Links:</strong> Check out the <a href="https://www.snapchat.com/lens/dad255155dfe48bda30b4d36e58d959b?type=SNAPCODE&metadata=01" target="_blank" rel="noopener">final lens</a>, its feature on the <a href="https://www.instagram.com/p/CivNAcOpcEY/" target="_blank" rel="noopener">Snap Spectacles Instagram</a>, or the <a href="https://alejandroromero.me/docs/Alejandro%20Romero-%20Master's%20Project%20Report.pdf" target="_blank" rel="noopener">official project paper</a>.</p>` },
+        <p><strong>Links:</strong> Check out the <a href="https://www.snapchat.com/lens/dad255155dfe48bda30b4d36e58d959b?type=SNAPCODE&metadata=01" target="_blank" rel="noopener">final lens</a>, its feature on the <a href="https://www.instagram.com/p/CivNAcOpcEY/" target="_blank" rel="noopener">Snap Spectacles Instagram</a>, or the <a href="docs/Alejandro%20Romero-%20Master's%20Project%20Report.pdf" target="_blank" rel="noopener">official project paper</a>.</p>` },
       { id: 'reflection', heading: 'Reflection', html: `
         <ul>
           <li><strong>Understand the problem deeply /</strong> Establish exactly what problem you want to solve early on — if you can't convince someone else of your solution, explore it more before implementing.</li>
@@ -572,14 +572,14 @@ window.PROJECTS = {
     recommended: ['ames', 'instagram', 'gvis']
   },
   instagram: {
-    thumb: 'https://alejandroromero.me/img/thumbnail/instagram.png',
+    thumb: 'img/thumbnail/instagram.png',
     category: 'Concept · Mixed Reality',
     title: 'Instagram AR/VR',
     tagline: 'Conceptualizing the future of social media interaction by designing a seamless mixed reality experience.',
     meta: { Role: 'UX/UI Designer, Full Stack Dev, Prototyper', Duration: '2 weeks', Team: '1 (Just me!)', Tools: 'VR · UX · Figma · Unity · C#' },
     sections: [
       { id: 'overview', heading: 'Overview', html: `
-        <video src="https://alejandroromero.me/img/instagram/InstagramARVR.mp4" autoplay muted loop playsinline></video>
+        <video src="img/instagram/InstagramARVR.mp4" autoplay muted loop playsinline></video>
         <p class="media-caption"><a href="https://www.youtube.com/watch?v=Z-o7AaLuoXo" target="_blank" rel="noopener">Watch the full YouTube teaser</a></p>
         <p>Social media provides us with the unique opportunity to socialize with one another from anywhere in the world. This medium of interaction satisfies our intrinsic needs of esteem and love/belonging in Maslow's hierarchy of needs. As technology evolves, the ways in which we meet these needs must evolve too.</p>
         <div class="ig-maslow">
@@ -612,7 +612,7 @@ window.PROJECTS = {
       { id: 'approach', heading: 'Approach', html: `
         <h3>Make it feel good</h3>
         <p>Instagram works because it feels natural. Expanding how we interact with it requires overhauling its visual design while maintaining familiarity — <strong>innovation and familiarity don't have to be exclusive; attending to both is crucial.</strong></p>
-        <img src="https://alejandroromero.me/img/instagram/ui1.png" alt="UI exploration">
+        <img src="img/instagram/ui1.png" alt="UI exploration">
         <h3>Add key features</h3>
         <p>I didn't just want to redesign Instagram, but fundamentally change how a user interacts with it. I mapped the features that make it usable and looked for opportunities to expand them into mixed reality.</p>
         <div class="affinity-grid">
@@ -642,14 +642,14 @@ window.PROJECTS = {
           <span><span class="aff-dot" style="background:#FFE8DE"></span>Opportunity</span>
         </div>
         <p>From these criteria I redesigned the Instagram desktop app, staying hyper-aware of the affinity map so one visual style would carry across three device types: AR on mobile, VR, and desktop.</p>
-        <img src="https://alejandroromero.me/img/instagram/ui2.png" alt="Redesigned UI">
+        <img src="img/instagram/ui2.png" alt="Redesigned UI">
         <p>AR provides expanded screen real estate where there otherwise wouldn't be any — with AR glasses, users can view and manipulate multiple windows on desktop or mobile with the swipe of a finger.</p>
-        <img src="https://alejandroromero.me/img/instagram/ui3.png" alt="AR windows">
+        <img src="img/instagram/ui3.png" alt="AR windows">
         <h3>Leveraging the power of XR</h3>
         <p>Mixed reality opens the door to interactions that just aren't possible on conventional displays: moving and resizing windows with your fingers (or from a distance with raycasted projections), 3D photos with real depth, and 3D models you can play with.</p>
         <div class="image-grid">
-          <video src="https://alejandroromero.me/img/instagram/moving.mp4" autoplay muted loop playsinline></video>
-          <video src="https://alejandroromero.me/img/instagram/3dphoto.mp4" autoplay muted loop playsinline></video>
+          <video src="img/instagram/moving.mp4" autoplay muted loop playsinline></video>
+          <video src="img/instagram/3dphoto.mp4" autoplay muted loop playsinline></video>
         </div>` },
       { id: 'reflection', heading: 'Reflection', html: `
         <p>Instagram AR/VR started as a small consideration of mixed reality's applications to social media and quickly turned into a passion project. It let me do market research in the social space and address pain points I myself experience using social apps in VR — and design a concept that feels truly fresh and relevant.</p>
@@ -658,7 +658,7 @@ window.PROJECTS = {
     recommended: ['spectacles', 'collabxr', 'shader']
   },
   animus: {
-    thumb: 'https://alejandroromero.me/img/thumbnail/animus.png',
+    thumb: 'img/thumbnail/animus.png',
     category: 'RTFKT × Bezi AR Challenge',
     title: 'Animus AR',
     tagline: 'Interactive AR portals into the worlds of the RTFKT Animus characters 🔥',
@@ -701,18 +701,18 @@ window.PROJECTS = {
     recommended: ['spectacles', 'shader', 'instagram']
   },
   tkd: {
-    thumb: 'https://alejandroromero.me/img/thumbnail/tkd.png',
+    thumb: 'img/thumbnail/tkd.png',
     category: 'Research · Motion Capture',
     title: 'Taekwondo Visualizer',
     tagline: 'Intuitive 3D visualization of accurate Taekwondo techniques using motion capture.',
     meta: { Role: 'Full Stack Dev', Duration: 'Jan 2020 — May 2020', Team: '<a href="https://aaronolsen.github.io/about_me.html" target="_blank" rel="noopener">Aaron Olsen, Ph.D.</a>', Tools: 'Mocap · Figma · C# · Unity · XROMM' },
     sections: [
       { id: 'why', heading: 'Why Taekwondo?', html: `
-        <img src="https://alejandroromero.me/img/tkd/TkdVizUI.png" alt="Taekwondo Visualizer UI">
+        <img src="img/tkd/TkdVizUI.png" alt="Taekwondo Visualizer UI">
         <p>Ever since the age of 6, I've been in love with Taekwondo. I joined the team at Brown and became an instructor. In Spring 2020, while studying motion data of nonhuman organisms at the Brainerd Biomechanics and Morphology lab, my mentor asked if I wanted to create an independent project — and the Taekwondo Visualizer was born.</p>
         <div class="image-grid">
-          <img src="https://alejandroromero.me/img/tkd/youngtkd.JPG" alt="Young Alejandro at Taekwondo">
-          <img src="https://alejandroromero.me/img/tkd/oldtkd.JPG" alt="Alejandro at Taekwondo">
+          <img src="img/tkd/youngtkd.JPG" alt="Young Alejandro at Taekwondo">
+          <img src="img/tkd/oldtkd.JPG" alt="Alejandro at Taekwondo">
         </div>` },
       { id: 'intro', heading: 'Introduction', html: `
         <h3>Quantifying Martial Arts</h3>
@@ -720,33 +720,33 @@ window.PROJECTS = {
       { id: 'data', heading: 'Data Collection', html: `
         <h3>Motion Capture System</h3>
         <p>We built a motion capture rig from scratch: a mocap suit with radio-dense beads tracked with <a href="https://www.xromm.org/" target="_blank" rel="noopener">XROMM</a> software, and 3 GoPro cameras capturing motion from three viewpoints — kick data tracked, exported as 3D transformations, and imported as Unity animations.</p>
-        <img src="https://alejandroromero.me/img/tkd/rig.png" alt="Motion capture rig">
+        <img src="img/tkd/rig.png" alt="Motion capture rig">
         <div class="image-grid">
-          <video src="https://alejandroromero.me/img/tkd/block.mp4" autoplay muted loop playsinline></video>
-          <video src="https://alejandroromero.me/img/tkd/TaekwondoBlockTest.mp4" autoplay muted loop playsinline></video>
+          <video src="img/tkd/block.mp4" autoplay muted loop playsinline></video>
+          <video src="img/tkd/TaekwondoBlockTest.mp4" autoplay muted loop playsinline></video>
         </div>
-        <video src="https://alejandroromero.me/img/tkd/kickGoPro.mp4" autoplay muted loop playsinline></video>
+        <video src="img/tkd/kickGoPro.mp4" autoplay muted loop playsinline></video>
         <h3>An Unexpected Roadblock</h3>
         <p>The workflow was solid — then Covid-19 made our motion capture system inaccessible. Rather than abandon the project, we <strong>pivoted to a new workflow</strong>.</p>` },
       { id: 'iteration', heading: 'Iteration', html: `
         <p>Photogrammetry was next — but holding a pose long enough for photos sacrifices accuracy, since a technique held statically differs from one in motion.</p>
         <div class="image-grid">
-          <img src="https://alejandroromero.me/img/tkd/roundhouse.png" alt="Roundhouse kick">
-          <img src="https://alejandroromero.me/img/tkd/front.png" alt="Front kick">
+          <img src="img/tkd/roundhouse.png" alt="Roundhouse kick">
+          <img src="img/tkd/front.png" alt="Front kick">
         </div>
         <p>We settled on animating character skeletons from two video viewpoints of an athlete completing each motion — time-efficient and accurate.</p>` },
       { id: 'design', heading: 'Design', html: `
         <p>With the animations created, I wireframed the final application, focusing entirely on ease of use in accessing the core features.</p>
-        <img src="https://alejandroromero.me/img/tkd/grey.png" alt="Wireframe">
-        <img src="https://alejandroromero.me/img/tkd/mockup.png" alt="Color mockup">
+        <img src="img/tkd/grey.png" alt="Wireframe">
+        <img src="img/tkd/mockup.png" alt="Color mockup">
         <p>Core features: responsive camera, interactive playback bar, kick sub-technique breakdowns, technique tips, an interactive menu with cosmetic options, skeletal view with limb velocities, and a projected center-of-mass visualization.</p>` },
       { id: 'product', heading: 'The Product', html: `
         <h3>Playback</h3>
-        <video src="https://alejandroromero.me/img/tkd/Playback.mp4" autoplay muted loop playsinline></video>
+        <video src="img/tkd/Playback.mp4" autoplay muted loop playsinline></video>
         <h3>Skeletal View and Center of Mass</h3>
-        <video src="https://alejandroromero.me/img/tkd/Skeletal+COM.mp4" autoplay muted loop playsinline></video>
+        <video src="img/tkd/Skeletal+COM.mp4" autoplay muted loop playsinline></video>
         <h3>Cosmetic Changes</h3>
-        <video src="https://alejandroromero.me/img/tkd/CosmeticChanges.mp4" autoplay muted loop playsinline></video>` },
+        <video src="img/tkd/CosmeticChanges.mp4" autoplay muted loop playsinline></video>` },
       { id: 'reflection', heading: 'Reflection', html: `
         <p>The ideation and iterative processes were extremely valuable in tackling the project in manageable chunks. Integrating real-world data into Unity opens easy paths to VR, browser, and mobile. A huge lesson in visualizing data for users in a fun, intuitive way — and it was fun to make! Thanks for reading! 💥</p>` }
     ],
@@ -760,7 +760,7 @@ window.PROJECTS = {
     meta: { Role: 'Designer, Prototyper', Duration: '3 days', Tools: 'Figma · Bezi · Unity' },
     sections: [
       { id: 'overview', heading: 'Overview', html: `
-        <video src="https://alejandroromero.me/img/collabXR/xr%203d%20modeling%20demo.mp4" autoplay muted loop playsinline></video>
+        <video src="img/collabXR/xr%203d%20modeling%20demo.mp4" autoplay muted loop playsinline></video>
         <p>A few years ago I analyzed some of the most-used VR applications for 3D modeling, contributing my findings to Brown CS's VR wiki. I wanted to explore new ways to collaborate on scientific visualizations in VR.</p>
         <div class="cmp-table">
           <div></div><div class="cmp-head">VR Usability</div><div class="cmp-head">Collaboration</div><div class="cmp-head">Applications</div>
@@ -789,23 +789,23 @@ window.PROJECTS = {
         <p>Years later I found Bezi, a browser-based collaborative tool for 3D design and XR prototyping. With its suite of innovative features, I couldn't help but imagine the ways it could change the standard for designing in XR.</p>` },
       { id: 'ai', heading: 'AI for 3D', html: `
         <p>With recent releases in generative AI — like OpenAI's Point-E for generating 3D point clouds from text — it's increasingly vital to discover what these systems mean for the future of 3D design workflows.</p>
-        <video src="https://alejandroromero.me/img/collabXR/AI.mov" autoplay muted loop playsinline></video>
+        <video src="img/collabXR/AI.mov" autoplay muted loop playsinline></video>
         <p>I mocked up a possible interface for generating 3D meshes with generative models on the cloud. Democratizing this technology in an accessible browser-based tool will be critical to how AI-assisted 3D design shapes industry standards.</p>` },
       { id: 'mobile', heading: 'Mobile Collab', html: `
         <p>Not everyone has an HMD, but almost everyone has a smartphone. Viewing and editing 3D files on mobile is a great way to test XR prototypes — and lets anyone contribute to the 3D design process from anywhere.</p>
-        <video src="https://alejandroromero.me/img/collabXR/mobile.mov" autoplay muted loop playsinline></video>
+        <video src="img/collabXR/mobile.mov" autoplay muted loop playsinline></video>
         <p>Three primary interaction types on mobile: the editor, AR mode with touchscreen controls, and 3D scenes with hand tracking.</p>` },
       { id: 'vr', heading: 'Design in VR', html: `
         <p>I also considered 3D modeling and collaboration in VR, since currently available VR modeling applications leave much to be desired.</p>
-        <img src="https://alejandroromero.me/img/collabXR/vr_bezel.png" alt="3D scene in VR">
+        <img src="img/collabXR/vr_bezel.png" alt="3D scene in VR">
         <p>By letting users see each other's cursors and edits in VR — alongside collaborators on mobile or desktop — mixed reality design takes on a whole new meaning.</p>
         <div class="image-grid">
-          <img src="https://alejandroromero.me/img/collabXR/modeling1.png" alt="VR 3D modeling">
-          <img src="https://alejandroromero.me/img/collabXR/modeling2.png" alt="VR 3D modeling">
+          <img src="img/collabXR/modeling1.png" alt="VR 3D modeling">
+          <img src="img/collabXR/modeling2.png" alt="VR 3D modeling">
         </div>` },
       { id: 'passthrough', heading: 'Passthrough', html: `
         <p>The future of XR lies in AR. To design for AR, designs have to be viewed and tested in AR — color passthrough for HMDs and full AR glasses are the future of AR prototyping.</p>
-        <img src="https://alejandroromero.me/img/collabXR/passthrough.png" alt="Color passthrough">
+        <img src="img/collabXR/passthrough.png" alt="Color passthrough">
         <p>Toggling into full color passthrough will set the next big XR design platforms apart. Pairing hand tracking with voice commands opens the door to the most naturalistic design opportunities we've ever seen.</p>` }
     ],
     recommended: ['instagram', 'spectacles', 'voxelpad']
@@ -817,11 +817,11 @@ window.PROJECTS = {
     tagline: 'Mixed-reality visualization work across two NASA research centers.',
     layout: 'hub',
     entries: [
-      { image: 'https://alejandroromero.me/img/thumbnail/GVIS.png',
+      { image: 'img/thumbnail/GVIS.png',
         tags: ['VR', 'UX', 'Python', 'Unity'],
         title: 'NASA — GVIS',
         desc: 'Mixed-reality visualizations that make science accessible to everyone.', href: 'project.html?id=gvis' },
-      { image: 'https://alejandroromero.me/img/thumbnail/ames.png',
+      { image: 'img/thumbnail/ames.png',
         tags: ['VR', 'UX', 'Python', 'Unity'],
         title: 'NASA — MarsVR',
         desc: 'The next generation of accessible Mars exploration in VR.', href: 'project.html?id=ames' }
@@ -829,38 +829,38 @@ window.PROJECTS = {
     recommended: ['spectacles', 'collabxr', 'blizzard']
   },
   gvis: {
-    thumb: 'https://alejandroromero.me/img/thumbnail/GVIS.png',
+    thumb: 'img/thumbnail/GVIS.png',
     category: 'NASA · Glenn Research Center',
     title: 'NASA — GVIS',
     tagline: 'Crafting mixed reality visualizations to make science accessible to everyone.',
     meta: { Role: 'Full Stack Dev, UX Designer', Duration: 'June 2020 — Aug 2020', Team: 'NASA GVIS Lab Members (~10)', Tools: 'VR · AR · Figma · Unity · Blender' },
     sections: [
       { id: 'overview', heading: 'Overview', html: `
-        <img src="https://alejandroromero.me/img/gvis/iss.png" alt="ISS visualization">
+        <img src="img/gvis/iss.png" alt="ISS visualization">
         <p>Throughout the summer of 2020, I contributed to a variety of projects and prospective technologies at GVIS that allow for more powerful visualizations at NASA — from MR development to remote experiences and mobile applications, factors made more essential by the COVID-19 pandemic.</p>` },
       { id: 'iss', heading: 'ISS', html: `
         <h3>Interactive International Space Station Visualization</h3>
         <p>The ISS visualization let me experiment with natural user interface techniques, optimized for the Oculus Quest with controller-less hand tracking. I initially designed a room where the user views a model of the ISS, but a life-sized ISS in orbit proved far more informative and visually appealing.</p>
         <p>Constant rotations on the Earth and the scene's light source create the illusion of orbit with realistic lighting shifts. Users can highlight ISS components by tapping names in a scrollable hand menu, with labels that always face the user as the model rotates.</p>
-        <img src="https://alejandroromero.me/img/gvis/handanchoring.png" alt="Hand-anchored UI">
-        <video src="https://alejandroromero.me/img/gvis/iss.mp4" autoplay muted loop playsinline></video>` },
+        <img src="img/gvis/handanchoring.png" alt="Hand-anchored UI">
+        <video src="img/gvis/iss.mp4" autoplay muted loop playsinline></video>` },
       { id: 'rover', heading: 'Mars Rover', html: `
         <h3>Exploring the Perseverance Rover</h3>
         <p>With the recent launch of Perseverance, I created an environment representing the surface of Mars using Unity's terrain editor.</p>
-        <img src="https://alejandroromero.me/img/gvis/rover.png" alt="Mars rover environment">
+        <img src="img/gvis/rover.png" alt="Mars rover environment">
         <p>The scene opens with an interactive menu covering the rover, its history, and Mars itself. Users can teleport around and view the rover from every angle.</p>
-        <img src="https://alejandroromero.me/img/gvis/ui.png" alt="Interactive menu">
+        <img src="img/gvis/ui.png" alt="Interactive menu">
         <p>Users can even grab individual pieces of the rover to see their names and descriptions appear beside them — letting go snaps the piece back into place, for a hands-on educational experience.</p>
-        <img src="https://alejandroromero.me/img/gvis/menu.png" alt="Rover piece interaction">` },
+        <img src="img/gvis/menu.png" alt="Rover piece interaction">` },
       { id: 'other', heading: 'Other Projects', html: `
         <p>I also built an experimental VR navigation project where users "swim" with their hands to explore the liquid bodies on Titan, Saturn's biggest moon.</p>
-        <img src="https://alejandroromero.me/img/gvis/titan.png" alt="Titan exploration">
+        <img src="img/gvis/titan.png" alt="Titan exploration">
         <p>And a side project, <strong>Bored Games VR</strong> — a prototype for playing board games with nothing but a VR headset and your hands, in realtime multiplayer with friends.</p>
-        <video src="https://alejandroromero.me/img/gvis/boredgames.mp4" autoplay muted loop playsinline></video>
+        <video src="img/gvis/boredgames.mp4" autoplay muted loop playsinline></video>
         <p>Players change games via a minimal tabletop menu and can emote with hand gestures — a "thumbs up" renders the matching emoticon.</p>
         <div class="image-grid">
-          <img src="https://alejandroromero.me/img/gvis/jenga.png" alt="Bored Games VR — Jenga">
-          <img src="https://alejandroromero.me/img/gvis/emoji.png" alt="Gesture emojis">
+          <img src="img/gvis/jenga.png" alt="Bored Games VR — Jenga">
+          <img src="img/gvis/emoji.png" alt="Gesture emojis">
         </div>` },
       { id: 'reflection', heading: 'Reflection', html: `
         <p>Working at the GVIS lab was an incredible experience learning from extremely intelligent R&D experts. These projects let me tackle problems I never thought I'd solve, with a mentor who helped me grow to make an impact at NASA. 10/10 would do again.</p>` }
@@ -868,14 +868,14 @@ window.PROJECTS = {
     recommended: ['ames', 'spectacles', 'infina']
   },
   ames: {
-    thumb: 'https://alejandroromero.me/img/thumbnail/ames.png',
+    thumb: 'img/thumbnail/ames.png',
     category: 'NASA · Ames Research Center',
     title: 'NASA — MarsVR',
     tagline: 'Creating the next generation of accessible Mars exploration in VR.',
     meta: { Role: 'UX Designer, Full Stack Dev', Duration: 'Aug 2020 — Dec 2020', Team: '4 · <a href="https://www.psi.edu/about/staffpage/eldar" target="_blank" rel="noopener">Eldar Noe Dobrea, Ph.D. (Mentor)</a>', Tools: 'VR · UX · Python · Figma · Unity · C#' },
     sections: [
       { id: 'overview', heading: 'Overview', html: `
-        <video src="https://alejandroromero.me/img/ames/demo.mp4" autoplay muted loop playsinline></video>
+        <video src="img/ames/demo.mp4" autoplay muted loop playsinline></video>
         <p>My project at NASA Ames Research Center supported an interactive toolkit for observing, interacting with, and assessing Mars data relayed by the Mars Science Laboratory (MSL). By directly referencing MSL database observations, we generated an accurate, traversable 3D representation of Mars as charted by the Curiosity rover.</p>` },
       { id: 'goals', heading: 'Key Interactions', html: `
         <ul>
@@ -889,24 +889,24 @@ window.PROJECTS = {
         <h3>Generating the Terrain</h3>
         <p>My teammates used NavCam coordinate and depth data (via Python) to generate meshes in Blender, colorized in an ochre palette for an accurate martian environment — the core of the VR app, and the basis for the 3D camera cones.</p>
         <div class="image-grid">
-          <img src="https://alejandroromero.me/img/ames/terrain1.png" alt="Terrain">
-          <img src="https://alejandroromero.me/img/ames/terrain2.png" alt="Terrain">
-          <img src="https://alejandroromero.me/img/ames/terrain3.png" alt="Terrain">
-          <img src="https://alejandroromero.me/img/ames/terrain4.png" alt="Terrain">
+          <img src="img/ames/terrain1.png" alt="Terrain">
+          <img src="img/ames/terrain2.png" alt="Terrain">
+          <img src="img/ames/terrain3.png" alt="Terrain">
+          <img src="img/ames/terrain4.png" alt="Terrain">
         </div>
         <h3>MastCam Image Sorting Engine</h3>
         <p>Most of my work involved MSL's MastCam images and their PDS labels. I automated an engine that parses every label, extracts the needed data into a lookup table, and queries the MSL database directly for both data and images.</p>
-        <img src="https://alejandroromero.me/img/ames/pds.png" alt="PDS label parsing">
+        <img src="img/ames/pds.png" alt="PDS label parsing">
         <p>With hundreds of thousands of data points per sol, sorting was the real challenge: users drill from sol → sequence → observation, with a preview window, camera cones, and a downloadable image gallery. Getting this smooth took heavy iteration and careful dictionary data structures.</p>
         <div class="image-grid">
-          <img src="https://alejandroromero.me/img/ames/MSL2.png" alt="MastCam interface">
-          <img src="https://alejandroromero.me/img/ames/MSL1.png" alt="MastCam interface">
+          <img src="img/ames/MSL2.png" alt="MastCam interface">
+          <img src="img/ames/MSL1.png" alt="MastCam interface">
         </div>` },
       { id: 'ux', heading: 'UX Aids', html: `
         <p>Because complex data can intimidate casual users, we added aids: a 3D Curiosity model showing the instruments that collect the data, explorable hands-on.</p>
-        <img src="https://alejandroromero.me/img/ames/blender.png" alt="Curiosity rover model">
+        <img src="img/ames/blender.png" alt="Curiosity rover model">
         <p>And the "Mars Buddy" — a small green martian who walks users through the UI, answers FAQs, follows you around the surface, and will even play catch!</p>
-        <img src="https://alejandroromero.me/img/ames/marsbuddy.png" alt="Mars Buddy">` },
+        <img src="img/ames/marsbuddy.png" alt="Mars Buddy">` },
       { id: 'future', heading: 'Future Work', html: `
         <p>Future versions will incorporate additional MSL datasets and new data from the Mars 2020 Perseverance rover: automated camera cone generation, ChemCam composition plots for any surface point, more MSL datatypes (DAN, CheMin, APXS, MAHLI), and a virtual tour led by Mars Buddy.</p>
         <p>Working with the <a href="https://an.rsl.wustl.edu/msl/mslbrowser/an3.aspx" target="_blank" rel="noopener">MSL datasets</a> was challenging but fun, and taught me a great deal about showing users complex data in comprehensible ways.</p>` }
@@ -914,14 +914,14 @@ window.PROJECTS = {
     recommended: ['gvis', 'spectacles', 'infina']
   },
   infina: {
-    thumb: 'https://alejandroromero.me/img/thumbnail/infina.png',
+    thumb: 'img/thumbnail/infina.png',
     category: 'Infina, Ltd. · FAA',
     title: 'Infina, Ltd.',
     tagline: 'Creating mixed reality training experiences for the Federal Aviation Administration.',
     meta: { Role: 'Full Stack Dev', Duration: 'July 2019 — Sept 2019', Team: 'Infina Design org · <a href="https://www.benmorseart.com/about.html" target="_blank" rel="noopener">Ben Morse (mentor)</a>', Tools: 'VR · AR · Speech Recognition · Unity · C#' },
     sections: [
       { id: 'overview', heading: 'Overview', html: `
-        <video src="https://alejandroromero.me/img/infina/Interactive%20Training%202019.mp4" autoplay muted loop playsinline></video>
+        <video src="img/infina/Interactive%20Training%202019.mp4" autoplay muted loop playsinline></video>
         <p>During the summer of 2019, I worked with <a href="https://www.infina.net/" target="_blank" rel="noopener">Infina, Ltd.</a> creating mixed reality experiences for the Federal Aviation Administration — from VR technical operations training demos to ground control taxiway applications.</p>` },
       { id: 'intro', heading: 'Introduction', html: `
         <h3>Creating Government Training Apps</h3>
@@ -929,21 +929,21 @@ window.PROJECTS = {
       { id: 'projects', heading: 'Projects', html: `
         <h3>Hardware Maintenance Training</h3>
         <p>An interactive refresher for power transfer switch maintenance. Physical training facilities bottleneck hands-on training with long waitlists, so we designed an app where users navigate the proper maintenance sequence with realtime feedback via UI elements, haptics, and environmental cues.</p>
-        <video src="https://alejandroromero.me/img/infina/ATS_Demo.mp4" autoplay muted loop playsinline></video>
+        <video src="img/infina/ATS_Demo.mp4" autoplay muted loop playsinline></video>
         <h3>Extreme Environment Training</h3>
         <p>We also tested a maintenance sequence in an extreme environment — a radio tower in northern Alaska — using arm-swing velocity for naturalistic VR locomotion, with minimal UI interference.</p>
-        <video src="https://alejandroromero.me/img/infina/Alaska_Demo.mp4" autoplay muted loop playsinline></video>
+        <video src="img/infina/Alaska_Demo.mp4" autoplay muted loop playsinline></video>
         <h3>Taxiways</h3>
         <p>A breadth-first-search AI delegates planes along taxiway paths. I built an interactive Boise Airport implementation where users direct planes by click or voice command, with realtime tracking of destinations and instructions — simulating traffic-controller/pilot communication.</p>
         <div class="image-grid">
-          <video src="https://alejandroromero.me/img/infina/Taxiways_v1.mp4" autoplay muted loop playsinline></video>
-          <video src="https://alejandroromero.me/img/infina/Taxiways_v2.mp4" autoplay muted loop playsinline></video>
+          <video src="img/infina/Taxiways_v1.mp4" autoplay muted loop playsinline></video>
+          <video src="img/infina/Taxiways_v2.mp4" autoplay muted loop playsinline></video>
         </div>
         <h3>Sandbox Projects!</h3>
         <p>My mentor encouraged learning VR development through test projects — including giving myself the ability to firebend. 🔥</p>
         <div class="image-grid">
-          <video src="https://alejandroromero.me/img/infina/VR_ATLA.mp4" autoplay muted loop playsinline></video>
-          <video src="https://alejandroromero.me/img/infina/LeapMotionProximityTest.mp4" autoplay muted loop playsinline></video>
+          <video src="img/infina/VR_ATLA.mp4" autoplay muted loop playsinline></video>
+          <video src="img/infina/LeapMotionProximityTest.mp4" autoplay muted loop playsinline></video>
         </div>` },
       { id: 'reflection', heading: 'Reflection', html: `
         <p>Infina was my first experience designing and developing VR professionally — and my first exposure to government contracting, with users and pain points I'd never considered. I even got to present my work to the CEO and VPs! 🤩</p>` }
@@ -951,17 +951,17 @@ window.PROJECTS = {
     recommended: ['gvis', 'ames', 'spectacles']
   },
   harvard: {
-    thumb: 'https://alejandroromero.me/img/thumbnail/harvard.png',
+    thumb: 'img/thumbnail/harvard.png',
     category: 'Harvard · Data Visualization',
     title: 'Extreme Weather Visualization',
     tagline: 'Helping to illustrate global changes in extreme weather through interactive visualization.',
     meta: { Role: 'Full Stack Dev', Duration: 'Nov 2021 — Dec 2021', Team: '<a href="https://mpstewart.net/" target="_blank" rel="noopener">Matthew Stewart</a>, <a href="https://www.nadatarkhan.com/" target="_blank" rel="noopener">Nada Tarkhan</a>, <a href="https://www.linkedin.com/in/maximilian-urbany-766086123/" target="_blank" rel="noopener">Max Urbany</a>', Tools: 'JavaScript · HTML/CSS · Three.js · D3.js · Blender · Rhino' },
     sections: [
       { id: 'overview', heading: 'Overview', html: `
-        <img src="https://alejandroromero.me/img/harvard/title_redesign.png" alt="Title design">
-        <img src="https://alejandroromero.me/img/harvard/globe_redesign.png" alt="Globe design">
+        <img src="img/harvard/title_redesign.png" alt="Title design">
+        <img src="img/harvard/globe_redesign.png" alt="Globe design">
         <p>I had the pleasure of taking Harvard's famous Visualization course, taught by <a href="https://vcg.seas.harvard.edu/people" target="_blank" rel="noopener">Hanspeter Pfister</a>, learning D3.js and Three.js to build our final data visualization project.</p>
-        <video src="https://alejandroromero.me/img/harvard/v1.mp4" autoplay muted loop playsinline></video>
+        <video src="img/harvard/v1.mp4" autoplay muted loop playsinline></video>
         <p><strong>Links:</strong> <a href="https://climate-crew.github.io/d3-climate-visualization/" target="_blank" rel="noopener">Interactive website</a> · <a href="https://github.com/Climate-Crew/d3-climate-visualization" target="_blank" rel="noopener">GitHub repo</a></p>` },
       { id: 'intro', heading: 'Introduction', html: `
         <h3>Raising awareness of a global issue</h3>
@@ -971,23 +971,23 @@ window.PROJECTS = {
         <h3>Brainstorming</h3>
         <p>We focused on three areas from macro to micro — global, city, and personal impacts — to paint a story that resonates: climate change affects everyone. We sketched over 20 potential visualizations and voted on the finalists.</p>
         <div class="image-grid">
-          <img src="https://alejandroromero.me/img/harvard/sketch1.png" alt="Sketch">
-          <img src="https://alejandroromero.me/img/harvard/sketch2.png" alt="Sketch">
-          <img src="https://alejandroromero.me/img/harvard/sketch3.png" alt="Sketch">
-          <img src="https://alejandroromero.me/img/harvard/sketch4.png" alt="Sketch">
+          <img src="img/harvard/sketch1.png" alt="Sketch">
+          <img src="img/harvard/sketch2.png" alt="Sketch">
+          <img src="img/harvard/sketch3.png" alt="Sketch">
+          <img src="img/harvard/sketch4.png" alt="Sketch">
         </div>
         <h3>First Pass Implementation</h3>
         <p>We set up a design system and standardized CSS and JS packages. Most visuals used D3.js; the globe used Three.js — the two integrate surprisingly seamlessly.</p>
         <div class="image-grid">
-          <video src="https://alejandroromero.me/img/harvard/spiral_vid.mov" autoplay muted loop playsinline></video>
-          <video src="https://alejandroromero.me/img/harvard/globe_vid.mov" autoplay muted loop playsinline></video>
+          <video src="img/harvard/spiral_vid.mov" autoplay muted loop playsinline></video>
+          <video src="img/harvard/globe_vid.mov" autoplay muted loop playsinline></video>
         </div>` },
       { id: 'redesign', heading: 'Redesign', html: `
         <p>Our v1 was practical, but had lost our initial vision of an aesthetically pleasing experience. User testing surfaced great feedback we couldn't fully implement in time — so I redesigned the website to reflect a cleaner, more polished experience.</p>
-        <img src="https://alejandroromero.me/img/harvard/redesigns.png" alt="Redesigned screens">` },
+        <img src="img/harvard/redesigns.png" alt="Redesigned screens">` },
       { id: 'reflection', heading: 'Reflection', html: `
         <p>We won the <strong>Best Project Award</strong> out of 29 projects, earning a spot in the Harvard <a href="https://www.cs171.org/2021/fame/" target="_blank" rel="noopener">CS 171 Hall of Fame</a>! Beyond the award, it was a great lesson in creating data-driven experiences that drive users to learn about important issues.</p>
-        <img src="https://alejandroromero.me/img/harvard/certificate.png" alt="Best Project certificate">` }
+        <img src="img/harvard/certificate.png" alt="Best Project certificate">` }
     ],
     recommended: ['catfish', 'sim', 'tkd']
   },
@@ -999,7 +999,7 @@ window.PROJECTS = {
     meta: { Role: 'Full Stack Dev', Duration: 'Feb 2018 — July 2020', Team: '<a href="https://aaronolsen.github.io/about_me.html" target="_blank" rel="noopener">Aaron Olsen, Ph.D.</a>', Tools: 'R · HTML/CSS · JavaScript · XROMM · Blender' },
     sections: [
       { id: 'overview', heading: 'Overview', html: `
-        <video src="https://alejandroromero.me/img/catfish/interpolation.mp4" autoplay muted loop playsinline></video>
+        <video src="img/catfish/interpolation.mp4" autoplay muted loop playsinline></video>
         <p>At Brown's <a href="http://www.brainerdlab.org/" target="_blank" rel="noopener">Brainerd Lab</a>, I worked with my mentor Aaron Olsen on projects exploring how suction feeding behaviors have driven evolutionary diversification of musculoskeletal systems in ray-finned fish — learning XROMM technology and 3D segmenting tools like 3D Slicer and HOROS along the way.</p>
         <p><strong>Published software:</strong> <a href="https://cran.r-project.org/web/packages/svgViewR/index.html" target="_blank" rel="noopener">svgViewR package on CRAN</a></p>` },
       { id: 'intro', heading: 'Introduction', html: `
@@ -1009,41 +1009,41 @@ window.PROJECTS = {
         <h3>Creating the Meshes</h3>
         <p>The 3D meshes came from real fish bones: CT scans produced DICOM files, imported into 3D Slicer or HOROS to isolate bones and export them as 3D meshes.</p>
         <div class="image-grid">
-          <img src="https://alejandroromero.me/img/catfish/scan1.png" alt="CT scan">
-          <img src="https://alejandroromero.me/img/catfish/scan2.png" alt="Segmented mesh">
+          <img src="img/catfish/scan1.png" alt="CT scan">
+          <img src="img/catfish/scan2.png" alt="Segmented mesh">
         </div>
         <h3>Making the Meshes presentable</h3>
         <p>We cleaned and decimated the meshes for performance while keeping scientific accuracy, leaving bones in their CT-scan positions. Each bone is its own mesh — enabling visualization, color-coding, even 3D printing.</p>
         <div class="image-grid">
-          <img src="https://alejandroromero.me/img/catfish/Catfish%20Comparisons%201.png" alt="Mesh comparison">
-          <img src="https://alejandroromero.me/img/catfish/Catfish%20Comparisons%202.png" alt="Mesh comparison">
-          <img src="https://alejandroromero.me/img/catfish/Catfish%20Comparisons%203.png" alt="Mesh comparison">
+          <img src="img/catfish/Catfish%20Comparisons%201.png" alt="Mesh comparison">
+          <img src="img/catfish/Catfish%20Comparisons%202.png" alt="Mesh comparison">
+          <img src="img/catfish/Catfish%20Comparisons%203.png" alt="Mesh comparison">
         </div>
         <h3>Physical Model</h3>
         <p>We 3D printed each bone to scale, simulating ligaments with woven polyester ribbons anchored by micro-screws — letting us manipulate the skull "by hand" to understand its motion patterns.</p>
         <div class="image-grid">
-          <img src="https://alejandroromero.me/img/catfish/physicaldisassembled.png" alt="Disassembled print">
-          <img src="https://alejandroromero.me/img/catfish/3D%20Print%20Key.jpg" alt="3D print key">
+          <img src="img/catfish/physicaldisassembled.png" alt="Disassembled print">
+          <img src="img/catfish/3D%20Print%20Key.jpg" alt="3D print key">
         </div>
-        <img src="https://alejandroromero.me/img/catfish/physical.jpg" alt="Assembled physical model">
-        <video src="https://alejandroromero.me/img/catfish/projected.mp4" autoplay muted loop playsinline></video>` },
+        <img src="img/catfish/physical.jpg" alt="Assembled physical model">
+        <video src="img/catfish/projected.mp4" autoplay muted loop playsinline></video>` },
       { id: 'application', heading: 'The Application', html: `
         <p>Aaron wrote a <a href="https://aaronolsen.github.io/software/linkr.html" target="_blank" rel="noopener">linkage model</a> handling the physics of motion and kinematics between bones. I helped expand the <a href="https://cran.r-project.org/web/packages/svgViewR/index.html" target="_blank" rel="noopener">svgViewR package</a> with interpolation functionality, so users can drive different forms of movement with sliders — all at once, or as individual breakdowns.</p>
-        <video src="https://alejandroromero.me/img/catfish/Catfish%20Skull%20Visualization%20Demo.mp4" autoplay muted loop playsinline></video>` },
+        <video src="img/catfish/Catfish%20Skull%20Visualization%20Demo.mp4" autoplay muted loop playsinline></video>` },
       { id: 'reflection', heading: 'Reflection', html: `
         <p>This interdisciplinary project was my first foray into scientific visualization. Taking real-world data and creating a medium for others' understanding is truly special — and it inspired countless other projects (plus a rare title: expert in catfish skull segmentation 😉).</p>` }
     ],
     recommended: ['tkd', 'harvard', 'sim']
   },
   voxelpad: {
-    thumb: 'https://alejandroromero.me/img/thumbnail/voxelpad.png',
+    thumb: 'img/thumbnail/voxelpad.png',
     category: 'Personal Project · Unity',
     title: 'Voxel Pad',
     tagline: 'An app allowing users to draw anything in three dimensions using voxels.',
     meta: { Role: 'Full Stack Dev', Duration: '1 week', Tools: 'Unity · C#' },
     sections: [
       { id: 'overview', heading: 'Overview', html: `
-        <video src="https://alejandroromero.me/img/voxelpad/clip.mp4" autoplay muted loop playsinline></video>
+        <video src="img/voxelpad/clip.mp4" autoplay muted loop playsinline></video>
         <p>I wanted to design an application for creating 8bit-style graphics using 3D voxels in an interactive environment — starting with the core question of "painting": how would the user draw in the first place?</p>` },
       { id: 'features', heading: 'Core Features', html: `
         <ul>
@@ -1059,17 +1059,17 @@ window.PROJECTS = {
         <h3>Mockups</h3>
         <p>To avoid issues later, I created a rough mockup with every feature I wanted so I knew exactly what to design and build.</p>
         <div class="image-grid">
-          <img src="https://alejandroromero.me/img/voxelpad/3d.png" alt="3D mockup">
-          <img src="https://alejandroromero.me/img/voxelpad/grey.png" alt="Greybox wireframe">
+          <img src="img/voxelpad/3d.png" alt="3D mockup">
+          <img src="img/voxelpad/grey.png" alt="Greybox wireframe">
         </div>
         <h3>Challenges</h3>
         <p>The primary issue was handling blocks that had already been drawn, since users would draw over them to add detail and color.</p>
         <h3>Solution</h3>
         <p>Two modes: <strong>2D mode</strong> draws on the canvas and overwrites colors of existing blocks, while <strong>3D mode</strong> uses a ray tracer to determine which face of a block is hovered, letting the user build on top of it in 3D.</p>
         <div class="image-grid">
-          <img src="https://alejandroromero.me/img/voxelpad/note3.png" alt="Implementation notes">
-          <img src="https://alejandroromero.me/img/voxelpad/note2.png" alt="Implementation notes">
-          <img src="https://alejandroromero.me/img/voxelpad/note1.png" alt="Implementation notes">
+          <img src="img/voxelpad/note3.png" alt="Implementation notes">
+          <img src="img/voxelpad/note2.png" alt="Implementation notes">
+          <img src="img/voxelpad/note1.png" alt="Implementation notes">
         </div>` },
       { id: 'reflection', heading: 'Reflection', html: `
         <p>The final result met the main goal: a lightweight program for drawing with 3D voxels. Future improvements: better UI with highlighted CTAs, clearer 2D/3D mode distinction, camera fixes, and image export. A great learning experience balancing functionality and UX while bringing big ideas to life in Unity. Thanks for reading!</p>` }
@@ -1077,14 +1077,14 @@ window.PROJECTS = {
     recommended: ['sim', 'collabxr', 'tkd']
   },
   sim: {
-    thumb: 'https://alejandroromero.me/img/sim/final.png',
+    thumb: 'img/sim/final.png',
     category: 'Personal Project · AI',
     title: 'Natural Selection Sim',
     tagline: 'Visualizing the selection of optimal traits in a population of A.I. agents in real time.',
     meta: { Role: 'Full Stack Dev', Duration: '1 week', Tools: 'AI · Unity · C#' },
     sections: [
       { id: 'overview', heading: 'Overview', html: `
-        <video src="https://alejandroromero.me/img/sim/NaturalSelectionSim.mp4" autoplay muted loop playsinline></video>
+        <video src="img/sim/NaturalSelectionSim.mp4" autoplay muted loop playsinline></video>
         <p>While discovering Unity and interactive design at Infina, I had the idea to build a natural selection simulator using AI. I'd seen similar projects, but wanted to create my own from scratch to learn more about AI and the Unity engine.</p>` },
       { id: 'ideation', heading: 'Ideation', html: `
         <h3>Objective</h3>
@@ -1093,20 +1093,20 @@ window.PROJECTS = {
         <p>To convey these cleanly, organisms are simple AI-controlled cubes with a small UI canvas showing energy and sex. Speed is conveyed by color (blue = slow, red = fast); food sources are green spheres that repopulate in feeding areas.</p>
         <h3>Other Challenges</h3>
         <p>A believable population also needed food consumption, energy management, reproductive drive, and genetic variation in the backend.</p>
-        <img src="https://alejandroromero.me/img/sim/notes.jpg" alt="Simulation notes">` },
+        <img src="img/sim/notes.jpg" alt="Simulation notes">` },
       { id: 'implementation', heading: 'Implementation', html: `
         <h3>Mockups</h3>
         <p>I mocked up a lightweight, intuitive layout and a palette for the ten possible speed groups.</p>
         <div class="image-grid">
-          <img src="https://alejandroromero.me/img/sim/greybox.png" alt="Greybox layout">
-          <img src="https://alejandroromero.me/img/sim/design.png" alt="Design palette">
+          <img src="img/sim/greybox.png" alt="Greybox layout">
+          <img src="img/sim/design.png" alt="Design palette">
         </div>
         <h3>Design</h3>
         <p>Minimal, nonintrusive UI: two graphs show the distribution of sexes and speeds in the population, with pause and fast-forward controls.</p>
-        <img src="https://alejandroromero.me/img/sim/final.png" alt="Final UI">
+        <img src="img/sim/final.png" alt="Final UI">
         <div class="image-grid">
-          <video src="https://alejandroromero.me/img/sim/graph1.mp4" autoplay muted loop playsinline></video>
-          <video src="https://alejandroromero.me/img/sim/graph2.mp4" autoplay muted loop playsinline></video>
+          <video src="img/sim/graph1.mp4" autoplay muted loop playsinline></video>
+          <video src="img/sim/graph2.mp4" autoplay muted loop playsinline></video>
         </div>
         <h3>The Result</h3>
         <p>Tradeoffs between speed and energy consumption, paired with limited food, selected for moderate speed genes: slow organisms (1–3) died out, fast ones (7–10) perished from energy consumption, and midrange speeds (4–6) dominated over repeated trials — with controlled population sizes.</p>` },

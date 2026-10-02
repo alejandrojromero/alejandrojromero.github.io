@@ -39,15 +39,13 @@
         body.dark-mode .zoom-level { color: #aaa; }
         .resume-stage {
             margin: 0 auto 100px; padding: 24px 20px 40px;
-            overflow: auto; display: flex; justify-content: center;
+            display: flex; justify-content: center;
         }
-        .sheet-holder { width: 816px; height: 1056px; flex: none; }
-        .resume-sheet {
-            width: 816px; height: 1056px; transform-origin: top left;
-            overflow: hidden; background: #fff; border-radius: 12px;
+        .resume-pdf {
+            width: min(816px, 100%); height: auto; display: block;
+            border: none; border-radius: 12px;
             box-shadow: 0 0 0 1px rgba(0,0,0,0.04), 0 10px 40px rgba(0,0,0,0.16), 0 2px 10px rgba(0,0,0,0.08);
         }
-        .resume-sheet iframe { width: 816px; height: 1056px; border: none; display: block; pointer-events: none; }
         @media (max-width: 900px) {
             .resume-toolbar, .resume-stage { padding-left: 20px; padding-right: 20px; }
         }
@@ -90,19 +88,10 @@
             <svg viewBox="0 0 24 24"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg>
             Download PDF
         </a>
-        <div class="zoom-group">
-            <button class="zoom-btn" id="zoomOut" aria-label="Zoom out"><svg viewBox="0 0 24 24"><path d="M5 12h14"/></svg></button>
-            <div class="zoom-level" id="zoomLevel">100%</div>
-            <button class="zoom-btn" id="zoomIn" aria-label="Zoom in"><svg viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M5 12h14"/></svg></button>
-        </div>
     </div>
 
     <div class="resume-stage" id="stage">
-        <div class="sheet-holder" id="holder">
-            <div class="resume-sheet" id="sheet">
-                <iframe src="Resume.dc.html" id="resumeFrame" title="Alejandro Romero resume" onload="window.__stripDesk && window.__stripDesk(this)"></iframe>
-            </div>
-        </div>
+        <img src="assets/resume-page.png" alt="Alejandro Romero resume" class="resume-pdf" draggable="false">
     </div>
 
     <footer>
@@ -121,37 +110,6 @@
     </footer>
 
     <script src="assets/site.js"></script>
-    <script>
-        window.__stripDesk = function (frame) {
-            try {
-                var d = frame.contentDocument;
-                var s = d.createElement('style');
-                s.textContent = 'doc-page{background:none !important;padding:0 !important;min-height:0 !important;min-width:0 !important} .page{border-radius:0 !important;box-shadow:none !important}';
-                d.head.appendChild(s);
-            } catch (e) {}
-        };
-        (function () {
-            var zoom = 1, min = 0.5, max = 2;
-            var sheet = document.getElementById('sheet');
-            var label = document.getElementById('zoomLevel');
-            var stage = document.getElementById('stage');
-            function fitInitial() {
-                var avail = stage.clientWidth - 40;
-                if (avail < 816) { zoom = Math.max(min, avail / 816); }
-                apply();
-            }
-            var holder = document.getElementById('holder');
-            function apply() {
-                sheet.style.transform = 'scale(' + zoom + ')';
-                holder.style.width = (816 * zoom) + 'px';
-                holder.style.height = (1056 * zoom) + 'px';
-                label.textContent = Math.round(zoom * 100) + '%';
-            }
-            document.getElementById('zoomIn').addEventListener('click', function () { zoom = Math.min(max, zoom + 0.1); apply(); });
-            document.getElementById('zoomOut').addEventListener('click', function () { zoom = Math.max(min, zoom - 0.1); apply(); });
-            fitInitial();
-        })();
-    </script>
     <script src="assets/lightbox.js"></script>
 </body>
 </html>
