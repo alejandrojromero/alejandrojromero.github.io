@@ -3,30 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About | Alejandro Romero</title>
+    <title>Photography | Alejandro Romero</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Space+Mono:wght@400;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/site.css">
     <style>
-        .about-layout {
-            display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px;
-            max-width: 1100px; margin: 0 auto; padding: 0 60px 40px;
-            align-items: start;
+        .photo-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 8px; padding: 8px 18px 60px; max-width: 1400px; margin: 0 auto;
         }
-        .about-text p { font-size: 17px; line-height: 1.8; color: #666; margin-bottom: 20px; }
-        body.dark-mode .about-text p { color: #aaa; }
-        .about-photo img { width: 100%; border-radius: 12px; display: block; background: #f5f5f5; }
-        .aleboi-link { color: #FF4A00; font-weight: 500; }
-        .aleboi-link:hover { color: #fff; }
-        body.dark-mode .about-photo img { background: #1a1a1a; }
-        @media (max-width: 900px) {
-            .about-layout { grid-template-columns: 1fr; gap: 30px; padding: 0 20px 30px; }
+        .photo-grid img {
+            width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block;
+            border-radius: 4px;
         }
     </style>
 <link rel="icon" type="image/png" href="assets/favicon.png">
 </head>
-<body>
+<body class="hub-page">
     <div id="customCursor"></div>
 
     <div class="nav-container">
@@ -58,20 +52,32 @@
     </div>
 
     <section class="page-hero">
-        <div class="project-category">About</div>
-        <h1 class="project-title">Hey, I'm Alejandro!</h1>
+        <div class="project-category">Art · Photography</div>
+        <h1 class="project-title">Photography</h1>
+        <p class="project-description">I love exploring new places and documenting the cool things I see.</p>
     </section>
 
-    <div class="about-layout">
-        <div class="about-text">
-            <p>I'm a designer and prototyper from Puerto Rico with a strong passion for making innovative experiences for all to enjoy.</p>
-            <p>My main foci are UX design, mixed reality, human-computer interaction, and mobile/web apps.</p>
-            <p>I took a game design course in high school that made me fall in love with tech and creating 3D experiences.</p>
-            <p>Outside of work, I do experimental art, motion graphics, and graphic design under the moniker <a class="fx-link aleboi-link" href="https://aleboi.xyz/" target="_blank" rel="noopener">aleboi</a>. I also enjoy photography, cycling, hiking, gaming, drawing, and a whole lot more. Feel free to drop me a line 🔥</p>
-        </div>
-        <div class="about-photo">
-            <img src="https://alejandroromero.me/img/about/photo_boi.jpg" alt="Alejandro Romero">
-        </div>
+    <div class="photo-grid">
+        <img src="https://alejandroromero.me/img/photo/rainier.JPG" alt="Mount Rainier" loading="lazy">
+        <img src="https://alejandroromero.me/img/photo/yosemite.JPG" alt="Yosemite" loading="lazy">
+        <img src="https://alejandroromero.me/img/photo/Temple.JPG" alt="Temple" loading="lazy">
+        <img src="https://alejandroromero.me/img/photo/beach.jpg" alt="Beach" loading="lazy">
+        <img src="https://alejandroromero.me/img/photo/GG.JPG" alt="Golden Gate" loading="lazy">
+        <img src="https://alejandroromero.me/img/photo/rainier2.JPG" alt="Mount Rainier" loading="lazy">
+        <img src="https://alejandroromero.me/img/photo/TwinPeaks.JPG" alt="Twin Peaks" loading="lazy">
+        <img src="https://alejandroromero.me/img/photo/Stars.JPG" alt="Stars" loading="lazy">
+        <img src="https://alejandroromero.me/img/photo/ny_isometric.JPG" alt="New York" loading="lazy">
+        <img src="https://alejandroromero.me/img/photo/Cactus2.JPG" alt="Cactus" loading="lazy">
+        <img src="https://alejandroromero.me/img/photo/sanjuan.jpg" alt="San Juan" loading="lazy">
+        <img src="https://alejandroromero.me/img/photo/SanJose.JPG" alt="San Jose" loading="lazy">
+        <img src="https://alejandroromero.me/img/photo/DeathValley.jpg" alt="Death Valley" loading="lazy">
+        <img src="https://alejandroromero.me/img/photo/BigSur.jpg" alt="Big Sur" loading="lazy">
+        <img src="https://alejandroromero.me/img/photo/phone.JPG" alt="Phone booth" loading="lazy">
+        <img src="https://alejandroromero.me/img/photo/nyc.JPG" alt="NYC" loading="lazy">
+        <img src="https://alejandroromero.me/img/photo/cathedral.JPG" alt="Cathedral" loading="lazy">
+        <img src="https://alejandroromero.me/img/photo/mountains.JPG" alt="Mountains" loading="lazy">
+        <img src="https://alejandroromero.me/img/photo/SaltFlat.JPG" alt="Salt Flat" loading="lazy">
+        <img src="https://alejandroromero.me/img/photo/BigSur3.jpg" alt="Big Sur" loading="lazy">
     </div>
 
     <footer>
@@ -86,7 +92,6 @@
             <a href="https://www.instagram.com/aleboi.art/" target="_blank" rel="noopener" aria-label="Instagram">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5v.01"/></svg>
             </a>
-
         </div>
     </footer>
 

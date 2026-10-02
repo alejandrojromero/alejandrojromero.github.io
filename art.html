@@ -1,326 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title title="https://alejandroromero.me">Alejandro Romero</title>
-    <link rel="icon" href="img/misc/favicon.png">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/67f90579cc.js" crossorigin="anonymous"></script>
-    <link href="css/style.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art | Alejandro Romero</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Space+Mono:wght@400;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/site.css">
+    <style>
+    </style>
+<link rel="icon" type="image/png" href="assets/favicon.png">
 </head>
+<body class="hub-page">
+    <div id="customCursor"></div>
 
-<body>
-
-
-    <svg id="fader"></svg>
-    <div class="container">
-        <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-white py-5 ">
-            <a class="navbar-brand js-scroll-trigger" href="index.html">Alejandro Romero</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> <span
-                    class="navbar-toggler-icon"></span> </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"> <a class="nav-link js-scroll-trigger" href="index.html#projects">Work</a>
-                    </li>
-                    <li class="nav-item"> <a class="nav-link js-scroll-trigger" href="art.html">Art</a>
-                    </li>
-                    <li class="nav-item"> <a class="nav-link js-scroll-trigger" href="about.html">About</a>
-                    </li>
-                    <li class="nav-item"> <a class="nav-link js-scroll-trigger" href="docs/Alejandro Romero Resume.pdf"
-                            target="_blank">Resume</a>
-                    </li>
-                </ul>
+    <div class="nav-container">
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html" class="fx-link">Home</a></li>
+                <li><a href="index.html#work" class="fx-link">Work</a></li>
+                <li><a href="art.html" class="fx-link">Art</a></li>
+                <li><a href="about.html" class="fx-link">About</a></li>
+                <li><a href="resume.html" class="fx-link">Resume</a></li>
+            </ul>
+            <div class="theme-toggle" id="themeToggle">
+                <svg id="sunIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg id="moonIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="display: none;">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
             </div>
         </nav>
-
-
-               <!-- Header -->
-               <div>
-                <div class="col-lg-6 mt-auto mb-auto ml-auto mr-auto">
-                    <header class="space-btw">
-    
-    
-                        <div class="text-center" >
-                            <h1 class="headline-title display-3">Art projects</h1>
-
-    
-                        <p style="line-height: 2em" class="text-center" >Art is a large part of who I am. Take a look here.
-
-                        </div>
-    
-                    </header>
-                </div>
-                <!-- <div class="col-lg-4 mt-auto mb-auto mr-auto">
-                    <img class="cover-img" src="img/misc/cover.png" alt="Cover">
-                </div> -->
-            </div>
-            <div class="space-bottom"></div>
-
-
-
-        <!-- Portfolio (more projects) -->
-        <div id="projects">
-            <div id="misc-gallery" class="grid" style="margin-bottom: 2em;">
-                
-
-                <div class="proj-card card ">
-                    <a href="https://www.instagram.com/aleboi.art/" target="_blank">
-                        <div style="width: 100%;">
-                            <img class="card-img" src="img/thumbnail/aleboi.png" alt="Image">
-                        </div>
-                        <div class="card-body">
-                            <div class="space-bottom-sm">
-                                <span class="badge proj-label">Blender</span>
-                                <span class="badge proj-label">Photoshop</span>
-                                <span class="badge proj-label">Figma</span>
-                            </div>
-                            <h3 class="card-title">Experimental Art</h3>
-                            <p class="card-text">
-                                Honing my art across mediums to create virtual worlds.  </p>
-                        </div>
-                    </a>
-                </div>
-
-
-                <div class="proj-card card ">
-                    <a href="https://www.instagram.com/a.r.works/" target="_blank">
-                        <div style="width: 100%;">
-                            <img class="card-img" src="img/thumbnail/3d.png" alt="Image">
-                        </div>
-                        <div class="card-body">
-                            <div class="space-bottom-sm">
-                                <span class="badge proj-label">Blender</span>
-                                <span class="badge proj-label">Photoshop</span>
-                                <span class="badge proj-label">Premiere</span>
-                            </div>
-                            <h3 class="card-title">Art Portfolio (2016 - 2020)</h3>
-                            <p class="card-text">
-                                A collection of 2D and 3D art projects I worked on in my free time under the alias A.R.Works</p>
-                            </p>
-                        </div>
-                    </a>
-                </div>
-
-
-                <div class="proj-card card">
-                    <a href="https://www.amazon.com/Fortress-Alejandro-Romero-ebook/dp/B00HYN8PKS#ace-g9766277718"
-                        target="_blank">
-                        <div style="width: 100%;">
-                            <img class="card-img" src="img/thumbnail/thefortress.png" alt="Image">
-                        </div>
-                        <div class="card-body">
-                            <div class="space-bottom-sm">
-                                <span class="badge proj-label">Sci-Fi Novel</span>
-                            </div>
-                            <h3 class="card-title">The Fortress</h3>
-                            <p class="card-text">My first science fiction novel, published on Amazon in 2014!</p>
-                        </div>
-                    </a>
-                </div>
-
-                
-
-            </div>
-        </div>
-
-        <div class="card" id="photo">
-            <div class="card-body">
-                <div class="space-bottom-sm">
-                    <span class="badge proj-label">Landscape</span>
-                    <span class="badge proj-label">Urban</span>
-                </div>
-                <h3 class="card-title">Photography</h3>
-                <p class="card-text">I love exploring new places and documenting the cool things I see. Here are some of my favorite shots. </p>
-            </div>
-
-            <div class="photo-grid" id="photo-gallery">
-                <a class="img-link" href="img/photo/rainier.JPG">
-                    <div>
-                        <img class="card-img square" style="width: 100%" src="img/photo/rainier.JPG" alt="Image">
-                    </div>
-                </a>
-
-                <a class="img-link" href="img/photo/yosemite.JPG">
-                    <div>
-                        <img class="card-img square" style="width: 100%" src="img/photo/yosemite.JPG" alt="Image">
-                    </div>
-                </a>
-
-
-                <a class="img-link" href="img/photo/Temple.JPG">
-                    <div>
-                        <img class="card-img square" style="width: 100%" src="img/photo/Temple.JPG" alt="Image">
-                    </div>
-                </a>
-
-                <a class="img-link" href="img/photo/beach.jpg">
-                    <div>
-                        <img class="card-img square" style="width: 100%" src="img/photo/beach.jpg" alt="Image">
-                    </div>
-                </a>
-
-                <a class="img-link" href="img/photo/GG.JPG">
-                    <div>
-                        <img class="card-img square" style="width: 100%" src="img/photo/GG.JPG" alt="Image">
-                    </div>
-                </a>
-
-                <a class="img-link" href="img/photo/rainier2.JPG">
-                    <div>
-                        <img class="card-img square" style="width: 100%" src="img/photo/rainier2.JPG" alt="Image">
-                    </div>
-                </a>
-
-
-                <a class="img-link" href="img/photo/TwinPeaks.JPG">
-                    <div>
-                        <img class="card-img square" style="width: 100%" src="img/photo/TwinPeaks.JPG" alt="Image">
-                    </div>
-                </a>
-
-                <a class="img-link" href="img/photo/Stars.JPG">
-                    <div>
-                        <img class="card-img square" style="width: 100%" src="img/photo/Stars.JPG" alt="Image">
-                    </div>
-                </a>
-
-                <a class="img-link" href="img/photo/ny_isometric.JPG">
-                    <div>
-                        <img class="card-img square" style="width: 100%" src="img/photo/ny_isometric.JPG" alt="Image">
-                    </div>
-                </a>
-
-
-                <a class="img-link" href="img/photo/Cactus2.JPG">
-                    <div>
-                        <img class="card-img square" style="width: 100%" src="img/photo/Cactus2.JPG" alt="Image">
-                    </div>
-                </a>
-
-                <a class="img-link" href="img/photo/sanjuan.jpg">
-                    <div>
-                        <img class="card-img square" style="width: 100%" src="img/photo/sanjuan.jpg" alt="Image">
-                    </div>
-                </a>
-
-                <a class="img-link" href="img/photo/SanJose.JPG">
-                    <div>
-                        <img class="card-img square" style="width: 100%" src="img/photo/SanJose.JPG" alt="Image">
-                    </div>
-                </a>
-
-                <a class="img-link" href="img/photo/DeathValley.jpg">
-                    <div>
-                        <img class="card-img square" style="width: 100%" src="img/photo/DeathValley.jpg" alt="Image">
-                    </div>
-                </a>
-
-                <a class="img-link" href="img/photo/BigSur.jpg">
-                    <div>
-                        <img class="card-img square" style="width: 100%" src="img/photo/BigSur.jpg" alt="Image">
-                    </div>
-                </a>
-
-                <a class="img-link" href="img/photo/phone.JPG">
-                    <div>
-                        <img class="card-img square" style="width: 100%" src="img/photo/phone.JPG" alt="Image">
-                    </div>
-                </a>
-
-                <a class="img-link" href="img/photo/nyc.JPG">
-                    <div>
-                        <img class="card-img square" style="width: 100%" src="img/photo/nyc.JPG" alt="Image">
-                    </div>
-                </a>
-
-                <a class="img-link" href="img/photo/cathedral.JPG">
-                    <div>
-                        <img class="card-img square" style="width: 100%" src="img/photo/cathedral.JPG" alt="Image">
-                    </div>
-                </a>
-
-                <a class="img-link" href="img/photo/mountains.JPG">
-                    <div>
-                        <img class="card-img square" style="width: 100%" src="img/photo/mountains.JPG" alt="Image">
-                    </div>
-                </a>
-
-                <a class="img-link" href="img/photo/SaltFlat.JPG">
-                    <div>
-                        <img class="card-img square" style="width: 100%" src="img/photo/SaltFlat.JPG" alt="Image">
-                    </div>
-                </a>
-
-                <a class="img-link" href="img/photo/BigSur3.jpg">
-                    <div>
-                        <img class="card-img square" style="width: 100%" src="img/photo/BigSur3.jpg" alt="Image">
-                    </div>
-                </a>
-
-
-
-            </div>
-        </div>
-
-        <!-- Footer -->
-        <footer class="py-5">
-            <div class="row">
-                <div class="col-sm-8">
-                    <p class="mb-1">&copy;
-                        <script>
-                            var d = new Date()
-                            document.write(d.getFullYear())
-                        </script>
-                        Alejandro Romero
-                    </p>
-                </div>
-                <div class="col-sm-4 social text-md-right">
-                    <a href="mailto:alejandro_romero@alumni.brown.edu" target="_blank" class="fa fa-envelope">
-                    </a>
-                    <a href="https://github.com/alejandrojromero" target="_blank" class="fa fab fa-github"></a>
-                    <a href="https://www.linkedin.com/in/alejandrojromero/" target="_blank" class="fa fa-linkedin"></a>
-                    <a href="https://www.instagram.com/aleboi.art/" target="_blank" class="fa fa-instagram">
-                    </a>
-                    <a href="https://www.youtube.com/channel/UCHFQkfqIZiIZCzZukbZJ_5Q" target="_blank"
-                        class="fa fa-youtube-play">
-                    </a>
-                </div>
-            </div>
-        </footer>
-
     </div>
 
-    <!-- Javascript -->
-    <script src="js/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-        crossorigin="anonymous"></script>
-    <script src="js/custom.js"></script>
-    <script>
+    <section class="page-hero">
+        <div class="project-category">Art</div>
+        <h1 class="project-title">Art projects</h1>
+        <p class="project-description">Art is a large part of who I am. Take a look here.</p>
+    </section>
 
-        window.onscroll = function () { myFunction() };
+    <div class="card-grid">
+        <a class="wall-item" href="https://www.instagram.com/aleboi.art/" target="_blank" rel="noopener">
+            <img class="wall-poster" src="assets/art_experimental_thumb.png" alt="Experimental Art" loading="lazy" onerror="this.remove()">
+            <div class="ph-bg"></div>
+            <div class="wall-item-overlay">
+                <div class="wall-item-title">Experimental Art</div>
+                <div class="wall-item-description">Honing my art across mediums to create virtual worlds</div>
+                <div class="wall-tags"><span>Blender</span><span>Photoshop</span><span>Figma</span></div>
+            </div>
+        </a>
+        <a class="wall-item" href="https://www.instagram.com/a.r.works/" target="_blank" rel="noopener">
+            <img class="wall-poster" src="assets/art_portfolio_thumb2.png" alt="Art Portfolio" loading="lazy" onerror="this.remove()">
+            <div class="ph-bg"></div>
+            <div class="wall-item-overlay">
+                <div class="wall-item-title">Art Portfolio (2016 – 2020)</div>
+                <div class="wall-item-description">2D and 3D art projects made in my free time under the alias A.R.Works</div>
+                <div class="wall-tags"><span>Blender</span><span>Photoshop</span><span>Premiere</span></div>
+            </div>
+        </a>
+        <a class="wall-item" href="photography.html">
+            <img class="wall-poster" src="https://alejandroromero.me/img/photo/rainier.JPG" alt="Photography" loading="lazy" onerror="this.remove()">
+            <div class="ph-bg"></div>
+            <div class="wall-item-overlay">
+                <div class="wall-item-title">Photography</div>
+                <div class="wall-item-description">I love exploring new places and documenting the cool things I see</div>
+                <div class="wall-tags"><span>Travel</span><span>Photography</span></div>
+            </div>
+        </a>
+    </div>
 
-        function myFunction() {
-            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            var scrolled = (winScroll / height) * 100;
-            document.getElementById("myBar").style.width = scrolled + "%";
-        }</script>
+    <footer>
+        <div class="copyright">© <span id="currentYear"></span> Alejandro Romero</div>
+        <div class="footer-socials">
+            <a href="mailto:alejandro_romero@alumni.brown.edu" aria-label="Email">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/alejandrojromero/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M7 10v7"/><path d="M7 7.01v.01"/><path d="M11 17v-4a2.5 2.5 0 0 1 5 0v4"/><path d="M11 10v7"/></svg>
+            </a>
+            <a href="https://www.instagram.com/aleboi.art/" target="_blank" rel="noopener" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5v.01"/></svg>
+            </a>
+
+        </div>
+    </footer>
+
+    <script src="assets/site.js"></script>
+    <script src="assets/lightbox.js"></script>
 </body>
-
-<div class="header">
-    <div class="progress-container">
-        <div class="progress-bar" id="myBar"></div>
-    </div>
-</div>
-
 </html>

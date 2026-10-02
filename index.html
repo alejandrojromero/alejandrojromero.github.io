@@ -1,866 +1,2223 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title title="https://alejandroromero.me">Alejandro Romero</title>
-    <link rel="icon" href="img/misc/favicon.png">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/67f90579cc.js" crossorigin="anonymous"></script>
-    <link href="css/style.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alejandro Romero - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Space+Mono:wght@400;700&family=Playfair+Display:wght@400;700&family=JetBrains+Mono:wght@400;700&family=Libre+Baskerville:wght@400;700&family=Courier+Prime:wght@400;700&family=Oswald:wght@400;700&family=Bebas+Neue&family=Archivo+Black&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #ffffff;
+            color: #1a1a1a;
+            overflow-x: hidden;
+            transition: background 0.3s ease, color 0.3s ease;
+            font-weight: 400;
+            letter-spacing: -0.01em;
+            cursor: none;
+        }
+
+        body.dark-mode {
+            background: #000;
+            color: #fff;
+        }
+
+        * {
+            cursor: none !important;
+        }
+
+        /* Custom Cursor */
+        #customCursor {
+            position: fixed;
+            width: 24px;
+            height: 24px;
+            pointer-events: none;
+            z-index: 10000;
+            transform: translate(-50%, -50%);
+            transition: width 0.2s ease, height 0.2s ease;
+            will-change: transform;
+        }
+
+        #customCursor::before,
+        #customCursor::after {
+            content: '';
+            position: absolute;
+            background: #1a1a1a;
+            transition: all 0.2s ease;
+        }
+
+        body.dark-mode #customCursor::before,
+        body.dark-mode #customCursor::after {
+            background: #fff;
+        }
+
+        /* Vertical line */
+        #customCursor::before {
+            width: 2px;
+            height: 100%;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+            clip-path: polygon(
+                0 0,
+                100% 0,
+                100% 35%,
+                0 35%,
+                0 0,
+                0 65%,
+                100% 65%,
+                100% 100%,
+                0 100%,
+                0 65%
+            );
+        }
+
+        /* Horizontal line */
+        #customCursor::after {
+            width: 100%;
+            height: 2px;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            clip-path: polygon(
+                0 0,
+                35% 0,
+                35% 100%,
+                0 100%,
+                0 0,
+                65% 0,
+                65% 100%,
+                100% 100%,
+                100% 0,
+                65% 0
+            );
+        }
+
+        /* Hover state - filled square */
+        #customCursor.hover {
+            width: 20px;
+            height: 20px;
+        }
+
+        #customCursor.hover::before {
+            width: 100%;
+            height: 100%;
+            clip-path: none;
+            transform: none;
+            left: 0;
+            border-radius: 50%;
+        }
+
+        #customCursor.hover::after {
+            opacity: 0;
+        }
+
+        /* Grid hover - monochrome negative circle */
+        #customCursor.grid-hover {
+            width: 20px;
+            height: 20px;
+        }
+
+        #customCursor.grid-hover::before {
+            width: 100%;
+            height: 100%;
+            clip-path: none;
+            transform: none;
+            left: 0;
+            background: transparent;
+            -webkit-backdrop-filter: grayscale(1) invert(1);
+            backdrop-filter: grayscale(1) invert(1);
+            border-radius: 50%;
+        }
+
+        #customCursor.grid-hover::after {
+            opacity: 0;
+        }
+
+        /* Floating Navigation */
+        .nav-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+            width: 100%;
+            margin: 0 auto;
+            margin-top: 0;
+            padding: 22px 60px;
+            border-radius: 16px;
+            background: transparent;
+            border: 1px solid transparent;
+            box-shadow: none;
+            backdrop-filter: none;
+            transition: width 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+                        margin-top 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+                        padding 0.4s ease, background 0.4s ease,
+                        box-shadow 0.4s ease, border-color 0.4s ease,
+                        backdrop-filter 0.4s ease;
+        }
+
+        /* Collapses into the centered floating island; width animates so links + toggle
+           glide symmetrically to center. Stays pinned afterward. */
+        .nav-container.scrolled nav {
+            width: var(--pill-w, 760px);
+            margin-top: 22px;
+            padding: 12px 30px;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), inset 0 0 0 0.5px rgba(255, 255, 255, 0.5);
+            border: 0.5px solid rgba(255, 255, 255, 0.8);
+        }
+
+        body.dark-mode .nav-container.scrolled nav {
+            background: rgba(26, 26, 26, 0.8);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), inset 0 0 0 0.5px rgba(255, 255, 255, 0.1);
+            border: 0.5px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* "Home" only appears once collapsed into the island */
+        .nav-container:not(.scrolled) .nav-home {
+            display: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #1a1a1a;
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 15px;
+            font-family: 'Libre Baskerville', serif;
+        }
+
+        body.dark-mode .nav-links a {
+            color: #fff;
+        }
+
+        /* Theme Toggle Icon */
+        .theme-toggle {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: none !important;
+            border-radius: 8px;
+            transition: transform 0.3s ease, background 0.2s ease;
+            margin-left: 10px;
+        }
+
+        .theme-toggle:hover {
+            background: #FF4A00;
+        }
+
+        .theme-toggle svg {
+            width: 20px;
+            height: 20px;
+            stroke: #1a1a1a;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            transition: stroke 0.2s ease, transform 0.3s ease;
+        }
+
+        body.dark-mode .theme-toggle svg {
+            stroke: #fff;
+        }
+
+        .theme-toggle:hover svg {
+            stroke: #fff;
+            transform: rotate(20deg);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 78vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 200px 60px 64px;
+            background: #ffffff;
+            position: relative;
+            overflow: hidden;
+            transition: background 0.3s ease;
+        }
+
+        /* Halftone metaball shader canvas, clipped to the hero only */
+        #heroShader {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+            display: block;
+        }
+
+        body.dark-mode .hero {
+            background: #000;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Legibility scrim so the dithered blobs never wash out the text */
+        .hero-content::before {
+            content: '';
+            position: absolute;
+            inset: -18% -12%;
+            z-index: -1;
+            background: radial-gradient(ellipse at center,
+                rgba(255, 255, 255, 0.94) 0%,
+                rgba(255, 255, 255, 0.72) 45%,
+                rgba(255, 255, 255, 0) 75%);
+            pointer-events: none;
+        }
+
+        body.dark-mode .hero-content::before {
+            background: radial-gradient(ellipse at center,
+                rgba(5, 5, 6, 0.85) 0%,
+                rgba(5, 5, 6, 0.6) 42%,
+                rgba(5, 5, 6, 0) 72%);
+        }
+
+        h1 {
+            font-size: clamp(48px, 8vw, 84px);
+            font-weight: 500;
+            margin-bottom: 30px;
+            line-height: 1.1;
+            color: #1a1a1a;
+            transition: color 0.3s ease;
+            letter-spacing: -0.02em;
+            font-family: 'Libre Baskerville', serif;
+            text-shadow:
+                0 0 16px rgba(255, 255, 255, 0.98),
+                0 0 32px rgba(255, 255, 255, 0.9),
+                0 0 60px rgba(255, 255, 255, 0.8);
+        }
+
+        body.dark-mode h1 {
+            color: #fff;
+            text-shadow: 0 2px 28px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Glitchy name animation */
+        .name-animate {
+            display: inline-block;
+            position: relative;
+            min-width: 280px;
+        }
+
+        .name-animate::before,
+        .name-animate::after {
+            content: 'Alejandro';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .name-animate::before {
+            color: #FF4A00;
+            z-index: -1;
+        }
+
+        .name-animate::after {
+            color: #FF6A3D;
+            z-index: -1;
+        }
+
+        .name-animate.glitching::before {
+            animation: glitchOrange1 0.4s steps(2) forwards;
+        }
+
+        .name-animate.glitching::after {
+            animation: glitchOrange2 0.4s steps(2) forwards;
+        }
+
+        @keyframes glitchOrange1 {
+            0% {
+                opacity: 0;
+                transform: translate(0, 0);
+            }
+            10% {
+                opacity: 0.8;
+                transform: translate(-3px, 1px);
+            }
+            20% {
+                opacity: 0;
+                transform: translate(0, 0);
+            }
+            30% {
+                opacity: 0.6;
+                transform: translate(4px, -1px);
+            }
+            40% {
+                opacity: 0;
+                transform: translate(0, 0);
+            }
+            50% {
+                opacity: 0.7;
+                transform: translate(-2px, 2px);
+            }
+            60% {
+                opacity: 0;
+                transform: translate(0, 0);
+            }
+            70% {
+                opacity: 0.5;
+                transform: translate(3px, -2px);
+            }
+            80% {
+                opacity: 0;
+                transform: translate(0, 0);
+            }
+            90% {
+                opacity: 0.4;
+                transform: translate(-1px, 1px);
+            }
+            100% {
+                opacity: 0;
+                transform: translate(0, 0);
+            }
+        }
+
+        @keyframes glitchOrange2 {
+            0% {
+                opacity: 0;
+                transform: translate(0, 0);
+            }
+            15% {
+                opacity: 0.6;
+                transform: translate(2px, -2px);
+            }
+            25% {
+                opacity: 0;
+                transform: translate(0, 0);
+            }
+            35% {
+                opacity: 0.8;
+                transform: translate(-4px, 1px);
+            }
+            45% {
+                opacity: 0;
+                transform: translate(0, 0);
+            }
+            55% {
+                opacity: 0.5;
+                transform: translate(1px, -1px);
+            }
+            65% {
+                opacity: 0;
+                transform: translate(0, 0);
+            }
+            75% {
+                opacity: 0.7;
+                transform: translate(-2px, 2px);
+            }
+            85% {
+                opacity: 0;
+                transform: translate(0, 0);
+            }
+            100% {
+                opacity: 0;
+                transform: translate(0, 0);
+            }
+        }
+
+        .bio {
+            font-size: clamp(16px, 2vw, 20px);
+            line-height: 1.7;
+            color: #666;
+            margin-bottom: 40px;
+            transition: color 0.3s ease;
+            font-weight: 400;
+            text-shadow:
+                0 0 10px rgba(255, 255, 255, 0.95),
+                0 0 22px rgba(255, 255, 255, 0.85);
+        }
+
+        body.dark-mode .bio {
+            color: #aaa;
+            text-shadow: 0 0 16px rgba(0, 0, 0, 0.6);
+        }
+
+        .bio span {
+            color: #FF4A00;
+            font-weight: 500;
+        }
+
+        /* Bio links keep the orange-red text color at rest */
+        .bio-link {
+            color: #FF4A00;
+            font-weight: 500;
+        }
+        body.dark-mode .bio-link {
+            color: #FF6A3D;
+        }
+
+        /* Shared link interaction: the cursor "becomes" a filled rectangle,
+           with the link text sitting in the foreground. Used by bio + nav links. */
+        .fx-link {
+            position: relative;
+            display: inline-block;
+            text-decoration: none;
+            white-space: nowrap;
+            z-index: 0;
+            text-shadow: none;
+            transition: color 0.18s ease;
+        }
+        .fx-link::before {
+            content: '';
+            position: absolute;
+            inset: -3px -7px;
+            z-index: -1;
+            background: #FF4A00;
+            border-radius: 4px;
+            opacity: 0;
+            transform: scale(0.84);
+            transform-origin: center;
+            transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+                        opacity 0.18s ease;
+        }
+        .fx-link:hover {
+            color: #fff;
+            text-shadow: none;
+        }
+        .fx-link:hover::before {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Logo revealed inside the hover rect, left of the text */
+        .link-logo {
+            display: inline-block;
+            vertical-align: -2px;
+            width: 0;
+            height: 15px;
+            opacity: 0;
+            margin-right: 0;
+            border-radius: 3px;
+            background: #fff;
+            padding: 0;
+            transition: width 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+                        margin-right 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+                        opacity 0.18s ease;
+        }
+        .fx-link:hover .link-logo {
+            width: 15px;
+            opacity: 1;
+            margin-right: 6px;
+        }
+
+        /* Make sure the hovered text is solid white everywhere, including dark mode
+           and the nav, beating any resting link-color specificity */
+        body .fx-link:hover,
+        body.dark-mode .fx-link:hover,
+        body.dark-mode .nav-links a.fx-link:hover,
+        body.dark-mode .bio-link.fx-link:hover {
+            color: #fff;
+        }
+
+        /* Previously — auto-scrolling chip carousel */
+        .prev-section {
+            margin-top: -22px;
+        }
+        .prev-label {
+            font-family: 'Libre Baskerville', serif;
+            font-style: italic;
+            font-size: 15px;
+            letter-spacing: 0;
+            text-transform: none;
+            color: #999;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.95);
+        }
+        body.dark-mode .prev-label {
+            color: #777;
+            text-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+        }
+        .prev-marquee {
+            overflow: hidden;
+            max-width: 640px;
+            margin: 0 auto;
+            -webkit-mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+            mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+        }
+        .prev-track {
+            display: flex;
+            gap: 12px;
+            width: max-content;
+            will-change: transform;
+        }
+        .prev-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 11px 18px;
+            border: 1px solid rgba(0, 0, 0, 0.12);
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(6px);
+            color: #1a1a1a;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            white-space: nowrap;
+            transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+        }
+        .prev-chip img {
+            width: 20px;
+            height: 20px;
+            display: block;
+        }
+        body.dark-mode .prev-chip img.logo-ink,
+        .prev-chip:hover img.logo-ink {
+            filter: invert(1);
+        }
+        .prev-chip:hover {
+            background: #FF4A00;
+            border-color: #FF4A00;
+            color: #fff;
+        }
+        body.dark-mode .prev-chip {
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            background: rgba(26, 26, 26, 0.75);
+            color: #fff;
+        }
+        body.dark-mode .prev-chip:hover {
+            background: #FF4A00;
+            border-color: #FF4A00;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .social-links a {
+            padding: 8px;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #1a1a1a;
+            text-decoration: none;
+            transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+        }
+
+        .social-links a svg {
+            width: 22px;
+            height: 22px;
+            display: block;
+        }
+
+        body.dark-mode .social-links a {
+            color: #fff;
+        }
+
+        .social-links a:hover {
+            background: #FF4A00;
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        /* Visual Wall Section */
+        .visual-wall {
+            padding: 12px;
+            background: #ffffff;
+            transition: background 0.3s ease;
+        }
+
+        body.dark-mode .visual-wall {
+            background: #000;
+        }
+
+        .wall-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            max-width: 100%;
+            margin: 0;
+        }
+
+        .wall-item {
+            position: relative;
+            width: 100%;
+            height: 380px;
+            overflow: hidden;
+            cursor: none !important;
+            background: #f5f5f5;
+            transition: background 0.3s ease;
+            border-radius: 12px;
+        }
+
+        body.dark-mode .wall-item {
+            background: #1a1a1a;
+        }
+
+        .wall-item::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.7) 100%);
+            z-index: 2;
+            opacity: 0;
+            transition: opacity 0.4s;
+            border-radius: inherit;
+        }
+
+        .wall-item:hover::before {
+            opacity: 1;
+        }
+
+        .wall-item-content {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .wall-poster,
+        .wall-video {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            border-radius: inherit;
+            transition: transform 0.6s ease, opacity 0.45s ease;
+        }
+
+        .wall-video {
+            opacity: 0;
+        }
+
+        .wall-item:hover .wall-video {
+            opacity: 1;
+        }
+
+        .wall-item:hover .wall-poster,
+        .wall-item:hover .wall-video {
+            transform: scale(1.05);
+        }
+
+        .wall-item-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 30px;
+            z-index: 3;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.4s;
+        }
+
+        .wall-item:hover .wall-item-overlay {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .wall-item-title {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: #fff;
+            letter-spacing: -0.02em;
+        }
+
+        .wall-item-description {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.65);
+            font-weight: 400;
+            letter-spacing: -0.01em;
+        }
+
+        /* Footer */
+        footer {
+            padding: 60px 30px 30px;
+            background: #ffffff;
+            transition: background 0.3s ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        body.dark-mode footer {
+            background: #000;
+        }
+
+        .copyright {
+            font-size: 14px;
+            color: #666;
+            transition: color 0.3s ease;
+        }
+
+        body.dark-mode .copyright {
+            color: #aaa;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 22px;
+        }
+
+        .footer-socials a {
+            padding: 7px;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #1a1a1a;
+            text-decoration: none;
+            transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+        }
+
+        .footer-socials a svg {
+            width: 20px;
+            height: 20px;
+            display: block;
+        }
+
+        body.dark-mode .footer-socials a {
+            color: #fff;
+        }
+
+        .footer-socials a:hover {
+            background: #FF4A00;
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        /* Project Page Overlay */
+        .project-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #ffffff;
+            z-index: 3000;
+            overflow-y: auto;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+        }
+
+        body.dark-mode .project-overlay {
+            background: #000;
+        }
+
+        .project-overlay.open {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .project-back {
+            position: fixed;
+            top: 30px;
+            left: 30px;
+            z-index: 3001;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            border-radius: 12px;
+            padding: 12px 20px;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #1a1a1a;
+            font-family: 'Libre Baskerville', serif;
+            font-size: 14px;
+            cursor: none !important;
+            transition: opacity 0.3s ease;
+        }
+
+        body.dark-mode .project-back {
+            background: rgba(26, 26, 26, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+
+        .project-back:hover {
+            opacity: 0.7;
+        }
+
+        .project-back svg {
+            width: 16px;
+            height: 16px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .project-hero {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 60px 60px;
+        }
+
+        .project-hero-content {
+            max-width: 800px;
+        }
+
+        .project-category {
+            font-size: 14px;
+            color: #FF4A00;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .project-title {
+            font-family: 'Libre Baskerville', serif;
+            font-size: clamp(36px, 6vw, 64px);
+            font-weight: 400;
+            margin-bottom: 30px;
+            line-height: 1.2;
+            color: #1a1a1a;
+        }
+
+        body.dark-mode .project-title {
+            color: #fff;
+        }
+
+        .project-description {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        body.dark-mode .project-description {
+            color: #aaa;
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .meta-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #999;
+        }
+
+        .meta-value {
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .project-content {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .sidebar-nav {
+            width: 250px;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            padding: 60px 40px;
+            border-right: 1px solid rgba(0, 0, 0, 0.06);
+            flex-shrink: 0;
+        }
+
+        body.dark-mode .sidebar-nav {
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .sidebar-nav ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .sidebar-nav a {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 15px;
+            color: #666;
+            text-decoration: none;
+            transition: color 0.3s ease, border-color 0.3s ease;
+            display: block;
+            padding: 5px 0 5px 15px;
+            margin-left: -15px;
+            border-left: 2px solid transparent;
+        }
+
+        body.dark-mode .sidebar-nav a {
+            color: #888;
+        }
+
+        .sidebar-nav a:hover,
+        .sidebar-nav a.active {
+            color: #1a1a1a;
+            border-left-color: #FF4A00;
+        }
+
+        body.dark-mode .sidebar-nav a:hover,
+        body.dark-mode .sidebar-nav a.active {
+            color: #fff;
+        }
+
+        .content-area {
+            flex: 1;
+            padding: 60px;
+        }
+
+        .content-section {
+            margin-bottom: 100px;
+        }
+
+        .content-section h2 {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 28px;
+            font-weight: 400;
+            margin-bottom: 30px;
+            color: #1a1a1a;
+        }
+
+        body.dark-mode .content-section h2 {
+            color: #fff;
+        }
+
+        .content-section p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 20px;
+            max-width: 700px;
+        }
+
+        body.dark-mode .content-section p {
+            color: #aaa;
+        }
+
+        .content-section img {
+            width: 100%;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .image-grid img {
+            margin: 0;
+        }
+
+        @media (max-width: 900px) {
+            .sidebar-nav {
+                display: none;
+            }
+
+            .content-area {
+                padding: 40px 20px;
+            }
+
+            .project-hero {
+                padding: 100px 20px 40px;
+            }
+
+            .image-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 760px) {
+            .project-back {
+                top: 15px;
+                left: 15px;
+                padding: 10px 15px;
+                font-size: 13px;
+            }
+
+            .project-title {
+                font-size: 28px;
+            }
+
+            .project-description {
+                font-size: 15px;
+            }
+
+            .project-meta {
+                gap: 25px;
+            }
+        }
+
+        /* Mobile Menu */
+        .hamburger-container {
+            display: none;
+            position: fixed;
+            top: 15px;
+            right: 15px;
+            z-index: 1001;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            border-radius: 12px;
+            padding: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        body.dark-mode .hamburger-container {
+            background: rgba(26, 26, 26, 0.8);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .hamburger-container.hidden {
+            opacity: 0;
+            transform: translateY(-100%);
+            pointer-events: none;
+        }
+
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            cursor: none !important;
+            gap: 5px;
+        }
+
+        /* The hamburger inside the floating desktop nav is never needed:
+           desktop uses the nav links, mobile uses the separate hamburger-container. */
+        .nav-container .hamburger {
+            display: none;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: #1a1a1a;
+            transition: all 0.3s ease;
+        }
+
+        body.dark-mode .hamburger span {
+            background: #fff;
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #ffffff;
+            z-index: 2000;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        body.dark-mode .mobile-menu {
+            background: #000;
+        }
+
+        .mobile-menu.open {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .mobile-menu-close {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: none !important;
+        }
+
+        .mobile-menu-close svg {
+            width: 28px;
+            height: 28px;
+            stroke: #1a1a1a;
+            stroke-width: 2;
+        }
+
+        body.dark-mode .mobile-menu-close svg {
+            stroke: #fff;
+        }
+
+        .mobile-menu-links {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .mobile-menu-links a {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 24px;
+            color: #1a1a1a;
+            text-decoration: none;
+            transition: opacity 0.2s ease;
+        }
+
+        body.dark-mode .mobile-menu-links a {
+            color: #fff;
+        }
+
+        .mobile-menu-links a:hover {
+            opacity: 0.6;
+        }
+
+        .mobile-menu-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .mobile-menu-toggle .theme-toggle {
+            margin-left: 0;
+        }
+
+        /* Scroll Progress Bar */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: #FF4A00;
+            z-index: 9999;
+            transition: width 0.1s ease-out;
+        }
+
+        @media (max-width: 1200px) {
+            .wall-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .wall-item {
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 760px) {
+            .nav-container {
+                display: none;
+            }
+
+            .hamburger-container {
+                display: block;
+            }
+
+            .mobile-menu {
+                display: flex;
+            }
+
+            .hero {
+                padding: 150px 20px 40px;
+                min-height: auto;
+            }
+
+            h1 {
+                font-size: 36px;
+                margin-bottom: 20px;
+            }
+
+            .bio {
+                font-size: 15px;
+                line-height: 1.6;
+                margin-bottom: 30px;
+            }
+
+            .social-links {
+                gap: 15px;
+                margin-top: 30px;
+            }
+
+            .social-links a {
+                width: 44px;
+                height: 44px;
+                font-size: 18px;
+            }
+
+            .visual-wall {
+                padding: 8px;
+            }
+
+            .wall-grid {
+                grid-template-columns: 1fr !important;
+                gap: 8px;
+            }
+
+            .wall-item {
+                height: 280px;
+            }
+
+            .wall-item-overlay {
+                padding: 20px;
+            }
+
+            .wall-item-title {
+                font-size: 18px;
+            }
+
+            .wall-item-description {
+                font-size: 12px;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 20px;
+                padding: 40px 20px 30px;
+                text-align: center;
+            }
+
+            .copyright {
+                font-size: 13px;
+            }
+
+            .footer-socials {
+                gap: 15px;
+            }
+
+            .footer-socials a {
+                width: 36px;
+                height: 36px;
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-links {
+                gap: 10px;
+            }
+
+            .nav-links a {
+                font-size: 12px;
+            }
+
+            h1 {
+                font-size: 30px;
+            }
+
+            .bio {
+                font-size: 14px;
+            }
+
+            .wall-item {
+                height: 240px;
+            }
+        }
+
+        @media (max-width: 760px) {
+            .prev-marquee {
+                max-width: 100%;
+            }
+            .prev-chip {
+                padding: 9px 14px;
+                font-size: 13px;
+            }
+            .prev-chip img {
+                width: 17px;
+                height: 17px;
+            }
+        }
+
+        /* Touch devices: restore native cursor, hide the custom one,
+           and keep tile titles readable without hover */
+        @media (hover: none), (pointer: coarse) {
+            *, body {
+                cursor: auto !important;
+            }
+            #customCursor {
+                display: none !important;
+            }
+            .wall-item-overlay {
+                transform: translateY(0);
+                opacity: 1;
+                background: linear-gradient(to top, rgba(0, 0, 0, 0.72), transparent);
+            }
+        }
+
+        /* Work grid additions */
+        a.wall-item { display: block; color: inherit; text-decoration: none; }
+        .ph-bg, .ph-title { display: none; }
+        .wall-item.ph .ph-bg {
+            display: block;
+            position: absolute; inset: 0;
+            background-image: radial-gradient(rgba(26,26,26,0.20) 1.6px, transparent 1.6px);
+            background-size: 11px 11px;
+            border-radius: inherit;
+        }
+        body.dark-mode .wall-item.ph .ph-bg {
+            background-image: radial-gradient(rgba(255,255,255,0.22) 1.6px, transparent 1.6px);
+        }
+        .wall-item.ph .ph-title {
+            display: flex; align-items: center; justify-content: center;
+            position: absolute; inset: 0; padding: 24px;
+            font-family: 'Libre Baskerville', serif;
+            font-size: 24px; text-align: center; color: #1a1a1a;
+            background: radial-gradient(ellipse at center, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.6) 50%, transparent 78%);
+            transition: opacity 0.3s ease;
+        }
+        body.dark-mode .wall-item.ph .ph-title {
+            color: #fff;
+            background: radial-gradient(ellipse at center, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.55) 50%, transparent 78%);
+        }
+        .wall-item.ph:hover .ph-title { opacity: 0; }
+        .wall-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 14px; }
+        .wall-tags span {
+            font-size: 10px; font-weight: 600; letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: #fff; background: rgba(255,255,255,0.22);
+            border-radius: 6px; padding: 5px 10px;
+        }
+</style>
+<link rel="icon" type="image/png" href="assets/favicon.png">
 </head>
-
 <body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
 
+    <!-- Custom Cursor -->
+    <div id="customCursor"></div>
 
-    <svg id="fader"></svg>
-    <div class="container">
-        <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-white py-5 ">
-            <a class="navbar-brand js-scroll-trigger" href="index.html">Alejandro Romero</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> <span
-                    class="navbar-toggler-icon"></span> </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"> <a class="nav-link js-scroll-trigger" href="#projects">Work</a>
-                    </li>
-                    <li class="nav-item"> <a class="nav-link js-scroll-trigger" href="art.html">Art</a>
-                    </li>
-                    <li class="nav-item"> <a class="nav-link js-scroll-trigger" href="about.html">About</a>
-                    </li>
-                    <li class="nav-item"> <a class="nav-link js-scroll-trigger" href="docs/Alejandro Romero Resume.pdf"
-                            target="_blank">Resume</a>
-                    </li>
-                </ul>
+    <!-- Floating Navigation -->
+    <div class="nav-container" id="nav">
+        <nav>
+            <ul class="nav-links">
+                <li class="nav-home"><a href="#home" class="scroll-link fx-link">Home</a></li>
+                <li><a href="#work" class="scroll-link fx-link">Work</a></li>
+                <li><a href="art.html" class="fx-link">Art</a></li>
+                <li><a href="about.html" class="fx-link">About</a></li>
+                <li><a href="resume.html" class="fx-link">Resume</a></li>
+            </ul>
+            <div class="theme-toggle" id="themeToggle">
+                        <svg id="sunIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                        <svg id="moonIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="display: none;">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </nav>
-        <!-- Header -->
-        <div class="row space-md">
-            <div class="col-lg-6 mt-auto mb-auto ml-auto mr-auto">
-                <header class="space-bottom">
-
-
-                    <div class="headline-big">
-                        <div> <span>Hey! I'm Alejandro.</span> </div>
-                    </div>
-
-
-
-
-
-                    <!-- <p style="line-height: 2em">I'm a <b> Designer</b> and <b> Prototyper </b>leveraging
-                        emerging
-                        tech to craft experiences that enrich the lives of others. -->
-
-                        <p class="proj-body2" style="line-height: 2em">Leading AI Product Design @ <a href="https://www.gendigital.com/us/en/"
-                            target="_blank"><b><span class="proj-link">Gen Digital.</span></b></a> I like to design new things that can empower others. Previously Lead Designer @ <a href="https://www.shaderapp.com/"
-                            target="_blank"><b><span class="proj-link">Shader.</span></b></a> UX Designer @ <a href="https://www.blizzard.com/en-us/"
-                            target="_blank"><b><span class="proj-link">Blizzard</span></b></a>, AR Creator @ <a href="https://www.spectacles.com/" target="_blank"><b><span
-                                        class="proj-link">Snap </span></b></a>and <a
-                                href="https://www.nasa.gov/" target="_blank"><b><span
-                                        class="proj-link">NASA.</span></b></a>
-                            HCI M.S. @ <a href="https://www.brown.edu"
-                                target="_blank"><b><span class="proj-link">Brown</span></b></a>
-                             with coursework at <a
-                                href="https://www.risd.edu/" target="_blank"><b><span
-                                        class="proj-link">RISD</span></b></a> and <a href="https://www.harvard.edu/"
-                                target="_blank"><b><span class="proj-link">Harvard.</span></b></a>
-                            <div class="social">
-                                <a href="mailto:alejandro_romero@alumni.brown.edu" target="_blank" class="fa fa-envelope">
-                                </a>
-                                <a href="https://github.com/alejandrojromero" target="_blank"
-                                    class="fa fab fa-github"></a>
-                                <a href="https://www.linkedin.com/in/alejandrojromero/" target="_blank"
-                                    class="fa fa-linkedin"></a>
-                                <a href="https://www.instagram.com/aleboi.art/" target="_blank" class="fa fa-instagram">
-                                </a>
-
-                            </div>
-                </header>
-            </div>
-            <!-- <div class="col-lg-4 mt-auto mb-auto mr-auto">
-                <img class="cover-img" src="img/misc/cover.png" alt="Cover">
-            </div> -->
-        </div>
-        <div class="space-bottom"></div>
-
-        
-
-        <!-- Portfolio -->
-        <div id="projects">
-            <div class="space-top"></div>
-            <div id="proj-gallery" class="grid" style="margin-bottom: 2em;">
-
-
-                
-                <div class="proj-card card">
-                    <a href="neo.html">
-                        <div style="width: 100%;">
-                            <img class="card-img" src="img/neo/neo.jpg" alt="Image">
-                        </div>
-                        <div class="card-body">
-                            <div class="space-bottom-sm">
-                                <span class="badge proj-label">UX/UI Design</span>
-                                <span class="badge proj-label">Prototyping</span>
-                                <span class="badge proj-label">Figma</span>
-                                <span class="badge proj-label">User Research</span>
-                                <span class="badge proj-label">Iterative Design</span>
-                            </div>
-                            <h3 class="card-title">Norton Neo</h3>
-                            <p class="card-text">Leading the creative vision for Norton Neo, an AI-native browser
-                                </p>
-                        </div>
-                    </a>
-                </div>
-
-
-                <div class="proj-card card ">
-                    <a href="https://aleboi.xyz/" target="_blank">
-                        <div style="width: 100%;">
-                            <img class="card-img" src="img/thumbnail/aleboi2.png" alt="Image">
-                        </div>
-                        <div class="card-body">
-                            <div class="space-bottom-sm">
-                                <span class="badge proj-label">Blender</span>
-                                <span class="badge proj-label">Photoshop</span>
-                                <span class="badge proj-label">Figma</span>
-                                <span class="badge proj-label">After Effects</span>
-                            </div>
-                            <h3 class="card-title">ALEBOI Studios</h3>
-                            <p class="card-text">
-                                Freelance and experimental visual work  </p>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="proj-card card">
-                    <a href="shader.html">
-                        <div style="width: 100%;">
-                            <img class="card-img" src="img/thumbnail/Shader.jpg" alt="Image">
-                        </div>
-                        <div class="card-body">
-                            <div class="space-bottom-sm">
-                                <span class="badge proj-label">UX/UI Design</span>
-                                <span class="badge proj-label">Prototyping</span>
-                                <span class="badge proj-label">Figma</span>
-                                <span class="badge proj-label">User Research</span>
-                                <span class="badge proj-label">Iterative Design</span>
-                            </div>
-                            <h3 class="card-title">Shader Inc.</h3>
-                            <p class="card-text">Leading design on social products at the intersection of AR and genAI
-                                </p>
-                        </div>
-                    </a>
-                </div>
-
-
-
-
-
-                <div class="proj-card card">
-                    <a href="blizzard.html">
-                        <div style="width: 100%;">
-                            <img class="card-img" src="img/thumbnail/blizzard3.png" alt="Image">
-                        </div>
-                        <div class="card-body">
-                            <div class="space-bottom-sm">
-                                <span class="badge proj-label">UX/UI Design</span>
-                                <span class="badge proj-label">Figma</span>
-                                <span class="badge proj-label">User Research</span>
-                                <span class="badge proj-label">Agile</span>
-                                <span class="badge proj-label">Unity</span>
-                            </div>
-                            <h3 class="card-title">Blizzard Entertainment</h3>
-                            <p class="card-text">Designing accessible experiences for millions of players 
-                                across the world
-                                </p>
-                        </div>
-                    </a>
-                </div>
-
-
-
-
-
-            </div>
-        </div>
-
-        <div class="space-md">
-            <h3 class="text-center">More projects</h3>
-        </div>
-
-
-        
- <!-- Portfolio (more projects) -->
- <div id="projects">
-    
-    <div id="misc-gallery" class="grid" style="margin-bottom: 1em;">
-
-
-                <div class="proj-card card">
-                    <a href="proj/spectacles.html">
-                        <div style="width: 100%;">
-                            <img class="card-img" src="img/thumbnail/spectacles.png" alt="Image">
-                        </div>
-                        <div class="card-body">
-                            <div class="space-bottom-sm">
-                                <span class="badge proj-label">AR</span>
-                                <span class="badge proj-label">UX/UI Design</span>
-                                <span class="badge proj-label">JavaScript</span>
-                                <span class="badge proj-label">Figma</span>
-                                <span class="badge proj-label">User Research</span>
-                            </div>
-                            <h3 class="card-title">Snap Spectacles</h3>
-                            <p class="card-text">Human-Computer Interaction research into the future of
-                                AR</p>
-                        </div>
-                    </a>
-                </div>
-
-                        <div class="proj-card card">
-                    <a href="proj/instagram.html">
-                        <div style="width: 100%;">
-                            <img class="card-img" src="img/thumbnail/instagram.png" alt="Image">
-                        </div>
-                        <div class="card-body">
-                            <div class="space-bottom-sm">
-                                <span class="badge proj-label">VR</span>
-                                <span class="badge proj-label">AR</span>
-                                <span class="badge proj-label">Unity</span>
-                                <span class="badge proj-label">Figma</span>
-                                <span class="badge proj-label">C#</span>
-                            </div>
-                            <h3 class="card-title">Instagram AR/VR</h3>
-                            <p class="card-text">Conceptualizing the future of social media interaction
-                                by designing a seamless mixed reality experience</p>
-                        </div>
-                    </a>
-                </div>
-
-
-                <div class="proj-card card ">
-                    <a href="proj/tkd.html">
-                        <div style="width: 100%;">
-                            <img class="card-img" src="img/thumbnail/tkd.png" alt="Image">
-                        </div>
-                        <div class="card-body">
-                            <div class="space-bottom-sm">
-                                <span class="badge proj-label">Mocap</span>
-                                <span class="badge proj-label">XROMM</span>
-                                <span class="badge proj-label">Unity</span>
-                                <span class="badge proj-label">C#</span>
-                            </div>
-                            <h3 class="card-title">Taekwondo Visualizer</h3>
-                            <p class="card-text">Intuitive 3D visualization of
-                                accurate Taekwondo techniques using motion capture</p>
-                        </div>
-                    </a>
-                </div>
-
-
-        <div class="proj-card card ">
-            <a href="https://twitter.com/aleboiiiiiiiii/status/1786093143106126205">
-                <div style="width: 100%;">
-                    <img class="card-img" src="img/thumbnail/animus.png" alt="Image">
-                </div>
-                <div class="card-body">
-                    <div class="space-bottom-sm">
-                        <span class="badge proj-label">Bezi</span>
-                        <span class="badge proj-label">Figma</span>
-                        <span class="badge proj-label">AR</span>
-                        <span class="badge proj-label">Midjourney</span>
-                    </div>
-                    <h3 class="card-title">Animus AR</h3>
-                    <p class="card-text">Interactive AR experience made for the RTFKT x Bezi AR challenge</p>
-                </div>
-            </a>
-        </div>
-
-
-        <div class="proj-card card">
-            <a href="proj/collabXR.html">
-                <div style="width: 100%;">
-                    <img class="card-img" src="img/thumbnail/collab3D.jpg" alt="Image">
-                </div>
-                <div class="card-body">
-                    <div class="space-bottom-sm">
-                        <span class="badge proj-label">VR</span>
-                        <span class="badge proj-label">AR</span>
-                        <span class="badge proj-label">Figma</span>
-                        <span class="badge proj-label">Bezi</span>
-                        <span class="badge proj-label">Unity</span>
-                    </div>
-                    <h3 class="card-title">Collab XR</h3>
-                    <p class="card-text">Reimagining how we approach 3D modeling in collaborative spaces
-                    </p>
-                </div>
-            </a>
-        </div>
-
-
-
-        
-        <div class="proj-card card">
-            <a href="proj/gvis.html">
-                <div style="width: 100%;">
-                    <img class="card-img" src="img/thumbnail/GVIS.png" alt="Image">
-                </div>
-                <div class="card-body">
-                    <div class="space-bottom-sm">
-                        <span class="badge proj-label">VR</span>
-                        <span class="badge proj-label">UX</span>
-                        <span class="badge proj-label">Python</span>
-                        <span class="badge proj-label">Figma</span>
-                        <span class="badge proj-label">C#</span>
-                        <span class="badge proj-label">Unity</span>
-
-                    </div>
-                    <h3 class="card-title">NASA - GVIS</h3>
-                    <p class="card-text">Crafting mixed reality visualizations to make science accessible to
-                        everyone
-                    </p>
-                </div>
-            </a>
-        </div>
-
-        <div class="proj-card card">
-            <a href="proj/ames.html">
-                <div style="width: 100%;">
-                    <img class="card-img" src="img/thumbnail/ames.png" alt="Image">
-                </div>
-                <div class="card-body">
-                    <div class="space-bottom-sm">
-                        <span class="badge proj-label">VR</span>
-                        <span class="badge proj-label">UX</span>
-                        <span class="badge proj-label">Python</span>
-                        <span class="badge proj-label">Figma</span>
-                        <span class="badge proj-label">C#</span>
-                        <span class="badge proj-label">Unity</span>
-
-                    </div>
-                    <h3 class="card-title">NASA - MarsVR</h3>
-                    <p class="card-text">Creating the next generation of accessible Mars exploration in VR
-                    </p>
-                </div>
-            </a>
-        </div>
-
-        <div class="proj-card card">
-            <a href="proj/infina.html">
-                <div style="width: 100%;">
-                    <img class="card-img" src="img/thumbnail/infina.png" alt="Image">
-                </div>
-                <div class="card-body">
-                    <div class="space-bottom-sm">
-                        <span class="badge proj-label">VR</span>
-                        <span class="badge proj-label">AR</span>
-                        <span class="badge proj-label">C#</span>
-                        <span class="badge proj-label">Unity</span>
-                        <span class="badge proj-label">Voice Recognition</span>
-                    </div>
-                    <h3 class="card-title">Infina, Ltd.</h3>
-                    <p class="card-text">Creating mixed reality training experiences for the Federal Aviation
-                        Administration
-                    </p>
-                </div>
-            </a>
-        </div>
-
-        <!-- <div class="proj-card card">
-            <a href="https://www.instagram.com/a.r.works_designs/" target="_blank">
-                <div style="width: 100%;">
-                    <img class="card-img" src="img/thumbnail/ui.png" alt="Image">
-                </div>
-                <div class="card-body">
-                    <div class="space-bottom-sm">
-                        <span class="badge proj-label">Figma</span>
-                        <span class="badge proj-label">Sketch</span>
-                        <span class="badge proj-label">Adobe XD</span>
-                    </div>
-                    <h3 class="card-title">UI Design Portfolio</h3>
-                    <p class="card-text">Concept designs I created for fun to practice making user interfaces
-                    </p>
-                </div>
-            </a>
-        </div> -->
-
-
-
-
-
-
-
-
-
-        <div class="proj-card card">
-            <a href="proj/harvard.html">
-                <div style="width: 100%;">
-                    <img class="card-img" src="img/thumbnail/harvard.png" alt="Image">
-                </div>
-                <div class="card-body">
-                    <div class="space-bottom-sm">
-                        <span class="badge proj-label">JavaScript</span>
-                        <span class="badge proj-label">D3.js</span>
-                        <span class="badge proj-label">Three.js</span>
-                        <span class="badge proj-label">HTML/CSS</span>
-                    </div>
-                    <h3 class="card-title">Extreme Weather Visualization</h3>
-                    <p class="card-text">Helping to illustrate global changes in extreme weather through
-                        interactive visualization.
-                    </p>
-                </div>
-            </a>
-        </div>
-
-
-
-
-
-
-
-        <div class="proj-card card">
-            <a href="proj/catfish.html">
-                <div style="width: 100%;">
-                    <img class="card-img" src="img/thumbnail/catfish.png" alt="Image">
-                </div>
-                <div class="card-body">
-                    <div class="space-bottom-sm">
-                        <span class="badge proj-label">R</span>
-                        <span class="badge proj-label">HTML</span>
-                        <span class="badge proj-label">JavaScript</span>
-                        <span class="badge proj-label">CSS</span>
-                        <span class="badge proj-label">XROMM</span>
-
-                    </div>
-                    <h3 class="card-title">Catfish Visualization</h3>
-                    <p class="card-text">Browser-based experience allowing users to visualize catfish skull
-                        morphology
-                    </p>
-                </div>
-            </a>
-        </div>
-
-
-
-        <div class="proj-card card">
-            <a href="https://devpost.com/software/plasticare" target="_blank">
-                <div style="width: 100%;">
-                    <img class="card-img" src="img/thumbnail/plasticare.png" alt="Image">
-                </div>
-                <div class="card-body">
-                    <div class="space-bottom-sm">
-                        <span class="badge proj-label">CV</span>
-                        <span class="badge proj-label">AI</span>
-                        <span class="badge proj-label">Tensorflow</span>
-                        <span class="badge proj-label">Python</span>
-                        <span class="badge proj-label">Figma</span>
-                    </div>
-                    <h3 class="card-title">PlastiCare</h3>
-                    <p class="card-text">Computer vision app created for IvyHacks. Scan objects to view their
-                        plastic content
-                        and see more sustainable alternatives!
-                    </p>
-                </div>
-            </a>
-        </div>
-
-
-        <div class="proj-card card ">
-            <a href="proj/voxelpad.html">
-                <div style="width: 100%;">
-                    <img class="card-img" src="img/thumbnail/voxelpad.png" alt="Image">
-                </div>
-                <div class="card-body">
-                    <div class="space-bottom-sm">
-                        <span class="badge proj-label">Unity</span>
-                        <span class="badge proj-label">C#</span>
-                    </div>
-                    <h3 class="card-title">Voxel Pad</h3>
-                    <p class="card-text">An app allowing users to draw anything
-                        in three dimensions using voxels </p>
-                </div>
-            </a>
-        </div>
-
-
-
-
-        <div class="proj-card card">
-            <a href="proj/sim.html">
-                <div style="width: 100%;">
-                    <img class="card-img" src="img/thumbnail/naturalselectionsim.png" alt="Image">
-                </div>
-                <div class="card-body">
-                    <div class="space-bottom-sm">
-                        <span class="badge proj-label">AI</span>
-                        <span class="badge proj-label">C#</span>
-                        <span class="badge proj-label">Unity</span>
-                    </div>
-                    <h3 class="card-title">Natural Selection Sim</h3>
-                    <p class="card-text">Visualizing the selection of optimal traits in a population of A.I. agents in real time
-                        
-                    </p>
-                </div>
-            </a>
-        </div>
-
-
-        <div class="proj-card card">
-            <a href="docs/Collaborative Remote Medical Imaging Exploration for Brain Science.pdf" target="_blank">
-                <div style="width: 100%;">
-                    <img class="card-img" src="img/thumbnail/annotation.png" alt="Image">
-                </div>
-                <div class="card-body">
-                    <div class="space-bottom-sm">
-                        <span class="badge proj-label">Figma Plugin</span>
-                        <span class="badge proj-label">JavaScript</span>
-                        <span class="badge proj-label">Python</span>
-                    </div>
-                    <h3 class="card-title">Medical Image Viewing Assistant</h3>
-                    <p class="card-text">Collaborative remote medical imaging exploration for brain science
-                        
-                    </p>
-                </div>
-            </a>
-        </div>
-
-        
-        <!-- <div class="proj-card card">
-            <a href="docs/Modeling Animal Representations Via Error-Driven Learning.pdf" target="_blank">
-                <div style="width: 100%;">
-                    <img class="card-img" src="img/thumbnail/marvel.png" alt="Image">
-                </div>
-                <div class="card-body">
-                    <div class="space-bottom-sm">
-                        <span class="badge proj-label">Go</span>
-                        <span class="badge proj-label">Computational Cog Neuro</span>
-                        <span class="badge proj-label">Unity</span>
-                    </div>
-                    <h3 class="card-title">MARVEL</h3>
-                    <p class="card-text">Modeling Animal Representations 
-                        Via Error-Driven Learning
-                        
-                    </p>
-                </div>
-            </a>
-        </div> -->
-
-
-        <div class="proj-card card">
-            <a href="https://drive.google.com/file/d/1zZX5BPwMyXzPQImKCg2qyroKa47I3ffY/view?usp=sharing" target="_blank">
-                <div style="width: 100%;">
-                    <img class="card-img" src="img/thumbnail/chrome.png" alt="Image">
-                </div>
-                <div class="card-body">
-                    <div class="space-bottom-sm">
-                        <span class="badge proj-label">Blender</span>
-                    </div>
-                    <h3 class="card-title">Chrome Crisis</h3>
-                    <p class="card-text">2.5D side-scrolling game inspired by Google Chrome. This was my first foray into 
-                        game development.
-                        
-                    </p>
-                </div>
-            </a>
-        </div>
-<!-- 
-        <div class="proj-card card">
-            <a href="https://devpost.com/software/plasticare" target="_blank">
-                <div style="width: 100%;">
-                    <img class="card-img" src="img/thumbnail/plasticare.png" alt="Image">
-                </div>
-                <div class="card-body">
-                    <div class="space-bottom-sm">
-                        <span class="badge proj-label">Go</span>
-                        <span class="badge proj-label">Computational Cog Neuro</span>
-                        <span class="badge proj-label">Unity</span>
-                    </div>
-                    <h3 class="card-title">Robot shit</h3>
-                    <p class="card-text">Modeling Animal Representations 
-                        Via Error-Driven Learning
-                        
-                    </p>
-                </div>
-            </a>
-        </div>
-
-
-
-
-        <div class="proj-card card">
-            <a href="https://devpost.com/software/plasticare" target="_blank">
-                <div style="width: 100%;">
-                    <img class="card-img" src="img/thumbnail/plasticare.png" alt="Image">
-                </div>
-                <div class="card-body">
-                    <div class="space-bottom-sm">
-                        <span class="badge proj-label">Go</span>
-                        <span class="badge proj-label">Computational Cog Neuro</span>
-                        <span class="badge proj-label">Unity</span>
-                    </div>
-                    <h3 class="card-title">Collaborative 3D MODELING?!</h3>
-                    <p class="card-text">Modeling Animal Representations 
-                        Via Error-Driven Learning
-                        
-                    </p>
-                </div>
-            </a>
-        </div>
-
-        <div class="proj-card card">
-            <a href="https://devpost.com/software/plasticare" target="_blank">
-                <div style="width: 100%;">
-                    <img class="card-img" src="img/thumbnail/plasticare.png" alt="Image">
-                </div>
-                <div class="card-body">
-                    <div class="space-bottom-sm">
-                        <span class="badge proj-label">Go</span>
-                        <span class="badge proj-label">Computational Cog Neuro</span>
-                        <span class="badge proj-label">Unity</span>
-                    </div>
-                    <h3 class="card-title">VR AR study? hmm </h3>
-                    <p class="card-text">Modeling Animal Representations 
-                        Via Error-Driven Learning
-                        
-                    </p>
-                </div>
-            </a>
-        </div> -->
-
-    </div>
-</div>
-        <!-- Portfolio (more projects)
-        <div id="projects">
-            <div id="proj-gallery" class="grid" style="margin-bottom: 2em;">
-                <div class="proj-card card ">
-                    <a href="proj/tkd.html">
-                        <div style="width: 100%;">
-                            <img class="card-img" src="img/thumbnail/tkd.png" alt="Image">
-                        </div>
-                        <div class="card-body">
-                            <div class="space-bottom-sm">
-                                <span class="badge proj-label">Mocap</span>
-                                <span class="badge proj-label">XROMM</span>
-                                <span class="badge proj-label">Unity</span>
-                                <span class="badge proj-label">C#</span>
-                            </div>
-                            <h3 class="card-title">Taekwondo Visualizer</h3>
-                            <p class="card-text">Intuitive 3D visualization of
-                                accurate Taekwondo techniques using motion capture</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="proj-card card">
-                    <a href="proj/gvis.html">
-                        <div style="width: 100%;">
-                            <img class="card-img" src="img/thumbnail/GVIS.png" alt="Image">
-                        </div>
-                        <div class="card-body">
-                            <div class="space-bottom-sm">
-                                <span class="badge proj-label">VR</span>
-                                <span class="badge proj-label">UX</span>
-                                <span class="badge proj-label">UX</span>
-                                <span class="badge proj-label">Python</span>
-                                <span class="badge proj-label">Figma</span>
-                                <span class="badge proj-label">C#</span>
-                                <span class="badge proj-label">Unity</span>
-
-                            </div>
-                            <h3 class="card-title">NASA - GVIS</h3>
-                            <p class="card-text">Crafting mixed reality visualizations to make science accessible to
-                                everyone
-                            </p>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="proj-card card">
-                    <a href="proj/harvard.html">
-                        <div style="width: 100%;">
-                            <img class="card-img" src="img/thumbnail/harvard.png" alt="Image">
-                        </div>
-                        <div class="card-body">
-                            <div class="space-bottom-sm">
-                                <span class="badge proj-label">JavaScript</span>
-                                <span class="badge proj-label">D3.js</span>
-                                <span class="badge proj-label">Three.js</span>
-                                <span class="badge proj-label">HTML/CSS</span>
-                            </div>
-                            <h3 class="card-title">Extreme Weather Visualization</h3>
-                            <p class="card-text">Helping to illustrate global changes in extreme weather through
-                                interactive visualization.
-                            </p>
-                        </div>
-                    </a>
-                </div>
-
-
-                <div class="proj-card card">
-                    <a href="https://www.instagram.com/a.r.works_designs/" target="_blank">
-                        <div style="width: 100%;">
-                            <img class="card-img" src="img/thumbnail/ui.png" alt="Image">
-                        </div>
-                        <div class="card-body">
-                            <div class="space-bottom-sm">
-                                <span class="badge proj-label">Figma</span>
-                                <span class="badge proj-label">Sketch</span>
-                                <span class="badge proj-label">Adobe XD</span>
-                            </div>
-                            <h3 class="card-title">UI Design Portfolio</h3>
-                            <p class="card-text">Concept designs I created for fun to practice making user interfaces
-                            </p>
-                        </div>
-                    </a>
-                </div>
-
-
-
-                <div class="proj-card card">
-                    <a href="proj/infina.html">
-                        <div style="width: 100%;">
-                            <img class="card-img" src="img/thumbnail/infina.png" alt="Image">
-                        </div>
-                        <div class="card-body">
-                            <div class="space-bottom-sm">
-                                <span class="badge proj-label">VR</span>
-                                <span class="badge proj-label">AR</span>
-                                <span class="badge proj-label">C#</span>
-                                <span class="badge proj-label">Unity</span>
-                                <span class="badge proj-label">Voice Recognition</span>
-                            </div>
-                            <h3 class="card-title">Infina, Ltd.</h3>
-                            <p class="card-text">Creating mixed reality training experiences for the Federal Aviation
-                                Administration
-                            </p>
-                        </div>
-                    </a>
-                </div>
-
-
-                <div class="proj-card card ">
-                    <a href="proj/voxelpad.html">
-                        <div style="width: 100%;">
-                            <img class="card-img" src="img/thumbnail/voxelpad.png" alt="Image">
-                        </div>
-                        <div class="card-body">
-                            <div class="space-bottom-sm">
-                                <span class="badge proj-label">Unity</span>
-                                <span class="badge proj-label">C#</span>
-                            </div>
-                            <h3 class="card-title">Voxel Pad</h3>
-                            <p class="card-text">An app allowing users to draw anything
-                                in three dimensions using voxels </p>
-                        </div>
-                    </a>
-                </div>
-
-
-
-
-                <div class="proj-card card">
-                    <a href="proj/catfish.html">
-                        <div style="width: 100%;">
-                            <img class="card-img" src="img/thumbnail/catfish.png" alt="Image">
-                        </div>
-                        <div class="card-body">
-                            <div class="space-bottom-sm">
-                                <span class="badge proj-label">R</span>
-                                <span class="badge proj-label">HTML</span>
-                                <span class="badge proj-label">JavaScript</span>
-                                <span class="badge proj-label">CSS</span>
-                                <span class="badge proj-label">XROMM</span>
-
-                            </div>
-                            <h3 class="card-title">Catfish Visualization</h3>
-                            <p class="card-text">Browser-based experience allowing users to visualize catfish skull
-                                morphology
-                            </p>
-                        </div>
-                    </a>
-                </div>
-
-
-
-                <div class="proj-card card">
-                    <a href="https://devpost.com/software/plasticare" target="_blank">
-                        <div style="width: 100%;">
-                            <img class="card-img" src="img/thumbnail/plasticare.png" alt="Image">
-                        </div>
-                        <div class="card-body">
-                            <div class="space-bottom-sm">
-                                <span class="badge proj-label">CV</span>
-                                <span class="badge proj-label">AI</span>
-                                <span class="badge proj-label">Tensorflow</span>
-                                <span class="badge proj-label">Python</span>
-                                <span class="badge proj-label">Figma</span>
-                            </div>
-                            <h3 class="card-title">PlastiCare</h3>
-                            <p class="card-text">Computer vision app created for IvyHacks. Scan objects to view their
-                                plastic content
-                                and see more sustainable alternatives!
-                            </p>
-                        </div>
-                    </a>
-                </div>
-
-
-            </div>
-        </div> -->
-
-        <!-- Footer -->
-        <footer class="py-5">
-            <div class="row">
-                <div class="col-sm-8">
-                    <p class="mb-1">&copy;
-                        <script>
-                            var d = new Date()
-                            document.write(d.getFullYear())
-                        </script>
-                        Alejandro Romero
-                    </p>
-                </div>
-                <div class="col-sm-4 social text-md-right">
-                    <a href="mailto:alejandro_romero@alumni.brown.edu" target="_blank" class="fa fa-envelope">
-                    </a>
-                    <a href="https://github.com/alejandrojromero" target="_blank" class="fa fab fa-github"></a>
-                    <a href="https://www.linkedin.com/in/alejandrojromero/" target="_blank" class="fa fa-linkedin"></a>
-                    <a href="https://www.instagram.com/aleboi.art/" target="_blank" class="fa fa-instagram">
-                    </a>
-                </div>
-            </div>
-        </footer>
-
     </div>
 
-    <!-- Javascript -->
-    <script src="js/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-        crossorigin="anonymous"></script>
-    <script src="js/custom.js"></script>
+    <!-- Hamburger Container for Mobile -->
+    <div class="hamburger-container" id="hamburgerContainer">
+        <div class="hamburger" id="hamburgerMobile">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-close" id="mobileMenuClose">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </div>
+        <ul class="mobile-menu-links">
+            <li><a href="#home" class="mobile-scroll-link">Home</a></li>
+            <li><a href="#work" class="mobile-scroll-link">Work</a></li>
+            <li><a href="art.html">Art</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="resume.html">Resume</a></li>
+        </ul>
+        <div class="mobile-menu-toggle">
+            <div class="theme-toggle" id="mobileThemeToggle">
+                <svg id="mobileSunIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg id="mobileMoonIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="display: none;">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <canvas id="heroShader" aria-hidden="true"></canvas>
+        <div class="hero-content">
+            <h1>Hey! I'm Alejandro.</h1>
+            <p class="bio">
+                Currently leading AI Product Design @ <a class="bio-link fx-link" href="https://www.gendigital.com/us/en/" target="_blank" rel="noopener noreferrer">Gen Digital</a>
+                <br>Places where I've made cool things:
+            </p>
+            <div class="prev-section">
+                <div class="prev-marquee">
+                    <div class="prev-track" id="prevTrack">
+                        <a class="prev-chip" href="https://www.risd.edu/" target="_blank" rel="noopener noreferrer"><img src="assets/logo_risd.png" alt="">RISD</a>
+                        <a class="prev-chip" href="https://www.microsoft.com/" target="_blank" rel="noopener noreferrer"><img src="assets/logo_microsoft.png" alt="">Microsoft</a>
+                        <a class="prev-chip" href="https://www.blizzard.com/en-us/" target="_blank" rel="noopener noreferrer"><img src="https://www.google.com/s2/favicons?domain=blizzard.com&sz=64" alt="">Blizzard</a>
+                        <a class="prev-chip" href="https://www.harvard.edu/" target="_blank" rel="noopener noreferrer"><img src="assets/logo_harvard.png" alt="">Harvard</a>
+                        <a class="prev-chip" href="https://www.nasa.gov/" target="_blank" rel="noopener noreferrer"><img src="assets/logo_nasa.png" alt="">NASA</a>
+                        <a class="prev-chip" href="https://www.snap.com/" target="_blank" rel="noopener noreferrer"><img class="logo-ink" src="assets/logo_snap.png" alt="">Snap</a>
+                        <a class="prev-chip" href="https://www.brown.edu/" target="_blank" rel="noopener noreferrer"><img src="assets/logo_brown.png" alt="">Brown — HCI M.S.</a>
+                        <a class="prev-chip" href="https://www.producthunt.com/products/shader" target="_blank" rel="noopener noreferrer"><img src="assets/logo_shader.png" alt="">Shader</a>
+                    </div>
+                </div>
+            </div>
+            <div class="social-links">
+                <a href="mailto:alejandro_romero@alumni.brown.edu" aria-label="Email">
+                    <!-- SWAP: custom email SVG -->
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/alejandrojromero/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <!-- SWAP: custom LinkedIn SVG -->
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M7 10v7"/><path d="M7 7.01v.01"/><path d="M11 17v-4a2.5 2.5 0 0 1 5 0v4"/><path d="M11 10v7"/></svg>
+                </a>
+                <a href="https://www.instagram.com/aleboi.art/" target="_blank" rel="noopener" aria-label="Instagram">
+                    <!-- SWAP: custom Instagram SVG -->
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5v.01"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visual Wall Section -->
+    <section class="visual-wall" id="work">
+        <div class="wall-grid">
+            <a class="wall-item" href="project.html?id=neo">
+                <div class="wall-item-content">
+                    <img class="wall-poster" src="assets/thumb_neo.jpg" alt="Norton Neo" loading="lazy" onerror="this.closest('.wall-item').classList.add('ph');this.remove()">
+                    <div class="ph-bg"></div>
+                    <div class="ph-title">Norton Neo</div>
+                    <div class="wall-item-overlay">
+                        <div class="wall-item-title">Norton Neo</div>
+                        <div class="wall-item-description">Leading the creative vision for Norton Neo, an AI-native browser</div>
+                        <div class="wall-tags"><span>UX/UI Design</span><span>Prototyping</span><span>User Research</span></div>
+                    </div>
+                </div>
+            </a>
+            <a class="wall-item" href="https://aleboi.xyz/" target="_blank" rel="noopener">
+                <div class="wall-item-content">
+                    <img class="wall-poster" src="assets/thumb_aleboi.png" alt="ALEBOI Studios" loading="lazy" onerror="this.closest('.wall-item').classList.add('ph');this.remove()">
+                    
+                    <div class="ph-bg"></div>
+                    <div class="ph-title">ALEBOI Studios</div>
+                    <div class="wall-item-overlay">
+                        <div class="wall-item-title">ALEBOI Studios</div>
+                        <div class="wall-item-description">Freelance and experimental visual work</div>
+                        <div class="wall-tags"><span>Blender</span><span>Photoshop</span><span>After Effects</span></div>
+                    </div>
+                </div>
+            </a>
+            <a class="wall-item" href="project.html?id=shader">
+                <div class="wall-item-content">
+                    <img class="wall-poster" src="https://alejandroromero.me/img/thumbnail/Shader_mobile.jpg" alt="Shader Inc." loading="lazy" onerror="this.closest('.wall-item').classList.add('ph');this.remove()">
+                    <div class="ph-bg"></div>
+                    <div class="ph-title">Shader Inc.</div>
+                    <div class="wall-item-overlay">
+                        <div class="wall-item-title">Shader Inc.</div>
+                        <div class="wall-item-description">Leading design on social products at the intersection of AR and genAI</div>
+                        <div class="wall-tags"><span>UX/UI Design</span><span>Prototyping</span><span>User Research</span></div>
+                    </div>
+                </div>
+            </a>
+            <a class="wall-item" href="project.html?id=spectacles">
+                <div class="wall-item-content">
+                    <img class="wall-poster" src="https://alejandroromero.me/img/thumbnail/spectacles.png" alt="Snap Spectacles" loading="lazy" onerror="this.closest('.wall-item').classList.add('ph');this.remove()">
+                    <div class="ph-bg"></div>
+                    <div class="ph-title">Snap Spectacles</div>
+                    <div class="wall-item-overlay">
+                        <div class="wall-item-title">Snap Spectacles</div>
+                        <div class="wall-item-description">HCI research into the future of AR</div>
+                        <div class="wall-tags"><span>AR</span><span>UX/UI</span><span>JavaScript</span><span>Lens Studio</span></div>
+                    </div>
+                </div>
+            </a>
+            <a class="wall-item" href="project.html?id=blizzard">
+                <div class="wall-item-content">
+                    <img class="wall-poster" src="assets/thumb_blizzard.png" alt="Blizzard Entertainment" loading="lazy" onerror="this.closest('.wall-item').classList.add('ph');this.remove()">
+                    
+                    <div class="ph-bg"></div>
+                    <div class="ph-title">Blizzard Entertainment</div>
+                    <div class="wall-item-overlay">
+                        <div class="wall-item-title">Blizzard Entertainment</div>
+                        <div class="wall-item-description">Designing accessible experiences for millions of players across the world</div>
+                        <div class="wall-tags"><span>UX/UI Design</span><span>User Research</span><span>Unity</span></div>
+                    </div>
+                </div>
+            </a>
+            <a class="wall-item" href="project.html?id=instagram">
+                <div class="wall-item-content">
+                    <img class="wall-poster" src="https://alejandroromero.me/img/thumbnail/instagram.png" alt="Instagram AR/VR" loading="lazy" onerror="this.closest('.wall-item').classList.add('ph');this.remove()">
+                    
+                    <div class="ph-bg"></div>
+                    <div class="ph-title">Instagram AR/VR</div>
+                    <div class="wall-item-overlay">
+                        <div class="wall-item-title">Instagram AR/VR</div>
+                        <div class="wall-item-description">Designing a seamless mixed-reality experience for the future of social</div>
+                        <div class="wall-tags"><span>VR</span><span>AR</span><span>Unity</span><span>Figma</span></div>
+                    </div>
+                </div>
+            </a>
+            <a class="wall-item" href="project.html?id=nasa">
+                <div class="wall-item-content">
+                    <img class="wall-poster" src="assets/thumb_nasa.jpg" alt="NASA" loading="lazy" onerror="this.closest('.wall-item').classList.add('ph');this.remove()">
+                    <div class="ph-bg"></div>
+                    <div class="ph-title">NASA</div>
+                    <div class="wall-item-overlay">
+                        <div class="wall-item-title">NASA</div>
+                        <div class="wall-item-description">Mixed-reality visualization work across two NASA research centers</div>
+                        <div class="wall-tags"><span>VR</span><span>UX</span><span>Python</span><span>Unity</span></div>
+                    </div>
+                </div>
+            </a>
+            <a class="wall-item" href="project.html?id=animus">
+                <div class="wall-item-content">
+                    <img class="wall-poster" src="https://alejandroromero.me/img/thumbnail/animus.png" alt="Animus AR" loading="lazy" onerror="this.closest('.wall-item').classList.add('ph');this.remove()">
+                    
+                    <div class="ph-bg"></div>
+                    <div class="ph-title">Animus AR</div>
+                    <div class="wall-item-overlay">
+                        <div class="wall-item-title">Animus AR</div>
+                        <div class="wall-item-description">Interactive AR experience for the RTFKT x Bezi AR challenge</div>
+                        <div class="wall-tags"><span>Bezi</span><span>Figma</span><span>AR</span></div>
+                    </div>
+                </div>
+            </a>
+            <a class="wall-item" href="project.html?id=tkd">
+                <div class="wall-item-content">
+                    <img class="wall-poster" src="https://alejandroromero.me/img/thumbnail/tkd.png" alt="Taekwondo Visualizer" loading="lazy" onerror="this.closest('.wall-item').classList.add('ph');this.remove()">
+                    
+                    <div class="ph-bg"></div>
+                    <div class="ph-title">Taekwondo Visualizer</div>
+                    <div class="wall-item-overlay">
+                        <div class="wall-item-title">Taekwondo Visualizer</div>
+                        <div class="wall-item-description">3D visualization of Taekwondo techniques using motion capture</div>
+                        <div class="wall-tags"><span>Mocap</span><span>XROMM</span><span>Unity</span><span>C#</span></div>
+                    </div>
+                </div>
+            </a>
+            <a class="wall-item" href="project.html?id=collabxr">
+                <div class="wall-item-content">
+                    <img class="wall-poster" src="assets/collabxr_thumb.png" alt="Collab XR" loading="lazy" onerror="this.closest('.wall-item').classList.add('ph');this.remove()">
+                    <div class="ph-bg"></div>
+                    <div class="ph-title">Collab XR</div>
+                    <div class="wall-item-overlay">
+                        <div class="wall-item-title">Collab XR</div>
+                        <div class="wall-item-description">Reimagining 3D modeling in collaborative spaces</div>
+                        <div class="wall-tags"><span>VR</span><span>AR</span><span>Bezi</span><span>Unity</span></div>
+                    </div>
+                </div>
+            </a>
+            <a class="wall-item" href="game-corner.html" target="_blank" rel="noopener" id="gameCornerTile">
+                <div class="wall-item-content">
+                    <img class="wall-poster" src="assets/thumb_gamecorner.png" alt="Aleboi's Game Corner" loading="lazy" onerror="this.closest('.wall-item').classList.add('ph');this.remove()">
+                    <div class="ph-bg"></div>
+                    <div class="wall-item-overlay">
+                        <div class="wall-item-title">Aleboi's Game Corner</div>
+                        <div class="wall-item-description">A side project logging the status of every video game I've ever played</div>
+                        <div class="wall-tags"><span>Side Project</span><span>Games</span><span>Web</span></div>
+                    </div>
+                </div>
+            </a>
+                <a class="wall-item" href="archive.html">
+                <div class="wall-item-content">
+                    <img class="wall-poster" src="assets/thumb_archive.png" alt="Design Archive" loading="lazy" onerror="this.closest('.wall-item').classList.add('ph');this.remove()">
+                    <div class="ph-bg"></div>
+                    <div class="wall-item-overlay">
+                        <div class="wall-item-title">Design Archive</div>
+                        <div class="wall-item-description">Older case studies and experiments</div>
+                        <div class="wall-tags"><span>2014 — 2021</span></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="copyright">© <span id="currentYear"></span> Alejandro Romero</div>
+        <div class="footer-socials">
+            <a href="mailto:alejandro_romero@alumni.brown.edu" aria-label="Email">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/alejandrojromero/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M7 10v7"/><path d="M7 7.01v.01"/><path d="M11 17v-4a2.5 2.5 0 0 1 5 0v4"/><path d="M11 10v7"/></svg>
+            </a>
+            <a href="https://www.instagram.com/aleboi.art/" target="_blank" rel="noopener" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5v.01"/></svg>
+            </a>
+        </div>
+    </footer>
+
     <script>
+        // Set current year dynamically
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
 
-        window.onscroll = function () { myFunction() };
+        // Duplicate the Previously chips so the marquee loops seamlessly,
+        // then drive the scroll with rAF so hover eases to a stop instead of snapping
+        const prevTrack = document.getElementById('prevTrack');
+        if (prevTrack) {
+            prevTrack.innerHTML += prevTrack.innerHTML;
+            const marquee = prevTrack.parentElement;
+            const BASE = 42;            // px per second
+            let speed = BASE, target = BASE, offset = 0, last = performance.now();
+            marquee.addEventListener('mouseenter', () => { target = 0; });
+            marquee.addEventListener('mouseleave', () => { target = BASE; });
+            function tick(now) {
+                const dt = Math.min((now - last) / 1000, 0.05);
+                last = now;
+                speed += (target - speed) * Math.min(1, dt * 6);   // ease toward target
+                offset += speed * dt;
+                const loop = prevTrack.scrollWidth / 2;
+                if (loop > 0 && offset >= loop) offset -= loop;
+                prevTrack.style.transform = `translateX(${-offset}px)`;
+                requestAnimationFrame(tick);
+            }
+            requestAnimationFrame(tick);
+        }
 
-        function myFunction() {
-            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            var scrolled = (winScroll / height) * 100;
-            document.getElementById("myBar").style.width = scrolled + "%";
-        }</script>
+        // Custom Cursor
+        const customCursor = document.getElementById('customCursor');
+        const hoverElements = document.querySelectorAll('a, button, .theme-toggle');
+        const gridItems = document.querySelectorAll('.wall-item');
+
+        let mouseX = 0;
+        let mouseY = 0;
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        function updateCursor() {
+            customCursor.style.left = `${mouseX}px`;
+            customCursor.style.top = `${mouseY}px`;
+            requestAnimationFrame(updateCursor);
+        }
+
+        updateCursor();
+
+        // Circle cursor on every link and button
+        hoverElements.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                customCursor.classList.add('hover');
+            });
+            el.addEventListener('mouseleave', () => {
+                customCursor.classList.remove('hover');
+            });
+        });
+
+        gridItems.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                customCursor.classList.add('grid-hover');
+            });
+            el.addEventListener('mouseleave', () => {
+                customCursor.classList.remove('grid-hover');
+            });
+        });
+
+        // Gallery: poster image by default, play the video on hover
+        gridItems.forEach(item => {
+            const video = item.querySelector('.wall-video');
+            if (!video) return;
+            item.addEventListener('mouseenter', () => {
+                video.play().catch(() => {});
+            });
+            item.addEventListener('mouseleave', () => {
+                video.pause();
+                video.currentTime = 0;
+            });
+        });
+
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const mobileThemeToggle = document.getElementById('mobileThemeToggle');
+        const sunIcon = document.getElementById('sunIcon');
+        const moonIcon = document.getElementById('moonIcon');
+        const mobileSunIcon = document.getElementById('mobileSunIcon');
+        const mobileMoonIcon = document.getElementById('mobileMoonIcon');
+        const body = document.body;
+
+        function updateThemeIcons(theme) {
+            if (theme === 'dark') {
+                sunIcon.style.display = 'none';
+                moonIcon.style.display = 'block';
+                mobileSunIcon.style.display = 'none';
+                mobileMoonIcon.style.display = 'block';
+            } else {
+                sunIcon.style.display = 'block';
+                moonIcon.style.display = 'none';
+                mobileSunIcon.style.display = 'block';
+                mobileMoonIcon.style.display = 'none';
+            }
+        }
+
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const savedTheme = localStorage.getItem('theme');
+        const initialTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+        
+        if (initialTheme === 'dark') {
+            body.classList.add('dark-mode');
+        }
+        updateThemeIcons(initialTheme);
+
+        function toggleTheme() {
+            body.classList.toggle('dark-mode');
+            const theme = body.classList.contains('dark-mode') ? 'dark' : 'light';
+            updateThemeIcons(theme);
+            localStorage.setItem('theme', theme);
+        }
+
+        themeToggle.addEventListener('click', toggleTheme);
+        mobileThemeToggle.addEventListener('click', toggleTheme);
+
+        // Hide nav on scroll
+        let lastScroll = 0;
+        const nav = document.getElementById('nav');
+        const hamburgerContainer = document.getElementById('hamburgerContainer');
+        const scrollProgress = document.getElementById('scrollProgress');
+
+        window.addEventListener('scroll', updateNavOnScroll);
+
+        function updateNavOnScroll() {
+            const currentScroll = window.pageYOffset;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = docHeight > 0 ? (currentScroll / docHeight) * 100 : 0;
+
+            // Update progress bar
+            scrollProgress.style.width = scrollPercent + '%';
+
+            // Flat in-page nav at the top; collapses into the pinned pill once scrolled
+            const THRESHOLD = 60;
+            if (currentScroll > THRESHOLD) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+
+            lastScroll = currentScroll;
+        }
+
+        updateNavOnScroll();
+
+        // Measure the collapsed pill's natural width so the width animation has a real
+        // target (lets the toggle glide to center instead of snapping).
+        const navEl = document.querySelector('nav');
+        function measurePillWidth() {
+            const wasScrolled = nav.classList.contains('scrolled');
+            const prevTransition = navEl.style.transition;
+            navEl.style.transition = 'none';
+            nav.classList.add('scrolled');
+            navEl.style.width = 'max-content';
+            const w = Math.ceil(navEl.getBoundingClientRect().width) + 1;
+            navEl.style.width = '';
+            if (!wasScrolled) nav.classList.remove('scrolled');
+            document.documentElement.style.setProperty('--pill-w', w + 'px');
+            void navEl.offsetWidth; // reflow before restoring transition
+            navEl.style.transition = prevTransition;
+        }
+        measurePillWidth();
+        window.addEventListener('load', measurePillWidth);
+        window.addEventListener('resize', measurePillWidth);
+        if (document.fonts && document.fonts.ready) {
+            document.fonts.ready.then(measurePillWidth);
+        }
+
+        // Smooth scroll for internal links
+        document.querySelectorAll('.scroll-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href');
+                if (targetId === '#home') {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                } else {
+                    const target = document.querySelector(targetId);
+                    if (target) {
+                        const offset = targetId === '#work' ? 0 : 80;
+                        window.scrollTo({ top: target.getBoundingClientRect().top + window.pageYOffset - offset, behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+
+        // Mobile Menu
+        const hamburger = document.getElementById('hamburger');
+        const hamburgerMobile = document.getElementById('hamburgerMobile');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileMenuClose = document.getElementById('mobileMenuClose');
+
+        function openMobileMenu() {
+            mobileMenu.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        hamburger.addEventListener('click', openMobileMenu);
+        hamburgerMobile.addEventListener('click', openMobileMenu);
+        mobileMenuClose.addEventListener('click', closeMobileMenu);
+
+        // Close mobile menu on link click and smooth scroll
+        document.querySelectorAll('.mobile-scroll-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href');
+                mobileMenu.classList.remove('open');
+                document.body.style.overflow = '';
+                
+                setTimeout(() => {
+                    if (targetId === '#home') {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    } else {
+                        const target = document.querySelector(targetId);
+                        if (target) {
+                            const offset = targetId === '#work' ? 0 : 80;
+                            window.scrollTo({ top: target.getBoundingClientRect().top + window.pageYOffset - offset, behavior: 'smooth' });
+                        }
+                    }
+                }, 100);
+            });
+        });
+
+        // Close mobile menu on external link click
+        document.querySelectorAll('.mobile-menu-links a:not(.mobile-scroll-link)').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+                document.body.style.overflow = '';
+            });
+        });
+    </script>
+
+    <!-- Hero background: SDF raymarched metaballs + halftone dot-matrix shader -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+    (function () {
+        const canvas = document.getElementById('heroShader');
+        const hero = document.getElementById('home');
+        if (!canvas || !hero || typeof THREE === 'undefined') return;
+
+        let renderer;
+        try {
+            renderer = new THREE.WebGLRenderer({ canvas, antialias: false, alpha: false, powerPreference: 'high-performance' });
+        } catch (e) { return; }
+
+        const DPR = Math.min(window.devicePixelRatio || 1, 1.5);
+        const CELL_CSS = 8;          // halftone cell size in CSS px
+        const SCALE = 1.6;           // world half-extent mapped to screen edge
+
+        const VERT = `
+            varying vec2 vUv;
+            void main() {
+                vUv = uv;
+                gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+            }
+        `;
+
+        // Pass 1 — raymarch the metaball field, output luminance (r) + cursor accent (g)
+        const FRAG_LUM = `
+            varying vec2 vUv;
+            uniform float uTime;
+            uniform float uAspect;
+            uniform vec2  uMouse;
+            uniform float uMouseAmt;
+            uniform float uSpeed;
+
+            float smin(float a, float b, float k) {
+                float h = clamp(0.5 + 0.5 * (b - a) / k, 0.0, 1.0);
+                return mix(b, a, h) - k * h * (1.0 - h);
+            }
+            float sdSphere(vec3 p, vec3 c, float r) { return length(p - c) - r; }
+
+            vec3 cursorCenter;
+            float cursorR;
+
+            // returns vec2(distance, accent)
+            vec2 mapScene(vec3 p) {
+                float t = uTime * uSpeed;
+                float k = 0.55;
+                float d = 10.0;
+                d = smin(d, sdSphere(p, vec3(sin(t*0.35)*0.9,      sin(t*0.45+1.0)*0.85, cos(t*0.30)*0.5),     0.42), k);
+                d = smin(d, sdSphere(p, vec3(cos(t*0.27+2.0)*1.15, sin(t*0.33+0.5)*0.9,  sin(t*0.25+1.5)*0.5), 0.50), k);
+                d = smin(d, sdSphere(p, vec3(sin(t*0.22+4.0)*0.7,  cos(t*0.40+2.5)*0.9,  cos(t*0.35+0.7)*0.5), 0.38), k);
+                d = smin(d, sdSphere(p, vec3(cos(t*0.30+1.0)*1.05, sin(t*0.28+3.0)*0.75, sin(t*0.32+2.2)*0.5), 0.46), k);
+                d = smin(d, sdSphere(p, vec3(sin(t*0.18+0.3)*0.6,  cos(t*0.24+1.7)*0.95, cos(t*0.27+3.1)*0.5), 0.40), k);
+                d = smin(d, sdSphere(p, vec3(cos(t*0.21+5.0)*0.9,  sin(t*0.20+4.2)*0.6,  sin(t*0.23+0.9)*0.5), 0.44), k);
+                // cursor blob — merges via the same smooth union
+                float dc = sdSphere(p, cursorCenter, cursorR);
+                d = smin(d, dc, k);
+                float acc = (1.0 - smoothstep(0.0, cursorR + 0.55, length(p - cursorCenter))) * uMouseAmt;
+                return vec2(d, acc);
+            }
+
+            vec3 calcNormal(vec3 p) {
+                vec2 e = vec2(0.0018, 0.0);
+                return normalize(vec3(
+                    mapScene(p + e.xyy).x - mapScene(p - e.xyy).x,
+                    mapScene(p + e.yxy).x - mapScene(p - e.yxy).x,
+                    mapScene(p + e.yyx).x - mapScene(p - e.yyx).x
+                ));
+            }
+
+            void main() {
+                cursorCenter = vec3(uMouse, 0.0);
+                cursorR = 0.42 * uMouseAmt + 0.0001;
+
+                vec2 uv = vUv * 2.0 - 1.0;
+                uv.x *= uAspect;
+                vec3 ro = vec3(uv * SCALE_C, 3.0);
+                vec3 rd = normalize(vec3(uv * 0.08, -1.0));
+
+                float tt = 0.0, hit = 0.0, acc = 0.0;
+                vec3 p = ro;
+                for (int i = 0; i < 56; i++) {
+                    p = ro + rd * tt;
+                    vec2 m = mapScene(p);
+                    if (m.x < 0.001) { hit = 1.0; acc = m.y; break; }
+                    tt += m.x;
+                    if (tt > 7.0) break;
+                }
+
+                float lum;
+                if (hit > 0.5) {
+                    vec3 n = calcNormal(p);
+                    vec3 lDir = normalize(vec3(0.5, 0.7, 0.7));
+                    float diff = max(dot(n, lDir), 0.0);
+                    float rim  = pow(1.0 - max(dot(n, -rd), 0.0), 2.5);
+                    lum = clamp(0.10 + 0.60 * diff + 0.22 * rim, 0.0, 1.0);
+                } else {
+                    lum = 0.0;   // no background grid — empty space stays clean
+                    acc = 0.0;
+                }
+                gl_FragColor = vec4(lum, acc, 0.0, 1.0);
+            }
+        `.replace(/SCALE_C/g, SCALE.toFixed(3));
+
+        // Pass 2 — halftone dot-matrix over the low-res luminance field
+        const FRAG_HALF = `
+            varying vec2 vUv;
+            uniform sampler2D uLum;
+            uniform vec2  uResolution;
+            uniform vec2  uCells;
+            uniform float uCell;
+            uniform vec3  uBg;
+            uniform vec3  uDot;
+            uniform vec3  uAccent;
+            uniform float uLumScale;
+
+            void main() {
+                vec2 frag = vUv * uResolution;
+                vec2 cellIdx = floor(frag / uCell);
+                vec2 cellCenter = (cellIdx + 0.5) * uCell;
+                vec2 sampUv = (cellIdx + 0.5) / uCells;
+                vec4 s = texture2D(uLum, sampUv);
+                float L = clamp(s.r * uLumScale, 0.0, 1.0);
+                float A = s.g;
+
+                float r = sqrt(L) * 0.46 * uCell;
+                float dist = length(frag - cellCenter);
+                float cov = (1.0 - smoothstep(r - 1.0, r + 1.0, dist)) * step(0.0001, r);
+
+                float aMix = smoothstep(0.08, 0.5, A);
+                vec3 dotCol = mix(uDot, uAccent, aMix);
+                vec3 col = mix(uBg, dotCol, cov);
+                gl_FragColor = vec4(col, 1.0);
+            }
+        `;
+
+        const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
+        const quad = new THREE.PlaneGeometry(2, 2);
+
+        const matLum = new THREE.ShaderMaterial({
+            uniforms: {
+                uTime: { value: 0 }, uAspect: { value: 1 },
+                uMouse: { value: new THREE.Vector2(0, 0) },
+                uMouseAmt: { value: 0 }, uSpeed: { value: 1 }
+            },
+            vertexShader: VERT, fragmentShader: FRAG_LUM
+        });
+
+        const matHalf = new THREE.ShaderMaterial({
+            uniforms: {
+                uLum: { value: null },
+                uResolution: { value: new THREE.Vector2(1, 1) },
+                uCells: { value: new THREE.Vector2(1, 1) },
+                uCell: { value: CELL_CSS * DPR },
+                uBg: { value: new THREE.Color() },
+                uDot: { value: new THREE.Color() },
+                uAccent: { value: new THREE.Color(1.0, 0.290, 0.0) },
+                uLumScale: { value: 1.0 }
+            },
+            vertexShader: VERT, fragmentShader: FRAG_HALF
+        });
+
+        const sceneLum = new THREE.Scene(); sceneLum.add(new THREE.Mesh(quad, matLum));
+        const sceneHalf = new THREE.Scene(); sceneHalf.add(new THREE.Mesh(quad, matHalf));
+
+        let rt = null;
+        function resize() {
+            const w = Math.max(1, hero.clientWidth);
+            const h = Math.max(1, hero.clientHeight);
+            const pxW = Math.floor(w * DPR);
+            const pxH = Math.floor(h * DPR);
+            const cell = CELL_CSS * DPR;
+            const cols = Math.max(1, Math.ceil(pxW / cell));
+            const rows = Math.max(1, Math.ceil(pxH / cell));
+
+            renderer.setPixelRatio(1);
+            renderer.setSize(pxW, pxH, false);
+            canvas.style.width = '100%';
+            canvas.style.height = '100%';
+
+            if (rt) rt.dispose();
+            rt = new THREE.WebGLRenderTarget(cols, rows, {
+                minFilter: THREE.NearestFilter, magFilter: THREE.NearestFilter,
+                depthBuffer: false, stencilBuffer: false
+            });
+
+            matLum.uniforms.uAspect.value = w / h;
+            matHalf.uniforms.uLum.value = rt.texture;
+            matHalf.uniforms.uResolution.value.set(pxW, pxH);
+            matHalf.uniforms.uCells.value.set(cols, rows);
+            matHalf.uniforms.uCell.value = cell;
+        }
+        resize();
+        window.addEventListener('resize', resize);
+
+        // Mouse → world-space cursor blob
+        const mouseTarget = new THREE.Vector2(0, 0);
+        const mouseCur = new THREE.Vector2(0, 0);
+        let amtTarget = 0, amtCur = 0;
+        window.addEventListener('mousemove', (e) => {
+            const rect = hero.getBoundingClientRect();
+            const inside = e.clientX >= rect.left && e.clientX <= rect.right &&
+                           e.clientY >= rect.top && e.clientY <= rect.bottom;
+            if (inside) {
+                const nx = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+                const ny = -(((e.clientY - rect.top) / rect.height) * 2 - 1);
+                mouseTarget.set(nx * (rect.width / rect.height) * SCALE, ny * SCALE);
+                amtTarget = 1;
+            } else {
+                amtTarget = 0;
+            }
+        });
+        document.addEventListener('mouseleave', () => { amtTarget = 0; });
+
+        const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        matLum.uniforms.uSpeed.value = reduce ? 0.25 : 1.0;
+
+        const bgDark = new THREE.Color(0x050506), dotDark = new THREE.Color(0xdcdcde);
+        const bgLight = new THREE.Color(0xffffff), dotLight = new THREE.Color(0x24242a);
+
+        const clock = new THREE.Clock();
+        let running = true;
+        if ('IntersectionObserver' in window) {
+            new IntersectionObserver((en) => { running = en[0].isIntersecting; }, { threshold: 0 }).observe(hero);
+        }
+
+        function frame() {
+            requestAnimationFrame(frame);
+            if (!running || !rt) return;
+            const dt = Math.min(clock.getDelta(), 0.05);
+            matLum.uniforms.uTime.value += dt;
+
+            amtCur += (amtTarget - amtCur) * Math.min(1, dt * 6);
+            mouseCur.lerp(mouseTarget, Math.min(1, dt * 8));
+            matLum.uniforms.uMouse.value.copy(mouseCur);
+            matLum.uniforms.uMouseAmt.value = amtCur;
+
+            const dark = document.body.classList.contains('dark-mode');
+            matHalf.uniforms.uBg.value.copy(dark ? bgDark : bgLight);
+            matHalf.uniforms.uDot.value.copy(dark ? dotDark : dotLight);
+            matHalf.uniforms.uLumScale.value = dark ? 0.85 : 0.7;
+
+            renderer.setRenderTarget(rt);
+            renderer.render(sceneLum, camera);
+            renderer.setRenderTarget(null);
+            renderer.render(sceneHalf, camera);
+        }
+        frame();
+    })();
+    </script>
+    <script src="assets/lightbox.js"></script>
 </body>
-
-<div class="header">
-    <div class="progress-container">
-        <div class="progress-bar" id="myBar"></div>
-    </div>
-</div>
-
 </html>
